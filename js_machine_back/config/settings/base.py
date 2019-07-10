@@ -293,6 +293,3 @@ SOCIALACCOUNT_ADAPTER = "js_machine.users.adapters.SocialAccountAdapter"
 # Your stuff...
 # REST_FRAMEWORK
 # ------------------------------------------------------------------------------
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
-}
