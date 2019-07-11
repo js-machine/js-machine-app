@@ -1,6 +1,6 @@
 {
   "name": "js_machine_front",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {   
     "react": "^16.8.6",
@@ -50,6 +50,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "3.5.3",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.0.1"
   }
 }
