@@ -65,6 +65,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
     "django.contrib.admin",
+    
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -77,6 +78,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "js_machine.users.apps.UsersConfig",
+    "js_machine.events.apps.EventConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -289,4 +291,5 @@ SOCIALACCOUNT_ADAPTER = "js_machine.users.adapters.SocialAccountAdapter"
 
 
 # Your stuff...
+# REST_FRAMEWORK
 # ------------------------------------------------------------------------------
