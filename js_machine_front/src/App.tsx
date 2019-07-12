@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { NavBar } from 'components/Routes/NavBar';
-import { Partners } from 'components/Partners';
-import { Events } from 'components/Events';
-import { News } from 'components/News';
-import { About } from 'components/About';
-import { Main } from 'components/Main';
+import { NavBar } from 'components/NavBar';
+import { Partners } from 'routes/Partners';
+import { Events } from 'routes/Events';
+import { News } from 'routes/News';
+import { About } from 'routes/About';
+import { Main } from 'routes/Main';
 import { Route, Redirect, Switch } from 'react-router';
 
 const App: React.FC = () => {
