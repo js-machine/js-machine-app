@@ -7,14 +7,21 @@
 }
 
 .post__date{
+    display: flex;
+    flex-flow: column nowrap;
     margin: 0;
     padding: 0 15px;
     font-size: 32px;
+}
+
+.post__day{
+    margin: 0;
+    padding: 0;
     font-weight: bold;
 }
 
-.post__info{
-
+.post__month{
+    font-size: 16px;
 }
 
 .post__title{

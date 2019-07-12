@@ -9,14 +9,14 @@ const sectionStyle = {
     justifyContent: 'center',
     display: 'flex',
     flexFlow: 'column nowrap',
-    right: '10vh'
+    right: '10vh',
 };
 
 const LinkToSocials: React.FC = () => {
     return (
         <div style={ sectionStyle }>
-            <a href='https://t.me/js_machine_channel' target='_blank'><img className ='imgStyle' src={TelegramIcon} alt='telegram-icon'/></a>
-            <a href='https://vk.com/jsmachine' target='_blank'><img className ='imgStyle' src={VkIcon} alt='vk-icon'/></a>
+            <a href="https://t.me/js_machine_channel" target="_blank"><img className ="imgStyle" src={TelegramIcon} alt="telegram-icon"/></a>
+            <a href="https://vk.com/jsmachine" target="_blank"><img className ="imgStyle" src={VkIcon} alt="vk-icon"/></a>
         </div>
     );
 };

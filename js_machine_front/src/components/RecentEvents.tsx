@@ -1,39 +1,31 @@
 import React from 'react';
-import { JSXElement } from '@babel/types';
 
-import '../styles/recentEvents.css'
+import '../styles/recentEvents.css';
 
-const sectionStyle = {
-    width: '100%',
-    position: 'absolute' as 'absolute',
-    // padding: '0 50px',
-    display: 'flex',
-    flexFlow: 'row nowrap',
-    justifyContent: 'space-between',
-    bottom: '10vh',
-};
+interface Post {
+    id: string;
+    date: string;
+    title: string;
+    description: string;
+}
 
 const RecentEvents: React.FC<any> = (props) => {
-    const content: JSXElement = props.test.map((post: any) => {
-        let date: Date = new Date(post.date);
-        console.log(date);
+    return props.test.map((post: Post) => {
+        const postDate: number = new Date(post.date).getDate();
+        const postMonth: string = new Date(post.date).toLocaleString('ru', { month: 'short' });
 
-        return <div key={post.id} className='recentEvents__post post'>
-            <div className='post__date'>
-                <span>{post.date}</span>
-                <span>{post.month}</span>
+        return <div key={post.id} className="recentEvents__post post">
+            <div className="post__date">
+                <p className="post__day">{postDate}</p>
+                <span className="post__month">{postMonth}</span>
             </div>
-            <div className='post__info'>
-                <p className='post__title'>{post.title}</p>
-                <span className='post__description'>{post.description}</span>
+            <div className="post__info">
+                <p className="post__title">{post.title}</p>
+                <span className="post__description">{post.description}</span>
             </div>
-        </div>
+        </div>;
+
     });
-    return (
-        <div style={sectionStyle}>
-            {content}
-        </div>
-    );
 };
 
 export default RecentEvents;
