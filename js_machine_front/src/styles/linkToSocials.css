@@ -1,10 +1,10 @@
-.imgStyle {
+.link-to-socials__img {
     width: 30px;
     padding: 10px;
     opacity: 0.7;
     transition: 0.2s;
 }
 
-.imgStyle:hover{
+.link-to-socials__img:hover{
     opacity: 1;
 }

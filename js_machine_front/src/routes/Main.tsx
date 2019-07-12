@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import Background from '../images/main.jpg';
-import '../styles/main.css';
+import Background from 'images/main.jpg';
+import 'styles/main.css';
 
-import LinkToSicials from '../components/LinkToSocials';
-import RecentEvents from '../components/RecentEvents';
+import LinkToSicials from 'components/LinkToSocials';
+import RecentEvents from 'components/RecentEvents';
 
 const sectionStyle = {
   height: '100vh',
