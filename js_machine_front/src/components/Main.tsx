@@ -12,7 +12,6 @@ const sectionStyle = {
 
 export const Main: React.FC = memo(() => {
   return (
-    <div style={ sectionStyle }>
-    </div>
+    <div style={ sectionStyle }/>
   );
 });
