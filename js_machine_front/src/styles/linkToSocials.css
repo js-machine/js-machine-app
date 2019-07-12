@@ -1,0 +1,10 @@
+.imgStyle {
+    width: 30px;
+    padding: 10px;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.imgStyle:hover{
+    opacity: 1;
+}
