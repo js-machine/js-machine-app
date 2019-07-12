@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import '../styles/route.css';
+import '../../styles/route.css';
 import { NavLink } from 'react-router-dom';
 
 export const NavBar: React.FC = memo(() => {
