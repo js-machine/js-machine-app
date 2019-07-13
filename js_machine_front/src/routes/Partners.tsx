@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 import Background from '../images/partners.jpg';
 import '../styles/partners.css';
 
+import PartnersLogo from 'components/PartnersLogo';
+
 const sectionStyle = {
   height: '100vh',
   backgroundImage: `url(${Background})`,
@@ -13,7 +15,10 @@ const sectionStyle = {
 export const Partners: React.FC = memo(() => {
   return (
     <div style={ sectionStyle }>
-      <div className="body" />
+      <div className="body">
+        <div className="partners__title">ПАРТНЕРЫ</div>
+        <PartnersLogo/>
+      </div>
     </div>
   );
 });

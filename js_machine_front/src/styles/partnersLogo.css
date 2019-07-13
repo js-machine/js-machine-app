@@ -1,0 +1,10 @@
+.partners-logo{
+    position: absolute;
+    bottom: 10vh;
+    right: 10vh;
+}
+
+.partners-logo__img{
+    height: 90px;
+    padding: 0 20px;
+}
