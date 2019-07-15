@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import 'styles/recentEvents.css';
 
@@ -10,10 +10,10 @@ interface Post {
 }
 
 interface Props {
-    test: Array<Post>;
+    test: Post[];
 }
 
-const RecentEvents: React.FC<Props> = (props: Props) => {
+export const RecentEvents: React.FC<Props> = memo((props: Props) => {
     return <>
         {
             props.test.map((post: Post) => {
@@ -33,6 +33,4 @@ const RecentEvents: React.FC<Props> = (props: Props) => {
             })
         }
     </>;
-};
-
-export default RecentEvents;
+});

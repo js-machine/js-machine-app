@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import VkIcon from 'images/vk-icon.png';
 import TelegramIcon from 'images/telegram-icon.png';
 import 'styles/linkToSocials.css';
@@ -12,13 +12,11 @@ const sectionStyle = {
     right: '10vh',
 };
 
-const LinkToSocials: React.FC = () => {
+export const LinkToSocials: React.FC = memo(() => {
     return (
         <div style={ sectionStyle }>
             <a href="https://t.me/js_machine_channel" target="_blank" rel="noopener noreferrer"><img className ="link-to-socials__img" src={TelegramIcon} alt="telegram-icon"/></a>
             <a href="https://vk.com/jsmachine" target="_blank" rel="noopener noreferrer"><img className ="link-to-socials__img" src={VkIcon} alt="vk-icon"/></a>
         </div>
     );
-};
-
-export default LinkToSocials;
+});

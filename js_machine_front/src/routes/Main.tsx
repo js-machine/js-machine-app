@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import Background from 'images/main.jpg';
 import 'styles/main.css';
 
-import LinkToSicials from 'components/LinkToSocials';
-import RecentEvents from 'components/RecentEvents';
+import { LinkToSocials } from 'components/LinkToSocials';
+import { RecentEvents } from 'components/RecentEvents';
 
 const sectionStyle = {
   height: '100vh',
@@ -43,7 +43,7 @@ const testPosts = [
 export const Main: React.FC = memo(() => {
   return (
     <div style={sectionStyle}>
-      <LinkToSicials />
+      <LinkToSocials />
       <div className="main__events">
         <RecentEvents test={testPosts} />
       </div>
