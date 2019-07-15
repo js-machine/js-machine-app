@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import 'styles/recentEvents.css';
 
-interface Post {
+interface Event {
     id: string;
     date: string;
     title: string;
@@ -10,24 +10,24 @@ interface Post {
 }
 
 interface Props {
-    test: Post[];
+    events: Event[];
 }
 
 export const RecentEvents: React.FC<Props> = memo((props: Props) => {
     return <>
         {
-            props.test.map((post: Post) => {
-                const postDate: number = new Date(post.date).getDate();
-                const postMonth: string = new Date(post.date).toLocaleString('ru', { month: 'short' });
+            props.events.map((event: Event) => {
+                const eventDate: number = new Date(event.date).getDate();
+                const eventMonth: string = new Date(event.date).toLocaleString('ru', { month: 'short' });
 
-                return <div key={post.id} className="recentEvents__post post">
-                    <div className="post__date">
-                        <p className="post__day">{postDate}</p>
-                        <span className="post__month">{postMonth}</span>
+                return <div key={event.id} className="event">
+                    <div className="event__date">
+                        <p className="event__day">{eventDate}</p>
+                        <span className="event__month">{eventMonth}</span>
                     </div>
-                    <div className="post__info">
-                        <p className="post__title">{post.title}</p>
-                        <span className="post__description">{post.description}</span>
+                    <div className="event__info">
+                        <p className="event__title">{event.title}</p>
+                        <span className="event__description">{event.description}</span>
                     </div>
                 </div>;
             })

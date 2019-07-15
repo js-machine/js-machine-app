@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import Background from 'images/main.jpg';
 import 'styles/main.css';
 
-import { LinkToSocials } from 'components/LinkToSocials';
+import { SocialLinks } from 'components/SocialLinks';
 import { RecentEvents } from 'components/RecentEvents';
 
 const sectionStyle = {
@@ -13,7 +13,7 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-const testPosts = [
+const events = [
   {
     id: '0',
     date: '01/30/2019',
@@ -43,9 +43,9 @@ const testPosts = [
 export const Main: React.FC = memo(() => {
   return (
     <div style={sectionStyle}>
-      <LinkToSocials />
+      <SocialLinks />
       <div className="main__events">
-        <RecentEvents test={testPosts} />
+        <RecentEvents events={events} />
       </div>
     </div>
   );

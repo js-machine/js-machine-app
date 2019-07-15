@@ -1,4 +1,4 @@
-.recentEvents__post{
+.event{
     width: 25%;
     margin: 0 50px;
     display: flex;
@@ -6,7 +6,7 @@
     color: white;
 }
 
-.post__date{
+.event__date{
     display: flex;
     flex-flow: column nowrap;
     margin: 0;
@@ -14,24 +14,24 @@
     font-size: 32px;
 }
 
-.post__day{
+.event__day{
     margin: 0;
     padding: 0;
     font-weight: bold;
 }
 
-.post__month{
+.event__month{
     font-size: 16px;
 }
 
-.post__title{
+.event__title{
     margin: 0;
     padding: 5px 0 0;
     text-align: left;
     font-size: 24px;
 }
 
-.post__description{
+.event__description{
     margin: 20px 0 auto;
     display: block;
     text-align: left;
