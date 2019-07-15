@@ -1,5 +1,14 @@
-.body {
+.partners {
     height: 100%;
     width: 100%;
     background-color: rgba(0,0,0,0.6);
+}
+
+.partners__title{
+    position: absolute;
+    top: 10vh;
+    left: 5vh;
+    font-size: 55px;
+    font-weight: bold;
+    color: #F2E14C;
 }
