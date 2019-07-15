@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import 'styles/partnersLogo.css';
 
 import EpamLogo from 'images/epam-icon.png';
 import DevByLogo from 'images/dev-by-icon.png';
 import StreamLineLogo from 'images/streamline-icon.png';
 
-const PartnersLogo: React.FC = () => {
+export const PartnersLogo: React.FC = memo(() => {
     return (
         <div className="partners-logo">
             <img src={EpamLogo} className="partners-logo__img" alt="Epam logo"/>
@@ -13,6 +13,4 @@ const PartnersLogo: React.FC = () => {
             <img src={StreamLineLogo} className="partners-logo__img" alt="Streamline logo"/>
         </div>
     );
-};
-
-export default PartnersLogo;
+});
