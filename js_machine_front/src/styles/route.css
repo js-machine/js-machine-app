@@ -1,20 +1,39 @@
-.activeLink, a:active {
-    color: #F2E14C;
+.active-link {
+    color: #F2E14C;    
 }
 
-.nav {
-    position: absolute;
-    right: 3vh;
-    top: 8vh;
-}
-
-.nav__link {
-    padding-right: 8vh;
-}
 a {    
     font-family: 'Arial', sans-serif;
     font-size: 2.6vh;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    margin-right: 7vh;
+}
+
+.logo-box__link {
+    height: 4vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} 
+
+.menu {
+    position: absolute;
+    right: 8vh;    
+    top: 4vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.logo-box {
+    position: absolute;
+    top: 4vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 9.5vh;
 }
