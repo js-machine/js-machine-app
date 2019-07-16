@@ -11,9 +11,9 @@ export const TileContent: React.FC<Props> = memo((props: Props) => {
     <div className="content color">
       <div className="container">
         <div className="container_flex-container">
-          {props.arrTiles.map((item: Tile, i: number) => (
+          {props.arrTiles.map((item: Tile) => (
             <TileElement
-              key={i}
+              key={item.id}
               description={item.description}
               title={item.title}
             />
