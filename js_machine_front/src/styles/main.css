@@ -1,13 +1,16 @@
-.body {
+/* .body {
     height: 100%;
     width: 100%;
-}
+    position: relative;
+} */
 
 .main__events{
-    width: 100%;
+    vertical-align: bottom;
     position: absolute;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    bottom: 5vh;
+    bottom: 0;
+    margin: 0 60px 45px;
+    /* bottom: 5vh; */
 }

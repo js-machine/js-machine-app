@@ -13,16 +13,16 @@ export const NavBar: React.FC = memo(() => {
       </div>
 
       <div className="menu">
-        <NavLink exact={true} activeClassName="active-link" to="/about">
+        <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/about">
           О НАС
         </NavLink>
-        <NavLink exact={true} activeClassName="active-link" to="/news">
+        <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/news">
           НОВОСТИ
         </NavLink>
-        <NavLink exact={true} activeClassName="active-link" to="/events">
+        <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/events">
           СОБЫТИЯ
         </NavLink>
-        <NavLink exact={true} activeClassName="active-link" to="/partners">
+        <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/partners">
           ПАРТНЕРЫ
         </NavLink>
       </div>

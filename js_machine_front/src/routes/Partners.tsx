@@ -9,7 +9,7 @@ const sectionStyle = {
   backgroundImage: `url(${Background})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  backgroundPosition: '50% 20%',
 };
 
 export const Partners: React.FC = memo(() => {

@@ -7,9 +7,9 @@ interface Props {
 
 export const TileElement: React.FC<Props> = memo((props: Props) => {
   return (
-    <div className="container__article font-article">
-      <div className="container__title font-title">{props.title}</div>
-      {props.description}
+    <div className="container__article">
+      <div className="container__title">{props.title}</div>
+      <p className="container__description">{props.description}</p>
     </div>
   );
 });
