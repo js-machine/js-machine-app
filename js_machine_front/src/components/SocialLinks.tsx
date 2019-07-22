@@ -7,7 +7,7 @@ import 'styles/socialLinks.css';
 const sectionStyle = {
     height: '100%',
     alignItems: 'center',
-    display: 'flex'
+    display: 'flex',
 };
 
 export const SocialLinks: React.FC = memo(() => {

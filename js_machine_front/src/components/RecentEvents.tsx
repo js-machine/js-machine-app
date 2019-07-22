@@ -18,7 +18,7 @@ export const RecentEvents: React.FC<Props> = memo((props: Props) => {
         {
             props.events.map((event: Event) => {
                 const eventDate: number = new Date(event.date).getDate();
-                const eventMonth: string = new Date(event.date).toLocaleString('ru', { month: 'short' });
+                const eventMonth: string = new Date(event.date).toLocaleString('ru', { month: 'short' }).toUpperCase();
 
                 return <div key={event.id} className="event">
                     <div className="event__date">
