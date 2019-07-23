@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import 'styles/tileElement.css'
 
 interface Props {
   title: string;
@@ -7,9 +8,9 @@ interface Props {
 
 export const TileElement: React.FC<Props> = memo((props: Props) => {
   return (
-    <div className="container__article font-article">
-      <div className="container__title font-title">{props.title}</div>
-      {props.description}
+    <div className="tile-element">
+      <div className="tile-element__title">{props.title}</div>
+      <p className="tile-element__description">{props.description}</p>
     </div>
   );
 });

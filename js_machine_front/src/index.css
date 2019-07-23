@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-Bold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-SemiBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-BoldItalic.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: italic;
+}
+
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-SemiBoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-MediumItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face{
+  font-family: 'Exo';
+  src: url('fonts/Exo2-LightItalic.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: italic;
+}
