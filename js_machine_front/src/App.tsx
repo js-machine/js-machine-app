@@ -10,7 +10,7 @@ import { Route, Redirect, Switch } from 'react-router';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="app">
       <NavBar/>
       <Switch>
         <Route exact={true} path="/" component={Main} />
