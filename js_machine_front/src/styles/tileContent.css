@@ -1,0 +1,22 @@
+.color {
+    color: white;
+}
+
+.tile-content {
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    top: 29vh;    
+}
+
+.tile-content__container {    
+    margin-left: 25%;
+}
+
+.tile-content__container_flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    margin-right: 22px;
+    margin-top: 60px;
+}
