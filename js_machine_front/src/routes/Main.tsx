@@ -4,6 +4,7 @@ import 'styles/main.css';
 
 import { SocialLinks } from 'components/SocialLinks';
 import { RecentEvents } from 'components/RecentEvents';
+import { ErrorButton } from 'components/error-button';
 
 const sectionStyle = {
   height: '100%',
@@ -43,6 +44,7 @@ const events = [
 export const Main: React.FC = memo(() => {
   return (
     <div style={sectionStyle}>
+      <ErrorButton />
       <SocialLinks />
       <div className="main__events">
         <RecentEvents events={events} />

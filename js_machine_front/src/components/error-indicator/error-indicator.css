@@ -1,0 +1,32 @@
+.error-indicator {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #128f54;
+}
+
+.error-indicator__title {
+  font-family: 'Exo', sans-serif;   
+  font-size:6rem;
+  color: #F2E14C;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.error-indicator__subtitle {
+  font-family: 'Exo', sans-serif;   
+  font-size: 1.2rem;
+  color: #F2E14C;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.error-indicator__text{
+  color: #1b2664;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
