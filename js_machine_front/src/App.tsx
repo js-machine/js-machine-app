@@ -6,6 +6,7 @@ import { Events } from 'routes/Events';
 import { News } from 'routes/News';
 import { About } from 'routes/About';
 import { Main } from 'routes/Main';
+import Authorization from 'routes/Authorization';
 import { Route, Redirect, Switch } from 'react-router';
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route exact={true} path="/news" component={News} />
         <Route exact={true} path="/events" component={Events} />
         <Route exact={true} path="/partners" component={Partners} />
+        <Route exact={true} path="/authorization" component={Authorization} />
         <Redirect to={'/'} />
       </Switch>
     </div>
