@@ -25,6 +25,9 @@ export const NavBar: React.FC = memo(() => {
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/partners">
           ПАРТНЕРЫ
         </NavLink>
+        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
+          ВХОД
+        </NavLink>
       </div>
     </div>
   );

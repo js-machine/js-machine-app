@@ -1,0 +1,45 @@
+.auth-from{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0 0;
+}
+
+.auth-form__title{
+    font-size: 12px;
+    font-family: 'Exo';
+    margin-bottom: 20px;
+}
+
+.auth-form__input{
+    min-width: 300px;
+    height: 37px;
+    background-color: #EEEEEE;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 13px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.auth-form__btn{
+    margin: 27px;
+    padding: 10px 35px;
+    font-family: 'Exo';
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #F6E42F;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+
+.auth-form__btn:hover {
+    background-color: #e6d100;
+}
+
+.auth-form__btn:focus{
+    box-shadow: 0 0 0 1px black;
+}
