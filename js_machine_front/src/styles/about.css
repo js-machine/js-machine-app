@@ -1,0 +1,56 @@
+.body {
+    background-color: rgba(0,0,0,0.6);
+    font-family: 'Arial', sans-serif;    
+    letter-spacing: .1vh;
+}
+
+.title {
+    position: relative;
+    width: 30vh;
+    top: 19vh;
+    margin-left: 7vh;
+    font-size: 8vh;
+    color: #F2E14C;
+    font-weight: bold;   
+}
+
+.font-title {
+    font-size: 3.6vh;
+    font-weight: bold;
+}
+
+.font-article {
+    font-size: 1.8vh;
+}
+
+.color {
+    color: white;
+}
+
+.content {
+    margin: 0 auto;
+    position: relative;
+    right: 0;
+    top: 29vh;    
+}
+
+.container {    
+    margin-left: 25%;
+}
+
+.container_flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+}
+
+.container__title {
+    height: .5vh;
+    margin-bottom: 5vh;
+}
+
+.container__article {    
+    text-align: left;
+    width: 33vh;
+    margin-right: 15vh;
+} 

@@ -1,0 +1,39 @@
+.event{
+    width: 25%;
+    margin: 0 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+}
+
+.event__date{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0 15px;
+    font-size: 32px;
+}
+
+.event__day{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.event__month{
+    font-size: 16px;
+}
+
+.event__title{
+    margin: 0;
+    padding: 5px 0 0;
+    text-align: left;
+    font-size: 24px;
+}
+
+.event__description{
+    margin: 20px 0 auto;
+    display: block;
+    text-align: left;
+    font-size: 16px;
+}
