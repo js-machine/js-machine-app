@@ -2,9 +2,9 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  background: #128f54;
-}
+  background: #be7edb ;
 
+}
 .error-indicator__title {
   font-family: 'Exo', sans-serif;   
   font-size:6rem;

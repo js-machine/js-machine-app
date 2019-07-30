@@ -16,16 +16,14 @@ export default class ErrorBoundry extends React.Component<{}, State> {
     error: null,
   };
 
-  // tslint:disable-next-line: typedef
-  componentDidCatch(error: Error, errorInfo: object) {
+  componentDidCatch(error: Error, errorInfo: object): void {
     this.setState({
       hasError: true,
       error: error || new Error(MISSING_ERROR),
     });
   }
 
-  // tslint:disable-next-line: typedef
-  render() {
+  render(): React.ReactNode | React.FC {
     if (this.state.hasError) {
       return <ErrorIndicator />;
     }

@@ -12,8 +12,7 @@ export default class ErrorButton extends Component<{}, State> {
     renderError: false,
   };
 
-  // tslint:disable-next-line: typedef
-  render() {
+  render(): JSX.Element {
     if (this.state.renderError) {
       throw new Error('Custom Error');
     }
