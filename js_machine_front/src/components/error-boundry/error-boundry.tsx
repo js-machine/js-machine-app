@@ -4,22 +4,19 @@ import ErrorIndicator from '../error-indicator/error-indicator';
 
 const MISSING_ERROR = 'Error was swallowed during propagation.';
 
-interface State {
+interface ErrorBoundryState {
   hasError: boolean;
-  error: Error | null;
 }
 
-export default class ErrorBoundry extends React.Component<{}, State> {
+export default class ErrorBoundry extends React.Component<{}, ErrorBoundryState> {
 
-  state: State = {
+  state: ErrorBoundryState = {
     hasError: false,
-    error: null,
   };
 
-  componentDidCatch(error: Error, errorInfo: object): void {
+  componentDidCatch(): void {
     this.setState({
       hasError: true,
-      error: error || new Error(MISSING_ERROR),
     });
   }
 
