@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import ErrorIndicator from '../error-indicator/error-indicator';
 
-const MISSING_ERROR = 'Error was swallowed during propagation.';
-
 interface ErrorBoundryState {
   hasError: boolean;
 }
