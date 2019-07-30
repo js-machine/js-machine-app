@@ -6,6 +6,7 @@ import { AuthorizationSignUp } from 'components/authorization/AuthorizationSignU
 import { AuthorizationBar } from 'components/authorization/AuthorizationBar';
 
 import 'styles/authorization.css';
+import 'components/authorization/authCommonStyles.css';
 
 const sectionStyle = {
     height: '100vh',
@@ -15,7 +16,7 @@ const sectionStyle = {
     backgroundPosition: 'center',
 };
 
-interface Props {
+interface AuthorizationProps {
     changeFlag: () => void;
     signInStyle: string;
     signUpStyle: string;
@@ -24,7 +25,7 @@ interface Props {
     barBtn: string;
 }
 
-const Authorization: React.FC<Props> = memo((props: Props) => {
+const Authorization: React.FC<AuthorizationProps> = memo((props: AuthorizationProps) => {
     const { signInStyle, signUpStyle, ...authBarProps} = props;
 
     return (

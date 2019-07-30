@@ -1,14 +1,14 @@
 import React, { memo } from 'react';
 import 'styles/authorizationBar.css';
 
-interface Props {
+interface AuthorizationBarProps {
     changeFlag: () => void;
     barStyle: string;
     barTitle: string;
     barBtn: string;
 }
 
-export const AuthorizationBar: React.FC<Props> = memo((props: Props) => {
+export const AuthorizationBar: React.FC<AuthorizationBarProps> = memo((props: AuthorizationBarProps) => {
     return (
         <>
             <div className="authorization-bar">

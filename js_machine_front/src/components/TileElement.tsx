@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import 'styles/tileElement.css'
+import 'styles/tileElement.css';
 
 interface Props {
   title: string;

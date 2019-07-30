@@ -1,6 +1,8 @@
 import React from 'react';
 
-interface Props {
+import { getStateForSignIn, getStateForSignUp } from 'services/authrizationService';
+
+interface AuthorizationHOCProps {
     changeFlag: () => void;
     signInStyle: string;
     signUpStyle: string;
@@ -9,7 +11,7 @@ interface Props {
     barBtn: string;
 }
 
-interface MyState {
+interface AuthorizationHOCState {
     flag: boolean;
     signInStyle: string;
     signUpStyle: string;
@@ -18,44 +20,30 @@ interface MyState {
     barBtn: string;
 }
 
-export const AuthorizationHOC = (AuthComponent: React.FC<Props>) => {
-    return class AuthHOC extends React.PureComponent<Props, MyState> {
-        constructor(props: Props) {
+export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>) => {
+    return class AuthHOC extends React.PureComponent<AuthorizationHOCProps, AuthorizationHOCState> {
+        constructor(props: AuthorizationHOCProps) {
             super(props);
             this.state = {
                 flag: false,
-                signInStyle: 'sign-in__wrapper',
-                signUpStyle: 'reset_width',
-                barStyle: 'authorization-bar__wrapper_sign-in',
-                barTitle: 'Добро пожаловать!',
-                barBtn: 'РЕГИСТРАЦИЯ',
+                signInStyle: '',
+                signUpStyle: '',
+                barStyle: '',
+                barTitle: '',
+                barBtn: '',
             };
         }
 
         changeFlag = () => {
             if (!this.state.flag) {
-                this.setState(() => {
-                    return {
-                        flag: true,
-                        signInStyle: 'reset_width',
-                        signUpStyle: 'sign-up__wrapper',
-                        barStyle: 'authorization-bar__wrapper_sign-up',
-                        barTitle: 'С возвращением!',
-                        barBtn: 'ВОЙТИ',
-                    };
-                });
+                this.setState(() => getStateForSignUp());
             } else {
-                this.setState(() => {
-                    return {
-                        flag: false,
-                        signInStyle: 'sign-in__wrapper',
-                        signUpStyle: 'reset_width',
-                        barStyle: 'authorization-bar__wrapper_sign-in',
-                        barTitle: 'Добро пожаловать!',
-                        barBtn: 'РЕГИСТРАЦИЯ',
-                    };
-                });
+                this.setState(() => getStateForSignIn());
             }
+        }
+
+        componentDidMount = () => {
+            this.setState(() => getStateForSignIn());
         }
 
         render(): JSX.Element {

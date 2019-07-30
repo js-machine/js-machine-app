@@ -4,11 +4,11 @@ import { SocialAuth } from 'components/authorization/SocialAuth';
 
 import 'styles/authorizationSignUp.css';
 
-interface Props {
+interface SignUpProps {
     signUpStyle: string;
 }
 
-export const AuthorizationSignUp: React.FC<Props> = memo((props: Props) => {
+export const AuthorizationSignUp: React.FC<SignUpProps> = memo((props: SignUpProps) => {
     return (
         <div className="sign-up">
             <div className={`sign-up__wrapper ${props.signUpStyle}`}>
