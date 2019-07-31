@@ -6,7 +6,7 @@ interface ErrorBoundryState {
   hasError: boolean;
 }
 
-class ErrorBoundry extends React.Component<{}, ErrorBoundryState> {
+export class ErrorBoundry extends React.Component<{}, ErrorBoundryState> {
   state: ErrorBoundryState = {
     hasError: false,
   };
@@ -24,5 +24,3 @@ class ErrorBoundry extends React.Component<{}, ErrorBoundryState> {
     return this.props.children;
   }
 }
-
-export { ErrorBoundry };
