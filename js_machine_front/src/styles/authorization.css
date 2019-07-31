@@ -1,6 +1,7 @@
 .authorization {
     height: 100%;
     width: 100%;
+    background-color: rgba(0,0,0,0.6);
     display: flex;
     box-align: center;
     justify-content: center;
@@ -14,6 +15,8 @@
     align-items: center;
     min-width: 860px;
     max-height: 556px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
 .reset_width{

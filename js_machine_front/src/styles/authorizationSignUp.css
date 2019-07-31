@@ -1,6 +1,7 @@
 .sign-up{
     display: flex;
     flex-flow: column nowrap;
+    font-family: 'Exo';
 }
 
 .sign-up__wrapper{
@@ -12,6 +13,7 @@
 }
 
 .sign-up__title{
-    font-family: 'Exo';
+    font-size: 24px;
+    font-weight: bold;
     margin: 39px 0 23px 0;
-}
+} 

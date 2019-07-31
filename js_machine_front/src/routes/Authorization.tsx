@@ -6,7 +6,6 @@ import { AuthorizationSignUp } from 'components/authorization/AuthorizationSignU
 import { AuthorizationBar } from 'components/authorization/AuthorizationBar';
 
 import 'styles/authorization.css';
-import 'components/authorization/authCommonStyles.css';
 
 const sectionStyle = {
     height: '100vh',
@@ -17,7 +16,7 @@ const sectionStyle = {
 };
 
 interface AuthorizationProps {
-    changeFlag: () => void;
+    changeLoginOptions: () => void;
     signInStyle: string;
     signUpStyle: string;
     barStyle: string;

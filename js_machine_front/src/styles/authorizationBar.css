@@ -1,4 +1,15 @@
 .authorization-bar{
+    font-family: 'Exo';
+}
+
+.authorization-bar__wrapper_sign-in{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.authorization-bar__wrapper_sign-up{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .authorization-bar__wrapper{
@@ -8,16 +19,24 @@
     align-items: center;
     min-height: 550px;
     min-width: 320px;
+    background-color: #ECE24B;
 }
 
 .authorization-bar__title{
     max-width: 220px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
     margin: 0 0 17px 0;
 }
 
 .authorization-bar__btn{
     min-height: 40px;
     min-width: 160px;
+    border: 1px solid #222222;
+    border-radius: 20px;
+    background: none;
+    font-weight: bold;
     cursor: pointer;
     outline: none;
     transition: 0.2s;
@@ -29,4 +48,4 @@
 
 .authorization-bar__btn:focus{
     box-shadow: 0 0 0 1px black;
-}
+} 
