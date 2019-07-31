@@ -23,4 +23,4 @@ const ErrorIndicator: React.FC = memo(() => {
   );
 });
 
-export default ErrorIndicator;
+export { ErrorIndicator };
