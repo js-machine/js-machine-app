@@ -1,0 +1,20 @@
+.sign-in{
+    display: flex;
+    flex-flow: column nowrap;
+    transition: 0.7s;
+    font-family: 'Exo';
+}
+
+.sign-in__wrapper{
+    max-height: 550px;
+    max-width: 540px;
+    min-height: 550px;
+    min-width: 540px;
+    transition: 0.7s;
+}
+
+.sign-in__title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 39px 0 23px 0;
+} 
