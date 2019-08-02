@@ -1,0 +1,12 @@
+.body {
+}
+
+.main__events{
+    vertical-align: bottom;
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    bottom: 0;
+    margin: 0 60px 45px;
+}

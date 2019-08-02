@@ -5,7 +5,7 @@ import { Partners } from 'routes/Partners';
 import { Events } from 'routes/Events';
 import { News } from 'routes/News';
 import { About } from 'routes/About';
-import { Main } from 'routes/Main';
+import { Main } from 'module/Main/Main';
 import { Auth } from 'routes/Authorization';
 import { Route, Redirect, Switch } from 'react-router';
 
