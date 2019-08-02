@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import LogoSrc from 'images/logo.png';
 import 'styles/route.css';
 import { NavLink } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 export const NavBar: React.FC = memo(() => {
   return (
@@ -14,19 +15,19 @@ export const NavBar: React.FC = memo(() => {
 
       <div className="menu">
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/about">
-          О НАС
+        <FormattedMessage id="navBar.about" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/news">
-          НОВОСТИ
+        <FormattedMessage id="navBar.news" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/events">
-          СОБЫТИЯ
+        <FormattedMessage id="navBar.events" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/partners">
-          ПАРТНЕРЫ
+        <FormattedMessage id="navBar.partners" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
-          ВХОД
+        <FormattedMessage id="navBar.signIn" />
         </NavLink>
       </div>
     </div>

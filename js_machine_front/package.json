@@ -3,8 +3,10 @@
   "version": "0.2.2",
   "private": true,
   "dependencies": {
+    "@types/react-intl": "^2.3.18",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-intl": "^2.9.0",
     "react-router-dom": "^5.0.1"
   },
   "scripts": {

@@ -30,30 +30,30 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
                 signUpStyle: 'reset_width',
                 barStyle: 'authorization-bar__wrapper_sign-in',
                 barTitle: '',
-                barBtn: ''
+                barBtn: '',
             };
         }
 
         changeLoginOptions = () => {
             if (this.state.isAuthorizitationVisible) {
                 this.setState(() => {
-                    let signUpMocks = getStateForSignUp();
-                    let signUpStyles = {
+                    const signUpMocks = getStateForSignUp();
+                    const signUpStyles = {
                         isAuthorizitationVisible: false,
                         signInStyle: 'reset_width',
                         signUpStyle: 'sign-up__wrapper',
-                        barStyle: 'authorization-bar__wrapper_sign-up'
+                        barStyle: 'authorization-bar__wrapper_sign-up',
                     };
                     return {...signUpStyles, ...signUpMocks};
                 });
             } else {
                 this.setState(() => {
-                    let signInMocks = getStateForSignIn();
-                    let signInStyles = {
+                    const signInMocks = getStateForSignIn();
+                    const signInStyles = {
                         isAuthorizitationVisible: true,
                         signInStyle: 'sign-in__wrapper',
                         signUpStyle: 'reset_width',
-                        barStyle: 'authorization-bar__wrapper_sign-in'
+                        barStyle: 'authorization-bar__wrapper_sign-in',
                     };
                     return {...signInStyles, ...signInMocks};
                 });

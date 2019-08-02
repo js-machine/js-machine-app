@@ -3,6 +3,8 @@ import React, { memo } from 'react';
 import './error-indicator.css';
 import icon from './error-indicator.svg';
 
+import { FormattedMessage } from 'react-intl';
+
 const sectionStyle = {
   height: '100%',
   backgroundImage: `url(${icon})`,
@@ -13,13 +15,19 @@ const sectionStyle = {
 
 const ErrorIndicator: React.FC = memo(() => {
   return (
-  <div className="error-indicator"  style={sectionStyle}>
-    <div className="error-indicator__text">
-      <span className="error-indicator__title">УПС!</span>
-      <span className="error-indicator__subtitle">что-то пошло не так</span>
-      <span className="error-indicator__subtitle">(но мы уже отправили парня из поддержки починить это)</span>
+    <div className="error-indicator" style={sectionStyle}>
+      <div className="error-indicator__text">
+        <span className="error-indicator__title">
+          <FormattedMessage id="homepage.title" />
+        </span>
+        <span className="error-indicator__subtitle">
+          <FormattedMessage id="homepage.subTitle" />
+        </span>
+        <span className="error-indicator__subtitle">
+          (<FormattedMessage id="homepage.subTitle1" />)
+        </span>
+      </div>
     </div>
-  </div>
   );
 });
 
