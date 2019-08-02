@@ -5,7 +5,6 @@ import 'styles/authForm.css';
 
 export const SignInFrom: React.FC = memo(() => {
     return (
-        // tslint:disable-next-line: no-unused-expression
         <form className="auth-from">
             <div className="auth-form__title">
                 <FormattedMessage id="authorization.signInFormTitle" />
@@ -18,7 +17,7 @@ export const SignInFrom: React.FC = memo(() => {
             </FormattedMessage>
             <button className="auth-form__btn" type="submit">
                 <FormattedMessage id="authorization.signInFormSubmit" />
-            </button>;
+            </button>
         </form >
     );
 });

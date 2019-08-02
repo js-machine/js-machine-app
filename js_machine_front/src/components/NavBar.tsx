@@ -15,19 +15,19 @@ export const NavBar: React.FC = memo(() => {
 
       <div className="menu">
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/about">
-        <FormattedMessage id="navBar.about" />
+        <FormattedMessage id="page.about" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/news">
-        <FormattedMessage id="navBar.news" />
+        <FormattedMessage id="page.news" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/events">
-        <FormattedMessage id="navBar.events" />
+        <FormattedMessage id="page.events" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link"  activeClassName="active-link" to="/partners">
-        <FormattedMessage id="navBar.partners" />
+        <FormattedMessage id="page.partners" />
         </NavLink>
         <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
-        <FormattedMessage id="navBar.signIn" />
+        <FormattedMessage id="page.signIn" />
         </NavLink>
       </div>
     </div>

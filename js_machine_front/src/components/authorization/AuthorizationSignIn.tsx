@@ -15,7 +15,6 @@ export const AuthorizationSignIn: React.FC<SignInProps> = memo(
       <div className="sign-in">
         <div className={`sign-in__wrapper ${props.signInStyle}`}>
           <div className="sign-in__title">
-            {' '}
             <FormattedMessage id="authorization.signIn" />
           </div>
           <SocialAuth />

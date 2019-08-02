@@ -1,11 +1,11 @@
 export const messages: {[index: string]: any} = {
   'en-US': {
-    // navBar
-    'navBar.about': 'ABOUT US',
-    'navBar.news': 'NEWS',
-    'navBar.events': 'EVENTS',
-    'navBar.partners': 'PARTNERS',
-    'navBar.signIn': 'SIGN IN',
+    // Navigation
+    'page.about': 'ABOUT US',
+    'page.news': 'NEWS',
+    'page.events': 'EVENTS',
+    'page.partners': 'PARTNERS',
+    'page.signIn': 'SIGN IN',
     // error-indicator
     'errorIndicator.title': 'OOPS!',
     'errorIndicator.subTitle': 'Something went wrong',
@@ -29,11 +29,11 @@ export const messages: {[index: string]: any} = {
   },
   'ru-RU': {
     // navBar
-    'navBar.about': 'О НАС',
-    'navBar.news': 'НОВОСТИ',
-    'navBar.events': 'СОБЫТИЯ',
-    'navBar.partners': 'ПАРТНЕРЫ',
-    'navBar.signIn': 'ВХОД',
+    'page.about': 'О НАС',
+    'page.news': 'НОВОСТИ',
+    'page.events': 'СОБЫТИЯ',
+    'page.partners': 'ПАРТНЕРЫ',
+    'page.signIn': 'ВХОД',
     // error-indicator
     'errorIndicator.title': 'УПС!',
     'errorIndicator.subTitle': 'что-то пошло не так',
