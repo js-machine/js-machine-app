@@ -3,6 +3,7 @@ import Background from 'images/about.jpg';
 import 'styles/about.css';
 import { Tile } from 'model/Tile';
 import { TileContent } from 'components/TileContent';
+import { FormattedMessage } from 'react-intl';
 
 const sectionStyle = {
   height: '100vh',
@@ -36,7 +37,9 @@ export const About: React.FC = memo(() => {
   return (
     <div style={sectionStyle}>
       <div className="body">
-        <div className="title">О НАС</div>
+        <div className="title">
+          <FormattedMessage id="page.about" />
+        </div>
         <TileContent arrTiles={arrTiles} />
       </div>
     </div>
