@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import { NavBar } from 'components/NavBar';
-import { Partners } from 'routes/Partners';
-import { Events } from 'routes/Events';
-import { News } from 'routes/News';
-import { About } from 'routes/About';
-import { Main } from 'module/Main/Main';
-import { Auth } from 'routes/Authorization';
+import { NavBar } from '_navBar/navBar';
+import { Partners } from '_partnersLogo/partners';
+import { Events } from '_events/events';
+import { News } from '_news/news';
+import { About } from '_about/about';
+import { Main } from '_main/main';
+import { Auth } from '_authorization/authorization';
 import { Route, Redirect, Switch } from 'react-router';
 
 const App: React.FC = () => {
