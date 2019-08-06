@@ -1,21 +1,26 @@
 import React, { memo } from 'react';
-import { SignUpForm } from 'authorization/components/signUpForm';
-import { SocialAuth } from 'authorization/components/socialAuth';
+import { SocialAuth } from './socialAuth';
+import { SignUpForm } from './signUpForm';
+import { FormattedMessage } from 'react-intl';
 
 import '../styles/authorizationSignUp.css';
 
 interface SignUpProps {
-    signUpStyle: string;
+  signUpStyle: string;
 }
 
-export const AuthorizationSignUp: React.FC<SignUpProps> = memo((props: SignUpProps) => {
+export const AuthorizationSignUp: React.FC<SignUpProps> = memo(
+  (props: SignUpProps) => {
     return (
-        <div className="sign-up">
-            <div className={`sign-up__wrapper ${props.signUpStyle}`}>
-                <div className="sign-up__title">Создать аккаунт</div>
-                <SocialAuth />
-                <SignUpForm />
-            </div>
+      <div className="sign-up">
+        <div className={`sign-up__wrapper ${props.signUpStyle}`}>
+          <div className="sign-up__title">
+            <FormattedMessage id="authorization.signUp" />
+          </div>
+          <SocialAuth />
+          <SignUpForm />
         </div>
+      </div>
     );
-});
+  },
+);
