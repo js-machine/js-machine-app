@@ -5,4 +5,3 @@ export const messages: {[index: string]: object} = {
   'en-US': en_US ,
   'ru-RU': ru_RU,
 };
-
