@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Background from './images/about.jpg';
 import './styles/about.css';
-import { Tile } from './models/Tile';
+import { Tile } from './models/tile';
 import { TileContent } from './components/tileContent';
 import { FormattedMessage } from 'react-intl';
 

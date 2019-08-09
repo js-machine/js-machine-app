@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import '../styles/tileElement.css';
 
-import { IPropsTileElement } from 'scenes/about/models/ITileElement'
+import { PropsTileElement } from 'scenes/about/models/tileElement';
 
-export const TileElement: React.FC<IPropsTileElement> = memo((props: IPropsTileElement) => {
+export const TileElement: React.FC<PropsTileElement> = memo((props: PropsTileElement) => {
   return (
     <div className="tile-element">
       <div className="tile-element__title">{props.title}</div>

@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import { ErrorIndicator } from '../error-indicator';
 
-import { IErrorBoundaryState } from 'components/navBar/models/IErrorBoundary';
+import { ErrorBoundaryState } from 'components/navBar/models/errorBoundary';
 
-export class ErrorBoundary extends React.Component<{}, IErrorBoundaryState> {
-  state: IErrorBoundaryState = {
+export class ErrorBoundary extends React.Component<{}, ErrorBoundaryState> {
+  state: ErrorBoundaryState = {
     hasError: false,
   };
 

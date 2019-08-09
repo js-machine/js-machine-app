@@ -1,13 +1,9 @@
 import React, { memo } from 'react';
 import Background from './images/authorization.jpg';
-import { AuthorizationHOC } from 'scenes/authorization/components/authorizationHOC';
-import { AuthorizationSignIn } from 'scenes/authorization/components/authorizationSignIn';
-import { AuthorizationSignUp } from 'scenes/authorization/components/authorizationSignUp';
-import { AuthorizationBar } from 'scenes/authorization/components/authorizationBar';
-
-import { IAuthorizationProps } from 'scenes/authorization/models/IAuthorization';
-
 import './styles/authorization.css';
+
+import { AuthorizationHOC, AuthorizationSignIn, AuthorizationSignUp, AuthorizationBar} from './components/index';
+import { AuthorizationProps } from 'scenes/authorization/models/authorization';
 
 const sectionStyle = {
     height: '100vh',
@@ -17,7 +13,7 @@ const sectionStyle = {
     backgroundPosition: 'center',
 };
 
-const AuthorizationComponent: React.FC<IAuthorizationProps> = memo((props: IAuthorizationProps) => {
+const AuthorizationComponent: React.FC<AuthorizationProps> = memo((props: AuthorizationProps) => {
     const { signInStyle, signUpStyle, ...authBarProps} = props;
 
     return (

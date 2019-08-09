@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles/app.css';
-import { NavBar } from 'components/navBar/index';
-import { Partners } from 'scenes/partnersLogo/index';
-import { Events } from 'scenes/communityEvents/index';
-import { News } from 'scenes/news/index';
-import { About } from 'scenes/about/index';
-import { Main } from 'scenes/main/index';
-import { ErrorBoundary } from 'components/navBar/error-boundary/index';
-import { Authorization } from 'scenes/authorization/index';
+import { NavBar } from 'components/navBar/navBar';
+import { Partners } from 'scenes/partnersLogo/partners';
+import { Events } from 'scenes/communityEvents/communityEvents';
+import { News } from 'scenes/news/news';
+import { About } from 'scenes/about/about';
+import { Main } from 'scenes/main/main';
+import { ErrorBoundary } from 'components/navBar/error-boundary/error-boundary';
+import { Authorization } from 'scenes/authorization/authorization';
 import { Route, Redirect, Switch } from 'react-router';
 
 // Internationalization

@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 
 import '../styles/recentEvents.css';
 
-import { IEventProps, IEvent } from 'scenes/main/models/IRecentEvents';
+import { EventProps, Event } from 'scenes/main/models/recentEvents';
 
-export const RecentEvents: React.FC<IEventProps> = memo((props: IEventProps) => {
+export const RecentEvents: React.FC<EventProps> = memo((props: EventProps) => {
     return <>
         {
-            props.events.map((event: IEvent) => {
+            props.events.map((event: Event) => {
                 const eventDate: number = new Date(event.date).getDate();
                 const eventMonth: string = new Date(event.date).toLocaleString('ru', { month: 'short' }).toUpperCase();
 

@@ -2,11 +2,11 @@ import React from 'react';
 
 import { getStateForSignIn, getStateForSignUp } from 'scenes/authorization/services/authrizationService';
 
-import { IAuthorizationHOCProps, IAuthorizationHOCState } from 'scenes/authorization/models/IAuthorizationHOC';
+import { AuthorizationHOCProps, AuthorizationHOCState } from 'scenes/authorization/models/authorizationHOC';
 
-export const AuthorizationHOC = (AuthComponent: React.FC<IAuthorizationHOCProps>) => {
-    return class AuthHOC extends React.PureComponent<IAuthorizationHOCProps, IAuthorizationHOCState> {
-        constructor(props: IAuthorizationHOCProps) {
+export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>) => {
+    return class AuthHOC extends React.PureComponent<AuthorizationHOCProps, AuthorizationHOCState> {
+        constructor(props: AuthorizationHOCProps) {
             super(props);
             this.state = {
                 isAuthorizitationVisible: true,

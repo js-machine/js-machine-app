@@ -5,10 +5,10 @@ import { FormattedMessage } from 'react-intl';
 
 import '../styles/authorizationSignUp.css';
 
-import { ISignUpProps } from 'scenes/authorization/models/IAuthorizationSignUp';
+import { SignUpProps } from 'scenes/authorization/models/authorizationSignUp';
 
-export const AuthorizationSignUp: React.FC<ISignUpProps> = memo(
-  (props: ISignUpProps) => {
+export const AuthorizationSignUp: React.FC<SignUpProps> = memo(
+  (props: SignUpProps) => {
     return (
       <div className="sign-up">
         <div className={`sign-up__wrapper ${props.signUpStyle}`}>
