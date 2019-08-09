@@ -5,9 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import '../styles/authorizationSignIn.css';
 
-interface SignInProps {
-  signInStyle: string;
-}
+import { SignInProps } from 'scenes/authorization/models/authorizationSignIn';
 
 export const AuthorizationSignIn: React.FC<SignInProps> = memo(
   (props: SignInProps) => {

@@ -2,18 +2,9 @@ import React, { memo } from 'react';
 
 import '../styles/recentEvents.css';
 
-interface Event {
-    id: string;
-    date: string;
-    title: string;
-    description: string;
-}
+import { EventProps, Event } from 'scenes/main/models/recentEvents';
 
-interface Props {
-    events: Event[];
-}
-
-export const RecentEvents: React.FC<Props> = memo((props: Props) => {
+export const RecentEvents: React.FC<EventProps> = memo((props: EventProps) => {
     return <>
         {
             props.events.map((event: Event) => {

@@ -2,8 +2,7 @@ import React, { memo } from 'react';
 import Background from './images/main.jpg';
 import './styles/main.css';
 
-import { SocialLinks } from './components/SocialLinks';
-import { RecentEvents } from './components/RecentEvents';
+import { SocialLinks, RecentEvents  } from './';
 
 const sectionStyle = {
   height: '100%',

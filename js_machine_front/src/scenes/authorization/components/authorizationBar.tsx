@@ -1,12 +1,7 @@
 import React, { memo } from 'react';
 import '../styles/authorizationBar.css';
 
-interface AuthorizationBarProps {
-    changeLoginOptions: () => void;
-    barStyle: string;
-    barTitle: string;
-    barBtn: string;
-}
+import { AuthorizationBarProps } from 'scenes/authorization/models/authorizationBar';
 
 export const AuthorizationBar: React.FC<AuthorizationBarProps> = memo((props: AuthorizationBarProps) => {
     return (

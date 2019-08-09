@@ -1,13 +1,10 @@
 import React, { memo } from 'react';
 import { TileElement } from './tileElement';
-import { Tile } from 'about/model/Tile';
+import { Tile } from 'scenes/about/models/tile';
+import { PropsTileContent } from 'scenes/about/models/tileContent';
 import '../styles/tileContent.css';
 
-interface Props {
-  arrTiles: Tile[];
-}
-
-export const TileContent: React.FC<Props> = memo((props: Props) => {
+export const TileContent: React.FC<PropsTileContent> = memo((props: PropsTileContent) => {
   return (
     <div className="tile-content color">
       <div className="tile-content__container">

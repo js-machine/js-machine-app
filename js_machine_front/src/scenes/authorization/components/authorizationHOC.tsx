@@ -1,24 +1,8 @@
 import React from 'react';
 
-import { getStateForSignIn, getStateForSignUp } from 'authorization/services/authrizationService';
+import { getStateForSignIn, getStateForSignUp } from 'scenes/authorization/services/authrizationService';
 
-interface AuthorizationHOCProps {
-    changeLoginOptions: () => void;
-    signInStyle: string;
-    signUpStyle: string;
-    barStyle: string;
-    barTitle: string;
-    barBtn: string;
-}
-
-interface AuthorizationHOCState {
-    isAuthorizitationVisible: boolean;
-    signInStyle: string;
-    signUpStyle: string;
-    barStyle: string;
-    barTitle: string;
-    barBtn: string;
-}
+import { AuthorizationHOCProps, AuthorizationHOCState } from 'scenes/authorization/models/authorizationHOC';
 
 export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>) => {
     return class AuthHOC extends React.PureComponent<AuthorizationHOCProps, AuthorizationHOCState> {
@@ -34,7 +18,7 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
             };
         }
 
-        changeLoginOptions = () => {
+        private changeLoginOptions = () => {
             if (this.state.isAuthorizitationVisible) {
                 this.setState(() => {
                     const signUpMocks = getStateForSignUp();
@@ -60,11 +44,11 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
             }
         }
 
-        componentDidMount = () => {
+        public componentDidMount = () => {
             this.setState(() => getStateForSignIn());
         }
 
-        render(): JSX.Element {
+        public render(): JSX.Element {
             const { isAuthorizitationVisible, ...nextProps } = this.state;
 
             return <AuthComponent changeLoginOptions={this.changeLoginOptions} {...nextProps}/>;
