@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Background from './images/events.jpg';
 import './styles/events.css';
 
 import { EventsContent } from './components/eventsContent';
-import { mocksEventsData } from './models/mocksEventData';
+import { getEventData } from './services/moksEvetnData';
+import { EventState } from './models/events';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -15,16 +16,29 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export const Events: React.FC = memo(() => {
+export class Events extends React.PureComponent<{}, EventState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = { eventsData: [] };
+  }
 
-  return (
-    <div style={ sectionStyle }>
-      <div className="body">
-        <div className="title">
-          <FormattedMessage id="page.events" />
+  public componentDidMount = () => {
+    getEventData().then(response => this.setState(() => {
+        return {eventsData: response};
+      }),
+    );
+  }
+
+  public render(): JSX.Element {
+    return (
+      <div style={ sectionStyle }>
+        <div className="body">
+          <div className="title">
+            <FormattedMessage id="page.events" />
+          </div>
+          <EventsContent eventsData={this.state.eventsData} />
         </div>
-        <EventsContent eventsData={mocksEventsData} />
       </div>
-    </div>
-  );
-});
+    );
+  }
+}

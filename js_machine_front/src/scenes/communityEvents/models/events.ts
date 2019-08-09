@@ -8,3 +8,7 @@ export interface Event {
 export interface EventProps {
     eventsData: Event[];
 }
+
+export interface EventState {
+    eventsData: Event[];
+}

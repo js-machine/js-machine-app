@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Event, EventProps } from '../models/eventsContent';
+import { Event, EventProps } from '../models/events';
 import '../styles/eventsContent.css';
 
 export const EventsContent: React.FC<EventProps> = memo((props: EventProps) => {
