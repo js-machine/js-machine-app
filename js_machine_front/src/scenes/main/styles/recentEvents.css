@@ -1,6 +1,13 @@
 .event{
-    width: 25%;
-    margin: 0 36px 0;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.event_wrapper{
+    padding: 0 36px 0;
     display: flex;
     flex-flow: row nowrap;
     color: white;
@@ -38,4 +45,22 @@
     display: block;
     text-align: left;
     font-size: 14px;
+}
+
+@media screen and (max-width: 1050px){
+    .event_wrapper{
+        min-width: 25%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .event_wrapper{
+        min-width: 35%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .event_wrapper{
+        min-width: 55%;
+    }
 }
