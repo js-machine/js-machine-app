@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import '../styles/authorizationBar.css';
 
 import { AuthorizationBarProps } from 'scenes/authorization/models/authorizationBar';
 
-export const AuthorizationBar: React.FC<AuthorizationBarProps> = memo((props: AuthorizationBarProps) => {
+export const AuthorizationBar: React.FC<AuthorizationBarProps> = (props: AuthorizationBarProps) => {
     return (
         <>
             <div className="authorization-bar">
@@ -18,4 +18,4 @@ export const AuthorizationBar: React.FC<AuthorizationBarProps> = memo((props: Au
             </div>
         </>
     );
-});
+};
