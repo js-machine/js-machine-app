@@ -5,10 +5,6 @@ export interface Event {
     description: string;
 }
 
-export interface EventProps {
-    eventsData: Event[];
-}
-
-export interface EventState {
+export interface EventPropsAndState {
     eventsData: Event[];
 }
