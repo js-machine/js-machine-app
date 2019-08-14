@@ -2,6 +2,7 @@ import React from 'react';
 import { TileContent } from '../components/tileContent';
 import { Tile } from '../models/tile';
 import { shallow } from 'enzyme';
+import { TileElement } from '../components/tileElement';
 
 describe('TileContent component is ready', () => {
     const props: Tile[] = [
@@ -22,7 +23,7 @@ describe('TileContent component is ready', () => {
     it('tileElement component is ready', () => {
         const component = shallow(<TileContent arrTiles= {props}/>);
 
-        const tileElement = component.find('TileElement');
+        const tileElement = component.find(TileElement);
 
         expect(tileElement).toHaveLength(2);
     });
