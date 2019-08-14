@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { Event, EventPropsAndState } from '../models/events';
+import { Event, EventModel } from '../models/events';
 import '../styles/eventsContent.css';
 
-export const EventsContent: React.FC<EventPropsAndState> = memo((props: EventPropsAndState) => {
+export const EventsContent: React.FC<EventModel> = memo((props: EventModel) => {
     return (
         <div className="eventsContent">
             <div className="eventsContent__wrapper">

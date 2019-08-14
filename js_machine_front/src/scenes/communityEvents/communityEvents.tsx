@@ -4,7 +4,7 @@ import './styles/events.css';
 
 import { EventsContent } from './components/eventsContent';
 import { getEventData } from './services/moksEvetnData';
-import { EventPropsAndState } from './models/events';
+import { EventModel } from './models/events';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -16,7 +16,7 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export class Events extends React.PureComponent<{}, EventPropsAndState> {
+export class Events extends React.PureComponent<{}, EventModel> {
   constructor(props: {}) {
     super(props);
     this.state = { eventsData: [] };
