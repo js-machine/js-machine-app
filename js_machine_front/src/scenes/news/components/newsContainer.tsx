@@ -11,4 +11,4 @@ export const EventsContainer: React.FC<NewsModel> = (props: NewsModel) => {
             }
         </div>
     );
-}
+};

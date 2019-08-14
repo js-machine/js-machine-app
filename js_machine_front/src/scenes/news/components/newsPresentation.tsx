@@ -15,7 +15,7 @@ export class NewsPresentation extends React.PureComponent<News, NewsPresentation
         this.setState(() => ({ hover: false }));
     }
 
-    render() {
+    render(): JSX.Element {
         const newsDate: number = new Date(this.props.date).getDate();
         const newsMonth: string = new Date(this.props.date).toLocaleString('ru', { month: 'short' }).toUpperCase();
         const newsReadActive = this.state.hover ? 'news__read_active' : '';

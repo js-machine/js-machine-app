@@ -16,7 +16,7 @@ const sectionStyle = {
 };
 
 export class News extends React.PureComponent<{}, NewsModel> {
-  public state = { newsData: [] };
+  public state: NewsModel = { newsData: [] };
 
   public componentDidMount = () => {
     getNewsData().then(response => this.setState(() => ({ newsData: response })));
