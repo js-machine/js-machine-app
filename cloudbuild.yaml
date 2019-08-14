@@ -1,0 +1,2 @@
+steps:
+  -name: "js-machine-app/front"
