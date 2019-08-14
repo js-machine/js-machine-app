@@ -17,21 +17,18 @@ const sectionStyle = {
 };
 
 export class Events extends React.PureComponent<{}, EventModel> {
-  constructor(props: {}) {
-    super(props);
-    this.state = { eventsData: [] };
-  }
+  public state: EventModel = { eventsData: [] };
 
-  public componentDidMount = () => {
-    getEventData().then(response => this.setState(() => {
-        return {eventsData: response};
-      }),
-    );
+  public componentDidMount = async () => {
+    const response = await getEventData();
+    this.setState(() => {
+      return { eventsData: response };
+    });
   }
 
   public render(): JSX.Element {
     return (
-      <div style={ sectionStyle }>
+      <div style={sectionStyle}>
         <div className="body">
           <div className="title">
             <FormattedMessage id="page.events" />

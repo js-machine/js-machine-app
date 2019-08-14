@@ -44,4 +44,4 @@ const mocksEventsData = [
 ];
 
 
-export const getEventData = () => new Promise(resolve => resolve(mocksEventsData));
+export const getEventData = () => mocksEventsData;
