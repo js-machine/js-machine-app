@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { TileElement } from './tileElement';
 import { Tile } from 'scenes/about/models/tile';
 import { PropsTileContent } from 'scenes/about/models/tileContent';
 import '../styles/tileContent.css';
 
-export const TileContent: React.FC<PropsTileContent> = memo((props: PropsTileContent) => {
+export const TileContent: React.FC<PropsTileContent> = (props: PropsTileContent) => {
   return (
     <div className="tile-content color">
       <div className="tile-content__container">
@@ -20,4 +20,4 @@ export const TileContent: React.FC<PropsTileContent> = memo((props: PropsTileCon
       </div>
     </div>
   );
-});
+};
