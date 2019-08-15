@@ -4,7 +4,7 @@ steps:
     dir: "js_machine_front"
 
   - name: "gcr.io/cloud-builders/npm"
-    args: ["run", "test"]
+    args: ["run", "test:ci"]
     dir: "js_machine_front"
 
   - name: "gcr.io/cloud-builders/npm"
