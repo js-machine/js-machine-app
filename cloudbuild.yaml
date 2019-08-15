@@ -1,10 +1,13 @@
+env_variables:
+  CI: true
+
 steps:
   - name: "gcr.io/cloud-builders/npm"
     args: ["ci"]
     dir: "js_machine_front"
 
   - name: "gcr.io/cloud-builders/npm"
-    args: ["run", "test:ci"]
+    args: ["test"]
     dir: "js_machine_front"
 
   - name: "gcr.io/cloud-builders/npm"
