@@ -2,7 +2,8 @@
   "steps": [
     {
       "name": "gcr.io/cloud-builders/npm",
-      "args": ["ci"]
+      "args": ["ci"],
+      "dir": "js_machine_front"
     }
   ]
 }
