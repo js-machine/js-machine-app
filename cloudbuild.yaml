@@ -1,4 +1,12 @@
 steps:
   - name: "gcr.io/cloud-builders/npm"
-    args: ["install"]
-    dir: 'js_machine_front'
+    args: ["ci"]
+    dir: "js_machine_front"
+
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["run", "test"]
+    dir: "js_machine_front"
+
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["run", "build"]
+    dir: "js_machine_front"
