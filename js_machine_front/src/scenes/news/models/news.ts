@@ -8,7 +8,3 @@ export interface News {
 export interface NewsModel {
     newsData: News[];
 }
-
-export interface NewsPresentationState {
-    hover: boolean;
-}
