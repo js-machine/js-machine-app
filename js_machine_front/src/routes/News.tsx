@@ -6,18 +6,26 @@ const sectionStyle = {
   paddingTop: 100,
 };
 
-export class News extends PureComponent {
+interface State {
+  openDigest: boolean;
+}
 
-  state = {
-    openDigest: false
-  }
+export class News extends PureComponent<{}, State> {
+
+  constructor(props: {}) {
+    super(props);
+
+    this.state = {
+      openDigest: false,
+    };
+}
 
   openDigest = () => {
-    this.setState({ openDigest : true })
+    this.setState({ openDigest : true });
   }
 
   closeDigest = () => {
-    this.setState({ openDigest: false })
+    this.setState({ openDigest: false });
   }
 
   render(): JSX.Element {

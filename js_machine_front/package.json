@@ -3,8 +3,8 @@
   "version": "0.2.2",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-transition-group": "^4.2.2"
   },
@@ -39,18 +39,19 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/jest": "24.0.15",
     "@types/node": "12.6.1",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
     "@types/react-router-dom": "^4.3.4",
+    "@types/react-transition-group": "^4.2.2",
     "prettier": "^1.18.2",
+    "react-scripts": "3.0.1",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
-    "typescript": "3.5.3",
-    "react-scripts": "3.0.1"
+    "typescript": "3.5.3"
   }
 }
