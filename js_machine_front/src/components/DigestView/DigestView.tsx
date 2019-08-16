@@ -8,11 +8,19 @@ interface Props {
 }
 
 const DigestView: React.FC<Props> = memo((props: Props) => {
-  const cssClasses = ['DigestView', props.isOpen ? 'DigestView-open' : 'DigestView-closed'];
-
   return (
-    <CSSTransition timeout={300}>
-       <div className={cssClasses.join(' ')}>
+    <CSSTransition
+      mountOnEnter
+      unmountOnExit 
+      in={props.isOpen}
+      timeout={500}
+      classNames={{
+        enter:'',
+        enterActive:'DigestView-open',
+        exit:'',
+        exitActive:'DigestView-closed'
+      }}>
+       <div className="DigestView">
         <div className="left-side">
           <p><button onClick={props.closeDigest}>Close</button></p>
         </div>

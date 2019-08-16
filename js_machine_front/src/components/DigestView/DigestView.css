@@ -7,6 +7,7 @@
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     color: white;
+    display: flex;
 }
 
 .left-side {
@@ -21,9 +22,41 @@
 }
 
 .DigestView-open {
-    display: flex;
+    animation: openModal .5s linear forwards;
 }
 
 .DigestView-closed {
-    display: none;
+    animation: closeModal .5s linear forwards;
 }
+
+@keyframes openModal {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: .7;
+        transform: translateX(60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes closeModal {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(60%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+
