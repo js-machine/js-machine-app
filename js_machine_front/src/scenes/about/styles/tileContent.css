@@ -15,8 +15,20 @@
 
 .tile-content__container_flex-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     position: fixed;
     margin-right: 22px;
     margin-top: 60px;
+    overflow-y: scroll;
+    height: 55%;
+}
+
+.tile-content__container_flex-container::-webkit-scrollbar{
+    height: 4px;
+    width: 6px;
+}
+
+.tile-content__container_flex-container::-webkit-scrollbar-thumb{
+    background-color: rgb(242, 225, 76);
+    border-radius: 3px;
 }

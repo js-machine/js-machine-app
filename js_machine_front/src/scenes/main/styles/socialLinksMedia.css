@@ -1,0 +1,25 @@
+@media screen and (max-height: 824px) {
+    .social-links {
+        right: 35px;
+    }
+    .social-links__img {
+        width: 22px;
+        padding: 15px 0;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .social-links {
+        right: 35px;
+    }
+    .social-links__img {
+        width: 20px;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-height: 413px) {
+    .social-links {
+        display: none;
+    }
+}

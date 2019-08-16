@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import Background from './images/authorization.jpg';
 import './styles/authorization.css';
+import './styles/authorizationMedia.css';
 
 import { AuthorizationHOC, AuthorizationSignIn, AuthorizationSignUp, AuthorizationBar} from './';
 import { AuthorizationProps } from 'scenes/authorization/models/authorization';

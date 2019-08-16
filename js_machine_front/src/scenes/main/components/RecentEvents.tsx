@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 import '../styles/recentEvents.css';
+import '../styles/recentEventsMedia.css';
 
 import { EventProps, Event } from 'scenes/main/models/recentEvents';
 

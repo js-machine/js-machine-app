@@ -14,7 +14,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-} 
+}
 
 .menu {
     position: absolute;
@@ -26,9 +26,9 @@
     width: fit-content;
 }
 
-.menu__nav-link{
+.menu__nav-link {
     margin-left: 60px;
-    font-family: 'Exo', sans-serif;    
+    font-family: 'Exo', sans-serif;
     font-size: 16px;
     color: white;
     text-decoration: none;
@@ -36,5 +36,9 @@
 }
 
 .active-link {
-    color: #F2E14C;    
+    color: #F2E14C;
+}
+
+#menu__toggle {
+    display: none;
 }

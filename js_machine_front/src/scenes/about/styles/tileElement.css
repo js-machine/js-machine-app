@@ -1,7 +1,8 @@
 .tile-element {    
     text-align: left;
-    width: 30%;
-    margin: 0 50px;
+    width: 33%;
+    padding: 0 50px 25px;
+    box-sizing: border-box;
 }
 
 .tile-element__title {

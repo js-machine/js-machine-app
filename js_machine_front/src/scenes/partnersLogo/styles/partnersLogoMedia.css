@@ -1,0 +1,21 @@
+@media screen and (max-width: 1100px){
+    .partners-logo__img{    
+        width: 220px;
+        height: 70px;
+        margin-left: 25px;
+    
+    }
+
+}
+
+@media screen and (max-width: 815px){
+    .partners-logo{
+        flex-flow: row wrap;
+    }
+}
+
+@media screen and (max-height: 480px){
+    .partners-logo{
+        bottom: 20px;
+    }
+}

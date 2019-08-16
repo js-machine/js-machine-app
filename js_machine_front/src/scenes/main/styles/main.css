@@ -7,28 +7,3 @@
     bottom: 0;
     margin: 0 60px 45px;
 }
-
-@media screen and (max-width: 1050px){
-    .main__events{
-        width: 100%;
-        overflow: scroll;
-        overflow-y: hidden;
-        margin: 0 0px 45px;
-    }
-
-    .main__events::-webkit-scrollbar{
-        height: 4px;
-    }
-
-    .main__events::-webkit-scrollbar-thumb{
-        background: rgba(190, 190, 190, 0.534);
-    }
-
-}
-
-@media screen and (max-height: 736px){
-    .main__events{
-        margin: 0 0px 15px;
-    }
-
-}

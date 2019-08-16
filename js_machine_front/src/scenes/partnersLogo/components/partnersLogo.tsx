@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import '../styles/partnersLogo.css';
+import '../styles/partnersLogoMedia.css';
 
 export const PartnersLogo: React.FC = memo(() => {
     return (

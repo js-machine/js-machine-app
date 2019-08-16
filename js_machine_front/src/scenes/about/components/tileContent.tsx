@@ -3,6 +3,7 @@ import { TileElement } from './tileElement';
 import { Tile } from 'scenes/about/models/tile';
 import { PropsTileContent } from 'scenes/about/models/tileContent';
 import '../styles/tileContent.css';
+import '../styles/tileContentMedia.css';
 
 export const TileContent: React.FC<PropsTileContent> = memo((props: PropsTileContent) => {
   return (
