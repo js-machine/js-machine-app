@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import '../styles/authSocial.css';
 import '../styles/authSocialMedia.css';
 
-export const SocialAuth: React.FC = memo(() => {
+export const SocialAuth: React.FC = () => {
     return (
         <div className="social-auth">
             <div className="social-auth__icon social-auth__icon_google-plus" />
@@ -10,4 +10,4 @@ export const SocialAuth: React.FC = memo(() => {
             <div className="social-auth__icon social-auth__icon_twitter" />
         </div>
     );
-});
+};

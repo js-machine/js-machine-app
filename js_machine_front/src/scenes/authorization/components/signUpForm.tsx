@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import '../styles/authForm.css';
 import '../styles/authFormMedia.css';
 
-export const SignUpForm: React.FC = memo(() => {
+export const SignUpForm: React.FC = () => {
     return (
         <form className="auth-from">
             <div className="auth-form__title"><FormattedMessage id="authorization.signUpFormTitle" /></div>
@@ -24,4 +24,4 @@ export const SignUpForm: React.FC = memo(() => {
             </button>
         </form>
     );
-});
+};
