@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import '../styles/partnersLogo.css';
 import '../styles/partnersLogoMedia.css';
 
-export const PartnersLogo: React.FC = memo(() => {
+export const PartnersLogo: React.FC = () => {
     return (
         <div className="partners-logo">
             <div className="partners-logo__img partners-logo__img_epam"/>
@@ -10,4 +10,4 @@ export const PartnersLogo: React.FC = memo(() => {
             <div className="partners-logo__img partners-logo__img_streamline"/>
         </div>
     );
-});
+};

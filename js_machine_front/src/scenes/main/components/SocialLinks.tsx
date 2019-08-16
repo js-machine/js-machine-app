@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import VkIcon from '../images/vk-icon.png';
 import TelegramIcon from '../images/telegram-icon.png';
 import InstaIcon from '../images/instagram-icon.png';
@@ -11,7 +11,7 @@ const sectionStyle = {
     display: 'flex',
 };
 
-export const SocialLinks: React.FC = memo(() => {
+export const SocialLinks: React.FC = () => {
     return (
         <div style={ sectionStyle }>
             <div className="social-links">
@@ -21,4 +21,4 @@ export const SocialLinks: React.FC = memo(() => {
             </div>
         </div>
     );
-});
+};

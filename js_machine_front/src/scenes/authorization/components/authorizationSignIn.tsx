@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { SocialAuth } from './socialAuth';
 import { SignInFrom } from './signInFrom';
 import { FormattedMessage } from 'react-intl';
@@ -19,7 +19,9 @@ export const AuthorizationSignIn: React.FC<SignInProps> = memo(
           <SocialAuth />
           <SignInFrom />
         </div>
+        <SocialAuth />
+        <SignInFrom />
       </div>
-    );
-  },
-);
+    </div>
+  );
+};

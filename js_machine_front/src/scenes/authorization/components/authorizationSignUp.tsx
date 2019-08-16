@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { SocialAuth } from './socialAuth';
 import { SignUpForm } from './signUpForm';
 import { FormattedMessage } from 'react-intl';
@@ -19,7 +19,9 @@ export const AuthorizationSignUp: React.FC<SignUpProps> = memo(
           <SocialAuth />
           <SignUpForm />
         </div>
+        <SocialAuth />
+        <SignUpForm />
       </div>
-    );
-  },
-);
+    </div>
+  );
+};
