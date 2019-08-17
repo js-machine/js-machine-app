@@ -30,13 +30,13 @@ steps:
     inputs: 
      sourceFolder: '$(build.sourcesdirectory)'
      contents: |
-      js_machine_front\build\**
+      js_machine_front/build/**
       .firebaserc
       firebase.json
      targetFolder: '$(build.artifactstagingdirectory)'
 
   - task: PublishBuildArtifacts@1
-    displayName: 'Publish artifact: source'
+    displayName: 'Publish artifact: frontend.zip'
     inputs: 
       pathToPublish: '$(build.artifactstagingdirectory)'
       artifactName: 'frontend'
