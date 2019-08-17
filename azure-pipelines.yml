@@ -30,9 +30,9 @@ steps:
     inputs: 
      SourceFolder: '$(build.sourcesdirectory)'
      Contents: |
-      '**\js_machine_front\build\**'
-      '.firebaserc'
-      'firebase.json'
+      **\js_machine_front\build\**
+      .firebaserc
+      firebase.json
      TargetFolder: '$(build.artifactstagingdirectory)'
 
   - task: PublishBuildArtifacts@1
