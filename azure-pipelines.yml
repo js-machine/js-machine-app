@@ -29,6 +29,10 @@ steps:
     displayName: 'Copy files to: $(build.artifactstagingdirectory)'
     inputs: 
      SourceFolder: '$(build.sourcesdirectory)'
+     Contents: |
+      '**\build\**'
+      '.firebaserc'
+      'firebase.json'
      TargetFolder: '$(build.artifactstagingdirectory)'
 
   - task: PublishBuildArtifacts@1
