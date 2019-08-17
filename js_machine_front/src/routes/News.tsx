@@ -28,12 +28,20 @@ export class News extends PureComponent<{}, State> {
     this.setState({ openDigest: false });
   }
 
+  exitKeyPressHandler = (e : any) => {
+    if(e.keyCode === 27) {
+      this.closeDigest()
+    }
+  }
+
   render(): JSX.Element {
     return (
       <div style={ sectionStyle }>
         <h1>News</h1>
         <button onClick={this.openDigest}>Open digest</button>
-        <DigestView isOpen={this.state.openDigest} closeDigest={this.closeDigest} />
+        <DigestView isOpen={this.state.openDigest} 
+            closeDigest={this.closeDigest} 
+            pressHandler={this.exitKeyPressHandler}/>
       </div>
     );
   }

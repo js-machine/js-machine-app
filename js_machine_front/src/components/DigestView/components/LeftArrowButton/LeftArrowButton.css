@@ -1,0 +1,17 @@
+.LeftArrowButton {
+    position: fixed;
+    top: 7%;
+    left: 3%;
+    cursor: pointer;
+}
+
+.LeftArrowButton-text {
+    font-size:28px;
+    letter-spacing: 5px;
+}
+
+.LeftArrowButton-arrow {
+    color : #ffffff;
+    font-size:17px;
+    margin-right: 12px;
+}

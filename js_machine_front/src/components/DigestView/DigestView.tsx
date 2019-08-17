@@ -1,32 +1,41 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import './DigestView.css';
 
+import LeftArrowButton from './components/LeftArrowButton/LeftArrowButton';
+
 interface Props {
   isOpen: boolean;
-  closeDigest: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  closeDigest: any,
+  pressHandler: any
 }
 
 const DigestView: React.FC<Props> = memo((props: Props) => {
+
+  useEffect(() => {
+    return (
+      window.addEventListener('keydown', props.pressHandler)
+    )
+  });
+
   return (
     <CSSTransition
-      mountOnEnter
-      unmountOnExit 
+      mountOnEnter={true}
+      unmountOnExit={true}
       in={props.isOpen}
       timeout={500}
       classNames={{
-        enter:'',
-        enterActive:'DigestView-open',
-        exit:'',
-        exitActive:'DigestView-closed'
+        enter: '',
+        enterActive: 'DigestView-open',
+        exit: '',
+        exitActive: 'DigestView-closed',
       }}>
-       <div className="DigestView">
+      <div className="DigestView">
         <div className="left-side">
-          <p><button onClick={props.closeDigest}>Close</button></p>
+          <LeftArrowButton closeDigest={props.closeDigest} text="назад" />
         </div>
         <div className="right-side">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima earum, eligendi iusto sed laborum minus, aliquid placeat ut fugit,
-            eius possimus! Consectetur, delectus enim placeat non illum similique porro voluptatibus.</p>
+          
         </div>
       </div>
     </CSSTransition>
