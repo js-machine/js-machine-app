@@ -30,7 +30,7 @@ steps:
     inputs: 
      SourceFolder: '$(build.sourcesdirectory)'
      Contents: |
-      '**\build\**'
+      '**\js_machine_front\build\**'
       '.firebaserc'
       'firebase.json'
      TargetFolder: '$(build.artifactstagingdirectory)'
