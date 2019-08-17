@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
-import FontAwesome from 'react-fontawesome';
 import './LeftArrowButton.css';
+import arrow from 'images/DigestView/left.svg';
 
 interface Props {
-  closeDigest: (event: React.MouseEvent<HTMLButtonElement>) => void,
-  text: String
+  closeDigest: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  text: string;
 }
 
 const LeftArrowButton: React.FC<Props> = memo((props: Props) => {
   return (
     <span className="LeftArrowButton" onClick={props.closeDigest}>
-      <FontAwesome name="chevron-left" className="LeftArrowButton-arrow" />
+      <img src={arrow} alt="left-arrow" className="LeftArrowButton-arrow " />
       <span className="LeftArrowButton-text">{props.text}</span>
     </span>
   );

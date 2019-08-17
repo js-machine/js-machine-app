@@ -3,11 +3,12 @@ import CSSTransition from 'react-transition-group/CSSTransition';
 import './DigestView.css';
 
 import LeftArrowButton from './components/LeftArrowButton/LeftArrowButton';
+import DateAndView from './components/DateAndView/DateAndView';
 
 interface Props {
   isOpen: boolean;
-  closeDigest: any,
-  pressHandler: any
+  closeDigest: any;
+  pressHandler: any;
 }
 
 const DigestView: React.FC<Props> = memo((props: Props) => {
@@ -15,7 +16,7 @@ const DigestView: React.FC<Props> = memo((props: Props) => {
   useEffect(() => {
     return (
       window.addEventListener('keydown', props.pressHandler)
-    )
+    );
   });
 
   return (
@@ -35,7 +36,9 @@ const DigestView: React.FC<Props> = memo((props: Props) => {
           <LeftArrowButton closeDigest={props.closeDigest} text="назад" />
         </div>
         <div className="right-side">
-          
+          <DateAndView views={25} />
+          <h1>Digest Cycle #12</h1>
+          <p>Всем</p>
         </div>
       </div>
     </CSSTransition>

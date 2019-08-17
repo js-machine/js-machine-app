@@ -1,0 +1,14 @@
+.DateAndView {
+    display: flex;
+    align-items: center;
+}
+
+.DateAndView-Img {
+    width:20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.DateAndView-Date {
+    margin-right: 20px;
+}

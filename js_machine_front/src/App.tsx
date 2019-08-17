@@ -1,5 +1,4 @@
 import React from 'react';
-import 'font-awesome/css/font-awesome.min.css';
 import './App.css';
 import { NavBar } from 'components/NavBar';
 import { Partners } from 'routes/Partners';

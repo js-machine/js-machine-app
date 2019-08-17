@@ -6,12 +6,13 @@
 }
 
 .LeftArrowButton-text {
-    font-size:28px;
-    letter-spacing: 5px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 .LeftArrowButton-arrow {
-    color : #ffffff;
-    font-size:17px;
-    margin-right: 12px;
+    width: 22px;
+    height: 15px;
+    margin-right: 5px;
 }
