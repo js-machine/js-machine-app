@@ -13,9 +13,14 @@ steps:
     inputs:
       versionSpec: '10.x'
 
-  - script: |
-      npm ci
-      npm run test
-      npm run build
-    displayName: 'Install, test and build'
+  - script: npm ci
+    displayName: 'Npm ci'
+    workingDirectory: './js_machine_front'
+
+  - script: npm run test
+    displayName: 'Npm test'
+    workingDirectory: './js_machine_front'
+
+  - script: npm run build
+    displayName: 'Npm build'
     workingDirectory: './js_machine_front'
