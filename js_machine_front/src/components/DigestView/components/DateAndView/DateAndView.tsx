@@ -6,13 +6,11 @@ interface Props {
   views: number;
 }
 
-const DateAndView: React.FC<Props> = memo((props: Props) => {
+export const DateAndView: React.FC<Props> = memo((props: Props) => {
   return (
     <div className="DateAndView">
-        <span className="DateAndView-Date">5 АВГ</span>
-        <span><img src={Eye} alt="Eye" className="DateAndView-Img" /> {props.views}</span>
+      <span className="DateAndView-Date">5 АВГ</span>
+      <span><img src={Eye} alt="Eye" className="DateAndView-Img" /> {props.views}</span>
     </div>
   );
 });
-
-export default DateAndView;

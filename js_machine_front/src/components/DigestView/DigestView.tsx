@@ -2,17 +2,17 @@ import React, { memo, useEffect } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import './DigestView.css';
 
-import LeftArrowButton from './components/LeftArrowButton/LeftArrowButton';
-import DateAndView from './components/DateAndView/DateAndView';
-import Option from './components/Option/Option';
+import { LeftArrowButton } from './components/LeftArrowButton/LeftArrowButton';
+import { DateAndView } from './components/DateAndView/DateAndView';
+import { Option } from './components/Option/Option';
 
 interface Props {
   isOpen: boolean;
-  closeDigest: any;
-  pressHandler: any;
+  closeDigest: (event: React.MouseEvent<HTMLElement>) => void;
+  pressHandler: EventListener;
 }
 
-const DigestView: React.FC<Props> = memo((props: Props) => {
+export const DigestView: React.FC<Props> = memo((props: Props) => {
 
   useEffect(() => {
     return (
@@ -36,7 +36,7 @@ const DigestView: React.FC<Props> = memo((props: Props) => {
         <div className="left-side">
           <LeftArrowButton closeDigest={props.closeDigest} text="назад" />
         </div>
-        <Option someMethod={() =>  alert('Btn Handlers') } />
+        <Option someMethod={() => alert('Btn Handlers')} />
         <div className="right-side">
           <DateAndView views={25} />
           <h1>Digest Cycle #12</h1>
@@ -47,7 +47,7 @@ const DigestView: React.FC<Props> = memo((props: Props) => {
               начинаем! </p>
           <h2 className="Section">#Новости</h2>
           <h2 className="DigestView-Header">В Firebox будет проведен эксперимент, связанный с DNS-over-HTTP</h2>
-          <p className="DigestView-Para">Безопасность и удобство в перспективе. Что же из этого получится - не известно. А 
+          <p className="DigestView-Para">Безопасность и удобство в перспективе. Что же из этого получится - не известно. А
           пока что читаем <a href="localhost:3000">тут</a>.</p>
           <h2 className="Section">#События</h2>
           <h2 className="DigestView-Header">The Rolling Scopes Conference (9-11 августа)</h2>
@@ -65,5 +65,3 @@ const DigestView: React.FC<Props> = memo((props: Props) => {
     </CSSTransition>
   );
 });
-
-export default DigestView;

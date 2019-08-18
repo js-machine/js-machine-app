@@ -5,17 +5,15 @@ import share from 'images/DigestView/share-option.svg';
 import warning from 'images/DigestView/warning.svg';
 
 interface Props {
-  someMethod: any;
+  someMethod: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const LeftArrowButton: React.FC<Props> = memo((props: Props) => {
+export const Option: React.FC<Props> = memo((props: Props) => {
   return (
     <div className="Option">
-        <img src={share} alt="share" className="Option-Img" onClick={props.someMethod} />
-        <img src={star} alt="start" className="Option-Img" onClick={props.someMethod} />
-        <img src={warning} alt="warning" className="Option-Img" onClick={props.someMethod} />
+      <img src={share} alt="share" className="Option-Img" onClick={props.someMethod} />
+      <img src={star} alt="start" className="Option-Img" onClick={props.someMethod} />
+      <img src={warning} alt="warning" className="Option-Img" onClick={props.someMethod} />
     </div>
   );
 });
-
-export default LeftArrowButton;

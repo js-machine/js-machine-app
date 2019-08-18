@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import DigestView from 'components/DigestView/DigestView';
+import { DigestView } from 'components/DigestView/DigestView';
 
 const sectionStyle = {
   backgroundColor: 'grey',

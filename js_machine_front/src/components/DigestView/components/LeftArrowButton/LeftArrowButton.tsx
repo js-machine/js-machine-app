@@ -7,7 +7,7 @@ interface Props {
   text: string;
 }
 
-const LeftArrowButton: React.FC<Props> = memo((props: Props) => {
+export const LeftArrowButton: React.FC<Props> = memo((props: Props) => {
   return (
     <span className="LeftArrowButton" onClick={props.closeDigest}>
       <img src={arrow} alt="left-arrow" className="LeftArrowButton-arrow " />
@@ -15,5 +15,3 @@ const LeftArrowButton: React.FC<Props> = memo((props: Props) => {
     </span>
   );
 });
-
-export default LeftArrowButton;
