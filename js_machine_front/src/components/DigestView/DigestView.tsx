@@ -9,7 +9,7 @@ import { Option } from './components/Option/Option';
 interface Props {
   isOpen: boolean;
   closeDigest: (event: React.MouseEvent<HTMLElement>) => void;
-  pressHandler: EventListener;
+  pressHandler: (event: KeyboardEvent) => void;
 }
 
 export const DigestView: React.FC<Props> = memo((props: Props) => {

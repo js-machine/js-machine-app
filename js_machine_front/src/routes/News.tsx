@@ -28,7 +28,7 @@ export class News extends PureComponent<{}, State> {
     this.setState({ openDigest: false });
   }
 
-  exitKeyPressHandler = (e: any) => {
+  exitKeyPressHandler = (e: KeyboardEvent) => {
     if (e.keyCode === 27) {
       this.closeDigest();
     }
