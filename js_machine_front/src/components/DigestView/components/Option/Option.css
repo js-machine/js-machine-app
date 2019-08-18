@@ -1,0 +1,16 @@
+.Option {
+    width: 45px;
+    height: 130px;
+    background-color: #F2E14C;
+    position: relative;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Option-Img {
+    width: 25px;
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+}

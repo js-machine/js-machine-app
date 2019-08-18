@@ -15,11 +15,85 @@
 
 .DigestView p {
    text-align: left;
+   padding-right: 30%;
+}
+
+.DigestView-Para {
+    margin-bottom: 10px;
 }
 
 .DigestView h1, h2 {
     color: #000;
     text-align: left;
+}
+
+.DigestView-Header {
+    margin-top: 8px;
+    font-size: 26px;
+}
+
+.Section {
+    color: #9c9c9c;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    font-size: 26px;
+}
+
+@media (max-width: 1200px) {
+    .DigestView {
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: .1px;
+    }
+
+    .DigestView p {
+        padding-right: 10%;
+    }
+
+     .DigestView-Header {
+        margin-top: 4px;
+        font-size: 20px;
+    }
+
+    .Section {
+        margin-top: 20px;
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .DigestView {
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: .1px;
+    }
+
+    .DigestView p {
+        padding-right: 8%;
+    }
+
+     .DigestView-Header {
+        margin-top: 2px;
+        font-size: 16px;
+    }
+
+    .Section {
+        margin-top: 16px;
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+    
+}
+
+.DigestView ul {
+    text-align: left;
+}
+
+.DigestView a {
+    text-decoration: none;
+    color: #F2E14C;
 }
 
 .left-side {
@@ -34,6 +108,9 @@
     padding-top: 4%;
     padding-left: 4%;
     color: #9c9c9c;
+    border: .5px solid #4D88D5;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    overflow-y: scroll;
 }
 
 .DigestView-open {

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Eye from 'images/DigestView/eye.svg'
+import Eye from 'images/DigestView/eye.svg';
 import './DateAndView.css';
 
 interface Props {
