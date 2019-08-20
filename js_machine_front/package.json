@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-intl": "^2.9.0",
     "react-router-dom": "^5.0.1",
     "react-transition-group": "^4.2.2"
   },
@@ -48,7 +49,7 @@
     "@types/node": "12.6.1",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
-    "@types/react-intl": "^3.0.0",
+    "@types/react-intl": "^2.3.18",
     "@types/react-router-dom": "^4.3.4",
     "@types/react-test-renderer": "^16.9.0",
     "@types/react-transition-group": "^4.2.2",
