@@ -1,0 +1,45 @@
+.error-indicator {
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+  width: 100%;
+}
+
+.error-indicator__text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  width: 50%;
+  color: #1b2664;
+
+}
+
+.error-indicator__title {
+  color: #F2E14C;
+  font-family: 'Exo', sans-serif;   
+  font-size:6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.error-indicator__subtitle {
+  color: white;
+  font-family: 'Exo', sans-serif;   
+  font-size: 1.2rem;
+  text-align: left;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .error-indicator__text{
+    left: 5%;
+    top: 20%;
+    width: 50%;
+    color: #1b2664;
+  }
+}

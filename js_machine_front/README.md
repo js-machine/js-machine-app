@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Code Styles
+Follow the next [style guide](https://docs.google.com/document/d/1rOlDORteoiHomc85-VBl4fB_v9q_k4ceCKwpxezruXw/edit?usp=sharing) before development.
+
+If you have any questions or concerns about the guide contact [us](js.machine.team@gmail.com).
+
 ## Available Scripts
 
 In the project directory, you can run:
