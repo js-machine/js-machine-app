@@ -86,4 +86,4 @@ const mocksEventsData = [
 ];
 
 
-export const getNewsData = () => new Promise(resolve => resolve(mocksEventsData));
+export const getNewsData = () => mocksEventsData;
