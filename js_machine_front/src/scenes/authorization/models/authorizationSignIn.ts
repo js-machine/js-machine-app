@@ -1,3 +1,3 @@
 export interface SignInProps {
-    signInStyle: string;
+    isAuthorizitationVisible: boolean;
 }

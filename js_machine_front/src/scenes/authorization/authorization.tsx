@@ -15,15 +15,15 @@ const sectionStyle = {
 };
 
 export const AuthorizationComponent: React.FC<AuthorizationProps> = (props: AuthorizationProps) => {
-    const { signInStyle, signUpStyle, ...authBarProps} = props;
+    const { isAuthorizitationVisible } = props;
 
     return (
         <div style={sectionStyle}>
             <div className="authorization">
                 <div className="authorization__wrapper">
-                    <AuthorizationSignIn signInStyle={signInStyle}/>
-                    <AuthorizationBar {...authBarProps}/>
-                    <AuthorizationSignUp signUpStyle={signUpStyle}/>
+                    <AuthorizationSignIn isAuthorizitationVisible={isAuthorizitationVisible}/>
+                    <AuthorizationBar {...props}/>
+                    <AuthorizationSignUp isAuthorizitationVisible={isAuthorizitationVisible}/>
                 </div>
             </div>
         </div>

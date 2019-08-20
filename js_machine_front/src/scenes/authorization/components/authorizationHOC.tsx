@@ -10,9 +10,6 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
             super(props);
             this.state = {
                 isAuthorizitationVisible: true,
-                signInStyle: '',
-                signUpStyle: 'reset_sign-up-width',
-                barStyle: 'authorization-bar_sign-in',
                 barTitle: '',
                 barBtn: '',
             };
@@ -22,24 +19,12 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
             if (this.state.isAuthorizitationVisible) {
                 this.setState(() => {
                     const signUpMocks = getStateForSignUp();
-                    const signUpStyles = {
-                        isAuthorizitationVisible: false,
-                        signInStyle: 'reset_sign-in-width',
-                        signUpStyle: '',
-                        barStyle: 'authorization-bar_sign-up',
-                    };
-                    return {...signUpStyles, ...signUpMocks};
+                    return {...signUpMocks, isAuthorizitationVisible: false};
                 });
             } else {
                 this.setState(() => {
                     const signInMocks = getStateForSignIn();
-                    const signInStyles = {
-                        isAuthorizitationVisible: true,
-                        signInStyle: '',
-                        signUpStyle: 'reset_sign-up-width',
-                        barStyle: 'authorization-bar_sign-in',
-                    };
-                    return {...signInStyles, ...signInMocks};
+                    return {...signInMocks, isAuthorizitationVisible: true};
                 });
             }
         }
@@ -49,9 +34,7 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
         }
 
         public render(): JSX.Element {
-            const { isAuthorizitationVisible, ...nextProps } = this.state;
-
-            return <AuthComponent changeLoginOptions={this.changeLoginOptions} {...nextProps}/>;
+            return <AuthComponent changeLoginOptions={this.changeLoginOptions} {...this.state}/>;
         }
     };
 };
