@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Background from './images/authorization.jpg';
 import './styles/authorization.css';
 
@@ -13,7 +13,7 @@ const sectionStyle = {
     backgroundPosition: 'center',
 };
 
-const AuthorizationComponent: React.FC<AuthorizationProps> = memo((props: AuthorizationProps) => {
+export const AuthorizationComponent: React.FC<AuthorizationProps> = (props: AuthorizationProps) => {
     const { signInStyle, signUpStyle, ...authBarProps} = props;
 
     return (
@@ -27,6 +27,6 @@ const AuthorizationComponent: React.FC<AuthorizationProps> = memo((props: Author
             </div>
         </div>
     );
-});
+};
 
 export const Authorization = AuthorizationHOC(AuthorizationComponent);
