@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import '../styles/authForm.css';
 
-export const SignInFrom: React.FC = memo(() => {
+export const SignInFrom: React.FC = () => {
     return (
         <form className="auth-from">
             <div className="auth-form__title">
@@ -19,4 +19,4 @@ export const SignInFrom: React.FC = memo(() => {
             </button>
         </form >
     );
-});
+};

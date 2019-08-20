@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import '../styles/recentEvents.css';
 
 import { EventProps, Event } from 'scenes/main/models/recentEvents';
 
-export const RecentEvents: React.FC<EventProps> = memo((props: EventProps) => {
+export const RecentEvents: React.FC<EventProps> = (props: EventProps) => {
     return <>
         {
             props.events.map((event: Event) => {
@@ -24,4 +24,4 @@ export const RecentEvents: React.FC<EventProps> = memo((props: EventProps) => {
             })
         }
     </>;
-});
+};
