@@ -1,5 +1,11 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Background from './images/news.jpg';
+import { FormattedMessage } from 'react-intl';
+import './styles/news.css';
+
+import { EventsContainer } from './components/newsContainer';
+import { NewsModel } from './models/news';
+import { getNewsData } from './services/mocksNewsData';
 
 const sectionStyle = {
   height: '100vh',
@@ -9,10 +15,24 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export const News: React.FC = memo(() => {
-  return (
-    <div style={ sectionStyle }>
-      <div className="body"/>
-    </div>
-  );
-});
+export class News extends React.PureComponent<{}, NewsModel> {
+  public state: NewsModel = { newsData: [] };
+
+  public componentDidMount = async () => {
+    const response = await getNewsData();
+    this.setState(() => ({ newsData: response }));
+  }
+
+  public render(): JSX.Element {
+    return (
+      <div style={sectionStyle}>
+        <div className="body">
+          <div className="title">
+            <FormattedMessage id="page.news" />
+          </div>
+          <EventsContainer newsData={this.state.newsData}/>
+        </div>
+      </div>
+    );
+  }
+}
