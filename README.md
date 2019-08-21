@@ -6,7 +6,7 @@
 
 https://js-machine-app.web.app/
 
-link to [docs](https://firebase.google.com/docs/cli/)
+### How trigger build manually (link to [docs](https://firebase.google.com/docs/cli/))
 
 Install the Firebase CLI using npm by running:
 
@@ -22,6 +22,6 @@ firebase login
 
 To deploy to a Firebase project, run the following command from your project directory:
 
-``` 
+```
 firebase deploy
 ```
