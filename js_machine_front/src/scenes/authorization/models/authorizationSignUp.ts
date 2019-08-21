@@ -1,3 +1,3 @@
 export interface SignUpProps {
-  signUpStyle: string;
+  isAuthorizitationVisible: boolean;
 }

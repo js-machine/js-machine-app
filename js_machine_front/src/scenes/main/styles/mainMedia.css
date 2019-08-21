@@ -1,0 +1,25 @@
+@media screen and (max-width: 1050px){
+    .main__events{
+        width: 100%;
+        overflow: scroll;
+        overflow-y: hidden;
+        margin: 0 0px 45px;
+    }
+
+    .main__events::-webkit-scrollbar{
+        height: 4px;
+    }
+
+    .main__events::-webkit-scrollbar-thumb{
+        background-color: rgba(242, 225, 76, 0.377);
+        border-radius: 3px;
+    }
+
+}
+
+@media screen and (max-height: 736px){
+    .main__events{
+        margin: 0 0px 15px;
+    }
+
+}

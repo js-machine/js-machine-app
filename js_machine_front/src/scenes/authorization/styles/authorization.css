@@ -13,12 +13,10 @@
     box-align: center;
     justify-content: center;
     align-items: center;
-    min-width: 860px;
-    max-height: 556px;
+    width: 860px;
+    height: 550px;
     border-radius: 10px;
     background-color: #FFFFFF;
-}
-
-.reset_width{
-    display: none;
+    overflow: hidden;
+    position: relative;
 }

@@ -1,0 +1,23 @@
+@media screen and (max-width: 940px){
+    .authorization__wrapper{
+        width: 560px;
+        height: 556px;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .authorization__wrapper{
+        width: 300px;
+        height: 485px;
+        flex-flow: column nowrap;
+        margin-top: 65px;
+    }
+}
+
+@media screen and (max-height: 700px) and (min-width: 560px){
+    .authorization__wrapper{
+        width: 560px;
+        height: 250px;
+        margin-top: 65px;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/tileElement.css';
+import '../styles/tileElementMedia.css';
 
 import { PropsTileElement } from 'scenes/about/models/tileElement';
 

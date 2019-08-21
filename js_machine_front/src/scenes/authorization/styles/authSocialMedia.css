@@ -1,0 +1,7 @@
+@media screen and (max-width: 560px){
+    .social-auth__icon{
+        height: 33px;
+        width: 33px;
+        margin: 0 7px 0px 7px;
+    }
+}

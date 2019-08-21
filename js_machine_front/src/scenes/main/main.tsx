@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import Background from './images/main.jpg';
 import './styles/main.css';
+import './styles/mainMedia.css';
 
 import { SocialLinks, RecentEvents  } from './';
 
