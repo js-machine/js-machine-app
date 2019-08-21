@@ -1,0 +1,41 @@
+@media screen and (max-width: 1200px) {
+    .news{
+        max-width: 80%;
+    }
+
+    .news__wrapper {
+        padding: 0 30px 45px;
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .news{
+        max-width: 85%;
+        right: 35px;
+    }
+
+    .news__wrapper {
+        width: 50%;
+        padding: 0 20px 35px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .news{
+        max-width: 85%;
+        right: 10px;
+        top: 35%;
+    }
+
+    .news__wrapper {
+        width: 100%;
+        padding: 0 0px 25px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse){
+    .news__read {
+        display: none;
+    }
+}
