@@ -1,21 +1,22 @@
-import React, { memo } from 'react';
+import React from 'react';
 import LogoSrc from './images/logo.png';
 import './styles/route.css';
 import './styles/routeMedia.css';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import { NavBarState } from './models/navBar';
 
 export class NavBar extends React.PureComponent {
-  public state = {menuIsOpened: false};
+  public state: NavBarState = {menuIsOpened: false};
 
   handlingMenu = () => {
-    if (this.state.menuIsOpened){
+    if (this.state.menuIsOpened) {
       this.setState({menuIsOpened: false});
     } else {
       this.setState({menuIsOpened : true});
     }
   }
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         <div className="logo-box">
@@ -49,4 +50,4 @@ export class NavBar extends React.PureComponent {
       </div>
     );
   }
-};
+}
