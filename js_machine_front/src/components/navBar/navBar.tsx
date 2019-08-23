@@ -5,37 +5,48 @@ import './styles/routeMedia.css';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
-export const NavBar: React.FC = memo(() => {
-  return (
-    <div>
-      <div className="logo-box">
-        <NavLink to="/">
-          <img src={LogoSrc} className="logo-box__link" alt="logo" />
-        </NavLink>
-      </div>
+export class NavBar extends React.PureComponent {
+  public state = {menuIsOpened: false};
 
-      <input id="menu__toggle" type="checkbox" />
-      <label className="menu__btn" htmlFor="menu__toggle">
-        <span/>
-      </label>
+  handlingMenu = () => {
+    if (this.state.menuIsOpened){
+      this.setState({menuIsOpened: false});
+    } else {
+      this.setState({menuIsOpened : true});
+    }
+  }
+  render() {
+    return (
+      <div>
+        <div className="logo-box">
+          <NavLink to="/">
+            <img src={LogoSrc} className="logo-box__link" alt="logo" />
+          </NavLink>
+        </div>
 
-      <div className="menu">
-        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/about">
-          <FormattedMessage id="page.about" />
-        </NavLink>
-        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/news">
-          <FormattedMessage id="page.news" />
-        </NavLink>
-        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/events">
-          <FormattedMessage id="page.events" />
-        </NavLink>
-        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/partners">
-          <FormattedMessage id="page.partners" />
-        </NavLink>
-        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
-          <FormattedMessage id="page.signIn" />
-        </NavLink>
+        <input id="menu__toggle" type="checkbox" checked={this.state.menuIsOpened} onClick={this.handlingMenu}/>
+        <label className="menu__btn" htmlFor="menu__toggle">
+          <span />
+        </label>
+
+        <div className="menu">
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/about" onClick={this.handlingMenu}>
+            <FormattedMessage id="page.about" />
+          </NavLink>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/news" onClick={this.handlingMenu}>
+            <FormattedMessage id="page.news" />
+          </NavLink>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/events" onClick={this.handlingMenu}>
+            <FormattedMessage id="page.events" />
+          </NavLink>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/partners" onClick={this.handlingMenu}>
+            <FormattedMessage id="page.partners" />
+          </NavLink>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization" onClick={this.handlingMenu}>
+            <FormattedMessage id="page.signIn" />
+          </NavLink>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+};

@@ -9,7 +9,7 @@ import '../styles/authorizationSignInMedia.css';
 import { SignInProps } from 'scenes/authorization/models/authorizationSignIn';
 
 export const AuthorizationSignIn: React.FC<SignInProps> = (props: SignInProps) => {
-  const resetSignInWidth = props.isAuthorizitationVisible? '' : 'reset_sign-in-width'
+  const resetSignInWidth = props.isAuthorizitationVisible ? '' : 'reset_sign-in-width';
   return (
     <div className={`sign-in ${resetSignInWidth}`}>
       <div className={`sign-in__wrapper`}>
