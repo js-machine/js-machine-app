@@ -25,7 +25,7 @@ export class NavBar extends React.PureComponent {
           </NavLink>
         </div>
 
-        <input id="menu__toggle" type="checkbox" checked={this.state.menuIsOpened} onClick={this.handlingMenu}/>
+        <input id="menu__toggle" type="checkbox" checked={this.state.menuIsOpened} onChange={this.handlingMenu}/>
         <label className="menu__btn" htmlFor="menu__toggle">
           <span />
         </label>
