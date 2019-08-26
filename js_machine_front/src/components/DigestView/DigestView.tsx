@@ -36,7 +36,7 @@ export const DigestView: React.FC<Props> = memo((props: Props) => {
         <div className="left-side">
           <LeftArrowButton closeDigest={props.closeDigest} text="назад" />
         </div>
-        <Option someMethod={() => alert('Btn Handlers')} />
+        <Option />
         <div className="right-side">
           <DateAndView views={25} />
           <h1>Digest Cycle #12</h1>
