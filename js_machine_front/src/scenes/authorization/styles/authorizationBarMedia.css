@@ -1,0 +1,60 @@
+@media screen and (max-width: 940px){
+    .authorization-bar_sign-in{
+        transform: translate(170px, 0);
+    }
+    
+    .authorization-bar_sign-up{
+        transform: translate(-170px, 0);
+    }
+
+    .authorization-bar__wrapper{
+        width: 220px;
+        height: 556px;
+    }
+}
+
+@media screen and (max-width: 560px){
+    .authorization-bar__wrapper{
+        width: 300px;
+        height: 115px;
+    }
+
+    .authorization-bar_sign-in{
+        transform: translate(0,185px);
+    }
+    
+    .authorization-bar_sign-up{
+        transform: translate(0,-185px);
+    }
+
+    .authorization-bar__title{
+        font-size: 20px;
+    }
+
+    .authorization-bar__btn{
+        height: 34px;
+        width: 120px;
+        border: 1px solid #222222;
+        border-radius: 20px;
+        background: none;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+        transition: 0.2s;
+    }
+}
+
+@media screen and (max-height: 700px) and (min-width: 560px){
+    .authorization-bar_sign-in{
+        transform: translate(170px, 0);
+    }
+    
+    .authorization-bar_sign-up{
+        transform: translate(-170px, 0);
+    }
+
+    .authorization-bar__wrapper{
+        width: 220px;
+        height: 250px;
+    }
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 950px){
+    .tile-content__container {    
+        margin-left: 10%;
+    }
+}

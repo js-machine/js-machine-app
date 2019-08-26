@@ -1,8 +1,6 @@
 export interface AuthorizationProps {
     changeLoginOptions: () => void;
-    signInStyle: string;
-    signUpStyle: string;
-    barStyle: string;
+    isAuthorizitationVisible: boolean;
     barTitle: string;
     barBtn: string;
 }

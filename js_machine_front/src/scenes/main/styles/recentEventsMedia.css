@@ -1,0 +1,17 @@
+@media screen and (max-width: 1050px){
+    .event_wrapper{
+        min-width: 25%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .event_wrapper{
+        min-width: 35%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .event_wrapper{
+        min-width: 55%;
+    }
+}

@@ -3,6 +3,7 @@ import VkIcon from '../images/vk-icon.png';
 import TelegramIcon from '../images/telegram-icon.png';
 import InstaIcon from '../images/instagram-icon.png';
 import '../styles/socialLinks.css';
+import '../styles/socialLinksMedia.css';
 
 const sectionStyle = {
     height: '100%',

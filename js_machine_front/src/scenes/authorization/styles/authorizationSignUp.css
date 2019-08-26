@@ -1,19 +1,23 @@
-.sign-up{
+.sign-up {
+    position: relative;
     display: flex;
     flex-flow: column nowrap;
     font-family: 'Exo';
-}
-
-.sign-up__wrapper{
-    max-height: 550px;
-    max-width: 540px;
-    min-height: 550px;
-    min-width: 540px;
     transition: 0.7s;
+    right: 270px;
 }
 
-.sign-up__title{
+.reset_sign-up-width{
+    right: -100%;
+}
+
+.sign-up__wrapper {
+    height: 550px;
+    width: 540px;
+}
+
+.sign-up__title {
     font-size: 24px;
     font-weight: bold;
     margin: 39px 0 23px 0;
-} 
+}
