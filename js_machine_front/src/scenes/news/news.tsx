@@ -1,13 +1,24 @@
 import React, { PureComponent } from 'react';
+import Background from './images/news.jpg';
+import './styles/news.css';
+        
+import { FormattedMessage } from 'react-intl';
 import { DigestView } from 'components/DigestView/DigestView';
+import { EventsContainer } from './components/newsContainer';
+import { NewsModel } from './models/news';
+import { getNewsData } from './services/mocksNewsData';
 
 const sectionStyle = {
-  backgroundColor: 'grey',
-  paddingTop: 100,
+  height: '100vh',
+  backgroundImage: `url(${Background})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 };
 
 interface State {
   openDigest: boolean;
+  newsData: [];
 }
 
 export class News extends PureComponent<{}, State> {
@@ -17,7 +28,13 @@ export class News extends PureComponent<{}, State> {
 
     this.state = {
       openDigest: false,
+      newsData: []
     };
+  }
+    
+  public componentDidMount = async () => {
+    const response = await getNewsData();
+    this.setState(() => ({ newsData: response }));
   }
 
   openDigest = () => {
@@ -29,6 +46,7 @@ export class News extends PureComponent<{}, State> {
   }
 
   exitKeyPressHandler = (e: KeyboardEvent) => {
+    // Esc button handler for exiting modal
     if (e.keyCode === 27) {
       this.closeDigest();
     }
@@ -37,11 +55,16 @@ export class News extends PureComponent<{}, State> {
   render(): JSX.Element {
     return (
       <div style={sectionStyle}>
-        <h1>News</h1>
-        <button onClick={this.openDigest}>Open digest</button>
-        <DigestView isOpen={this.state.openDigest}
-          closeDigest={this.closeDigest}
-          pressHandler={this.exitKeyPressHandler} />
+        <div className="body">
+          <div className="title">
+            <FormattedMessage id="page.news" />
+          </div>
+          <button onClick={this.openDigest}>Open digest</button>
+          <DigestView isOpen={this.state.openDigest}
+            closeDigest={this.closeDigest}
+            pressHandler={this.exitKeyPressHandler} />
+          <EventsContainer newsData={this.state.newsData}/>
+        </div>
       </div>
     );
   }

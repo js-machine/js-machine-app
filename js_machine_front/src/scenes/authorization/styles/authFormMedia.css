@@ -1,0 +1,31 @@
+@media screen and (max-width: 560px){
+    .auth-from{
+        margin: 10px 0 0;
+    }
+
+    .auth-form__btn{
+        margin: 3px 27px 0;
+    }
+
+    .auth-form__input{
+        width: 280px;
+        height: 35px;
+        margin-bottom: 9px;
+    }
+}
+
+@media screen and (max-height: 700px) and (min-width: 560px){
+    .auth-from{
+        margin: 10px 0 0;
+    }
+
+    .auth-form__btn{
+        margin: 1px 27px 0;
+    }
+
+    .auth-form__input{
+        width: 280px;
+        height: 35px;
+        margin-bottom: 6px;
+    }
+}

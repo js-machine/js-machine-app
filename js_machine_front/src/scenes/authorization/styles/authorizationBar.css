@@ -1,15 +1,16 @@
 .authorization-bar{
     font-family: 'Exo';
+    position: relative;
+    background-color: #ECE24B;
+    transition: 0.7s;
 }
 
-.authorization-bar__wrapper_sign-in{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+.authorization-bar_sign-in{
+    transform: translate(270px, 0);
 }
 
-.authorization-bar__wrapper_sign-up{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.authorization-bar_sign-up{
+    transform: translate(-270px, 0);
 }
 
 .authorization-bar__wrapper{
@@ -17,9 +18,8 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 550px;
-    min-width: 320px;
-    background-color: #ECE24B;
+    height: 550px;
+    width: 320px;
 }
 
 .authorization-bar__title{
@@ -31,8 +31,8 @@
 }
 
 .authorization-bar__btn{
-    min-height: 40px;
-    min-width: 160px;
+    height: 40px;
+    width: 160px;
     border: 1px solid #222222;
     border-radius: 20px;
     background: none;

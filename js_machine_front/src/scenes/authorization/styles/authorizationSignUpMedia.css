@@ -1,0 +1,55 @@
+@media screen and (max-width: 940px) {
+    .sign-up {
+        right: 170px;
+    }
+
+    .reset_sign-up-width{
+        right: -100%;
+    }
+
+    .sign-up__wrapper {
+        width: 340px;
+        height: 556px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .sign-up {
+        right: 0;
+        top: -185px;
+    }
+
+    .reset_sign-up-width{
+        top: 100%;
+    }
+
+    .sign-up__wrapper {
+        height: 370px;
+    }
+    .sign-up__title {
+        font-size: 20px;
+        margin: 15px 0 15px 0;
+    }
+}
+
+@media screen and (max-height: 700px) and (min-width: 560px){
+    .sign-up{
+        right: 170px; 
+    }
+
+    .reset_sign-up-width{
+        right: -100%;
+    }
+
+    .sign-up__wrapper{
+        width: 340px;
+        height: 250px;
+        overflow-y: scroll; 
+        padding-bottom: 15px;
+    }
+
+    .sign-up__title{
+        font-size: 20px;
+        margin: 8px 0 15px 0;
+    } 
+}

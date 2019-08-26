@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import '../styles/authForm.css';
+import '../styles/authFormMedia.css';
 
 export const SignInFrom: React.FC = () => {
     return (

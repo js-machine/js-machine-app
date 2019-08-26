@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/authSocial.css';
+import '../styles/authSocialMedia.css';
 
 export const SocialAuth: React.FC = () => {
     return (
