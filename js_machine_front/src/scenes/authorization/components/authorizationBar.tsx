@@ -5,7 +5,7 @@ import '../styles/authorizationBarMedia.css';
 import { AuthorizationBarProps } from 'scenes/authorization/models/authorizationBar';
 
 export const AuthorizationBar: React.FC<AuthorizationBarProps> = (props: AuthorizationBarProps) => {
-    const barStyle = props.isAuthorizitationVisible? 'authorization-bar_sign-in' : 'authorization-bar_sign-up'
+    const barStyle = props.isAuthorizitationVisible ? 'authorization-bar_sign-in' : 'authorization-bar_sign-up';
     return (
         <>
             <div className={`authorization-bar ${barStyle}`}>

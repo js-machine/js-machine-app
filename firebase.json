@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "site": "js-machine-admin",
       "public": "js_machine_admin/build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
@@ -11,6 +12,7 @@
       ]
     },
     {
+      "site": "js-machine-app",
       "public": "js_machine_front/build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
