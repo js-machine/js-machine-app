@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "js-machine-app"
+  },
+  "targets": {
+    "js-machine-app": {
+      "hosting": {
+        "js-machine-app": [
+          "js-machine-app"
+        ],
+        "js-machine-admin": [
+          "js-machine-admin"
+        ]
+      }
+    }
   }
 }
