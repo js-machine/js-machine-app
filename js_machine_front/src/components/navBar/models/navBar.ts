@@ -1,3 +1,3 @@
 export interface NavBarState {
-    menuOpened: boolean;
+    isMenuOpened: boolean;
 }

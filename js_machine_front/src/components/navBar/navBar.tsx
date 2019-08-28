@@ -7,10 +7,10 @@ import { FormattedMessage } from 'react-intl';
 import { NavBarState } from './models/navBar';
 
 export class NavBar extends React.PureComponent {
-  public state: NavBarState = { menuOpened: false };
+  public state: NavBarState = { isMenuOpened: false };
 
   handleMenu = () => {
-    this.setState({ menuOpened: !this.state.menuOpened });
+    this.setState({ isMenuOpened: !this.state.isMenuOpened });
   }
   render(): JSX.Element {
     return (
@@ -21,7 +21,7 @@ export class NavBar extends React.PureComponent {
           </NavLink>
         </div>
 
-        <input id="menu__toggle" type="checkbox" checked={this.state.menuOpened} onChange={this.handleMenu} />
+        <input id="menu__toggle" type="checkbox" checked={this.state.isMenuOpened} onChange={this.handleMenu} />
         <label className="menu__btn" htmlFor="menu__toggle">
           <span />
         </label>
