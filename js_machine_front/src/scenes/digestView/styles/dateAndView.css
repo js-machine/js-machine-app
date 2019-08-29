@@ -1,15 +1,15 @@
-.dateAndView {
+.date-and-view {
     display: flex;
     align-items: center;
 }
 
-.dateAndView__img {
+.date-and-view__img {
     width:20px;
     height: 20px;
     vertical-align: middle;
     padding-bottom: 4px;
 }
 
-.dateAndView__date {
+.date-and-view__date {
     margin-right: 20px;
 }
