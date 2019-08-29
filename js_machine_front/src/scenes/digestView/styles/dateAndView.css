@@ -1,15 +1,15 @@
-.digestview__dateAndView {
+.dateAndView {
     display: flex;
     align-items: center;
 }
 
-.digestview__dateAndView-img {
+.dateAndView__img {
     width:20px;
     height: 20px;
     vertical-align: middle;
     padding-bottom: 4px;
 }
 
-.digestview__dateAndView-date {
+.dateAndView__date {
     margin-right: 20px;
 }

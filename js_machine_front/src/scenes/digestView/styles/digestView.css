@@ -1,4 +1,4 @@
-.digestview {
+.digest-view {
     position: fixed;
     z-index: 10;
     top: 0;
@@ -13,26 +13,26 @@
     letter-spacing: .4px;
 }
 
-.digestview p {
+.digest-view p {
    text-align: left;
    padding-right: 30%;
 }
 
-.digestview-para {
+.digest-view__para {
     margin-bottom: 10px;
 }
 
-.digestview h1, h2 {
+.digest-view h1, h2 {
     color: #000;
     text-align: left;
 }
 
-.digestview__header {
+.digest-view__header {
     margin-top: 8px;
     font-size: 26px;
 }
 
-.digestview__section {
+.digest-view__section {
     color: #9c9c9c;
     margin-top: 60px;
     margin-bottom: 0px;
@@ -40,22 +40,22 @@
 }
 
 @media (max-width: 1200px) {
-    .digestview {
+    .digest-view {
         font-weight: 400;
         font-size: 16px;
         letter-spacing: .1px;
     }
 
-    .digestview p {
+    .digest-view p {
         padding-right: 10%;
     }
 
-     .digestview__header {
+     .digest-view__header {
         margin-top: 4px;
         font-size: 20px;
     }
 
-    .digestview__section {
+    .digest-view__section {
         margin-top: 20px;
         margin-bottom: 0px;
         font-size: 20px;
@@ -64,22 +64,22 @@
 }
 
 @media (max-width: 900px) {
-    .digestview {
+    .digest-view {
         font-weight: 400;
         font-size: 12px;
         letter-spacing: .1px;
     }
 
-    .digestview p {
+    .digest-view p {
         padding-right: 8%;
     }
 
-     .digestview__header {
+     .digest-view__header {
         margin-top: 2px;
         font-size: 16px;
     }
 
-    .digestview__section {
+    .digest-view__section {
         margin-top: 16px;
         margin-bottom: 0px;
         font-size: 16px;
@@ -87,20 +87,20 @@
     
 }
 
-.digestview ul {
+.digest-view ul {
     text-align: left;
 }
 
-.digestview a {
+.digest-view a {
     text-decoration: none;
     color: #F2E14C;
 }
 
-.digestview__left-side {
+.digest-view__left-side {
     width: 30%;
 }
 
-.digestview__right-side {
+.digest-view__right-side {
     background-color: white;
     color: black;
     width: 70%;
@@ -113,11 +113,11 @@
     overflow-y: scroll;
 }
 
-.digestview-open {
+.digest-view-open {
     animation: openModal .5s linear forwards;
 }
 
-.digestview-closed {
+.digest-view-closed {
     animation: closeModal .5s linear forwards;
 }
 
