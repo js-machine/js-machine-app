@@ -35,6 +35,9 @@ export const NavBar: React.FC = memo(() => {
         <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
           <FormattedMessage id="page.signIn" />
         </NavLink>
+        <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/digestview">
+          <FormattedMessage id="page.digestview" />
+        </NavLink>
       </div>
     </div>
   );

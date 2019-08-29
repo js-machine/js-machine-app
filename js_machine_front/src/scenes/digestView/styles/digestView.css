@@ -1,4 +1,4 @@
-.DigestView {
+.digestview {
     position: fixed;
     z-index: 10;
     top: 0;
@@ -13,26 +13,26 @@
     letter-spacing: .4px;
 }
 
-.DigestView p {
+.digestview p {
    text-align: left;
    padding-right: 30%;
 }
 
-.DigestView-Para {
+.digestview-para {
     margin-bottom: 10px;
 }
 
-.DigestView h1, h2 {
+.digestview h1, h2 {
     color: #000;
     text-align: left;
 }
 
-.DigestView-Header {
+.digestview__header {
     margin-top: 8px;
     font-size: 26px;
 }
 
-.Section {
+.digestview__section {
     color: #9c9c9c;
     margin-top: 60px;
     margin-bottom: 0px;
@@ -40,22 +40,22 @@
 }
 
 @media (max-width: 1200px) {
-    .DigestView {
+    .digestview {
         font-weight: 400;
         font-size: 16px;
         letter-spacing: .1px;
     }
 
-    .DigestView p {
+    .digestview p {
         padding-right: 10%;
     }
 
-     .DigestView-Header {
+     .digestview__header {
         margin-top: 4px;
         font-size: 20px;
     }
 
-    .Section {
+    .digestview__section {
         margin-top: 20px;
         margin-bottom: 0px;
         font-size: 20px;
@@ -64,22 +64,22 @@
 }
 
 @media (max-width: 900px) {
-    .DigestView {
+    .digestview {
         font-weight: 400;
         font-size: 12px;
         letter-spacing: .1px;
     }
 
-    .DigestView p {
+    .digestview p {
         padding-right: 8%;
     }
 
-     .DigestView-Header {
+     .digestview__header {
         margin-top: 2px;
         font-size: 16px;
     }
 
-    .Section {
+    .digestview__section {
         margin-top: 16px;
         margin-bottom: 0px;
         font-size: 16px;
@@ -87,20 +87,20 @@
     
 }
 
-.DigestView ul {
+.digestview ul {
     text-align: left;
 }
 
-.DigestView a {
+.digestview a {
     text-decoration: none;
     color: #F2E14C;
 }
 
-.left-side {
+.digestview__left-side {
     width: 30%;
 }
 
-.right-side {
+.digestview__right-side {
     background-color: white;
     color: black;
     width: 70%;
@@ -113,11 +113,11 @@
     overflow-y: scroll;
 }
 
-.DigestView-open {
+.digestview-open {
     animation: openModal .5s linear forwards;
 }
 
-.DigestView-closed {
+.digestview-closed {
     animation: closeModal .5s linear forwards;
 }
 

@@ -1,17 +1,17 @@
-.LeftArrowButton {
+.digestview__leftArrowButton {
     position: fixed;
     top: 7%;
     left: 3%;
     cursor: pointer;
 }
 
-.LeftArrowButton-text {
+.digestview__leftArrowButton-text {
     font-size: 27px;
     letter-spacing: 1px;
     font-weight: 400;
 }
 
-.LeftArrowButton-arrow {
+.digestview__leftArrowButton-arrow {
     width: 22px;
     height: 15px;
     margin-right: 5px;

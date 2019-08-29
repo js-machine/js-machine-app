@@ -1,4 +1,4 @@
-.Option {
+.digestview__option {
     width: 45px;
     height: 130px;
     background-color: #F2E14C;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.Option-Img {
+.digestview__option-img {
     width: 25px;
     flex: 1;
     padding: 10px;
