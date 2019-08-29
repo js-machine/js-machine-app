@@ -1,0 +1,18 @@
+.left-arrow-button {
+    position: fixed;
+    top: 7%;
+    left: 3%;
+    cursor: pointer;
+}
+
+.left-arrow-button__text {
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.left-arrow-button__arrow {
+    width: 22px;
+    height: 15px;
+    margin-right: 5px;
+}

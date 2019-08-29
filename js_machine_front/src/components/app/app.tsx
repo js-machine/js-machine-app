@@ -6,6 +6,7 @@ import { Events } from 'scenes/communityEvents/communityEvents';
 import { News } from 'scenes/news/news';
 import { About } from 'scenes/about/about';
 import { Main } from 'scenes/main/main';
+import { DigestView } from 'scenes/digestView/digestView';
 import { ErrorBoundary } from 'components/navBar/error-boundary/error-boundary';
 import { Authorization } from 'scenes/authorization/authorization';
 import { Route, Redirect, Switch } from 'react-router';
@@ -36,6 +37,7 @@ const App: React.FC = () => {
             <Route exact={true} path="/events" component={Events} />
             <Route exact={true} path="/partners" component={Partners} />
             <Route exact={true} path="/authorization" component={Authorization} />
+            <Route exact={true} path="/digestview" component={DigestView} />
             <Redirect to={'/'} />
           </Switch>
         </ErrorBoundary>

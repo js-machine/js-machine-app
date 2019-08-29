@@ -25,22 +25,24 @@ export class NavBar extends React.PureComponent {
         <label className="menu__btn" htmlFor="menu__toggle">
           <span />
         </label>
-
         <div className="menu">
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/about" onClick={this.handleMenu}>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/about">
             <FormattedMessage id="page.about" />
           </NavLink>
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/news" onClick={this.handleMenu}>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/news">
             <FormattedMessage id="page.news" />
           </NavLink>
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/events" onClick={this.handleMenu}>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/events">
             <FormattedMessage id="page.events" />
           </NavLink>
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/partners" onClick={this.handleMenu}>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/partners">
             <FormattedMessage id="page.partners" />
           </NavLink>
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization" onClick={this.handleMenu}>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
             <FormattedMessage id="page.signIn" />
+          </NavLink>
+          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/digestview">
+            <FormattedMessage id="page.digestview" />
           </NavLink>
         </div>
       </div>
