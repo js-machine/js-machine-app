@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import './styles/digestView.css';
 
