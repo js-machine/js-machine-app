@@ -4,4 +4,5 @@ export const pages = {
   'page.events': 'EVENTS',
   'page.partners': 'PARTNERS',
   'page.signIn': 'SIGN IN',
+  'page.digestview': 'DIGEST VIEW',
 };
