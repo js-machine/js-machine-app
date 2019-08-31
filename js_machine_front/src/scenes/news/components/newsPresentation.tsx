@@ -26,5 +26,5 @@ export const NewsPresentation: React.FC<News> = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 };
