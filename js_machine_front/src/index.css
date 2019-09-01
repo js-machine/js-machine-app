@@ -70,3 +70,10 @@ code {
   font-weight: lighter;
   font-style: italic;
 }
+
+@font-face{
+  font-family: 'Machine';
+  src: url('fonts/machine.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -86,4 +86,8 @@
         text-decoration: none;
         transition-duration: .25s;
     }
+    .menu__nav-link--logo {
+        color: white;
+        font-family: 'Machine', sans-serif;
+    }
 }
