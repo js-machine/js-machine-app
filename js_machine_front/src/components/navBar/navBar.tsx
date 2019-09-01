@@ -7,11 +7,12 @@ import { FormattedMessage } from 'react-intl';
 import { NavBarState } from './models/navBar';
 
 export class NavBar extends React.PureComponent {
-  public state: NavBarState = { isMenuOpened: false };
+  public state: NavBarState = {isMenuOpened: false};
 
   handleMenu = () => {
-    this.setState({ isMenuOpened: !this.state.isMenuOpened });
+    this.setState({isMenuOpened: !this.state.isMenuOpened});
   }
+
   render(): JSX.Element {
     return (
       <div>
@@ -40,9 +41,6 @@ export class NavBar extends React.PureComponent {
           </NavLink>
           <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/authorization">
             <FormattedMessage id="page.signIn" />
-          </NavLink>
-          <NavLink exact={true} className="menu__nav-link" activeClassName="active-link" to="/digestview">
-            <FormattedMessage id="page.digestview" />
           </NavLink>
         </div>
       </div>

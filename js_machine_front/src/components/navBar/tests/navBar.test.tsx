@@ -9,6 +9,6 @@ describe('NavBar component is ready', () => {
 
         const tileContent = component.find(NavLink);
 
-        expect(tileContent).toHaveLength(7);
+        expect(tileContent).toHaveLength(6);
     });
 });
