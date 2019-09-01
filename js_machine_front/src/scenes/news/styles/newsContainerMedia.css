@@ -5,7 +5,7 @@
 
     .news__wrapper {
         padding: 0 30px 45px;
-        max-width: 85%;
+        max-width: 80%;
     }
 }
 
@@ -17,7 +17,11 @@
 
     .news__wrapper {
         width: 50%;
-        padding: 0 20px 35px;
+        padding: 0 30px 35px;
+    }
+
+    .news__wrapper:hover .news__read {
+        width: 85%;
     }
 }
 
@@ -30,7 +34,11 @@
 
     .news__wrapper {
         width: 100%;
-        padding: 0 0px 25px;
+        padding: 0 15px 25px;
+    }
+
+    .news__wrapper:hover .news__read {
+        width: 95%;
     }
 }
 
