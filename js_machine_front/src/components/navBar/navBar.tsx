@@ -74,14 +74,6 @@ export class NavBar extends React.PureComponent {
           >
             <FormattedMessage id="page.signIn" />
           </NavLink>
-          <NavLink
-            exact={true}
-            className="menu__nav-link"
-            activeClassName="active-link"
-            to="/digestview"
-          >
-            <FormattedMessage id="page.digestview" />
-          </NavLink>
         </div>
       </div>
     );
