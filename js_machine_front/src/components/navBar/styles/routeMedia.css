@@ -1,17 +1,20 @@
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1050px) {
     .menu__nav-link {
         margin-left: 30px;
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 895px) {
+    .menu__nav-link {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 840px) {
     .logo-box {
         left: 30px;
         top: 30px;
     }
-}
-
-@media screen and (max-width: 750px) {
     #menu__toggle {
         display: none;
     }
