@@ -27,11 +27,11 @@ export const AuthorizationHOC = (AuthComponent: React.FC<AuthorizationHOCProps>)
                     return {...signInMocks, isAuthorizitationVisible: true};
                 });
             }
-        }
+        };
 
         public componentDidMount = () => {
             this.setState(() => getStateForSignIn());
-        }
+        };
 
         public render(): JSX.Element {
             return <AuthComponent changeLoginOptions={this.changeLoginOptions} {...this.state}/>;

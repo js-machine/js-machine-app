@@ -1,0 +1,9 @@
+{
+  "name": "js-machine-app",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "emu:functions": "firebase serve --only functions",
+    "emu:firestore": "firebase serve --only firestore"
+  }
+}

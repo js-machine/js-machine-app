@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Background from './images/events.jpg';
 import './styles/events.css';
 
 import { EventsContent } from './components/eventsContent';
-import { getEventData } from './services/moksEvetnData';
-import { EventModel } from './models/events';
+import { getRecentEvents } from './services/events.api';
+import { Event } from './models/events';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -16,26 +16,21 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export class Events extends React.PureComponent<{}, EventModel> {
-  public state: EventModel = { eventsData: [] };
+export const Events = () => {
+  const [events, setEvents] = useState<Event[]>([]);
 
-  public componentDidMount = async () => {
-    const response = await getEventData();
-    this.setState(() => {
-      return { eventsData: response };
-    });
-  }
+  useEffect(() => {
+    getRecentEvents().then(setEvents);
+  }, []);
 
-  public render(): JSX.Element {
-    return (
-      <div style={sectionStyle}>
-        <div className="body">
-          <div className="title">
-            <FormattedMessage id="page.events" />
-          </div>
-          <EventsContent eventsData={this.state.eventsData} />
+  return (
+    <div style={sectionStyle}>
+      <div className="body">
+        <div className="title">
+          <FormattedMessage id="page.events" />
         </div>
+        <EventsContent events={events} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

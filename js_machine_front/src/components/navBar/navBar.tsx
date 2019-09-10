@@ -10,7 +10,7 @@ export class NavBar extends React.PureComponent {
 
   handleMenu = () => {
     this.setState({ isMenuOpened: !this.state.isMenuOpened });
-  }
+  };
   render(): JSX.Element {
     return (
       <div>

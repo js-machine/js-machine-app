@@ -21,7 +21,7 @@ export class News extends React.PureComponent<{}, NewsModel> {
   public componentDidMount = async () => {
     const response = await getNewsData();
     this.setState(() => ({ newsData: response }));
-  }
+  };
 
   public render(): JSX.Element {
     return (

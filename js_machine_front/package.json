@@ -62,5 +62,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "3.5.3"
-  }
+  },
+  "proxy": "http://localhost:5000/js-machine-app/us-central1/"
 }
