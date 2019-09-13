@@ -18,11 +18,11 @@
       "rewrites": [
         {
           "source": "/getAllEvents",
-          "destination": "getAllEvents"
+          "function": "getAllEvents"
         },
         {
           "source": "/getRecentEvents",
-          "destination": "getRecentEvents"
+          "function": "getRecentEvents"
         },
         {
           "source": "**",
@@ -33,8 +33,7 @@
   ],
   "functions": {},
   "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "rules": "firestore.rules"
   },
   "emulators": {
     "firestore": {
