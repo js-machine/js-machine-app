@@ -129,7 +129,8 @@
         "property-declaration",
         "member-variable-declaration"
       ],
-      "no-consecutive-blank-lines": true
+      "no-consecutive-blank-lines": true,
+      "jsx-boolean-value": [true, "never"]
     },
     "rulesDirectory": [],
     "linterOptions": {

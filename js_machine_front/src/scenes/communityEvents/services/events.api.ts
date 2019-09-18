@@ -12,7 +12,6 @@ export async function getAllEvents(): Promise<Event[]> {
 export async function getRecentEvents(): Promise<Event[]> {
   return fetch('/getRecentEvents', {
     method: 'GET',
-    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
     },
