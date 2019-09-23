@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import Background from './images/events.jpg';
 import './styles/events.css';
 
+import { Loader } from '../../components/loader/loader';
+import { CommunityEventsWrapper } from './components/communityEventsWrapper';
 import { EventsContent } from './components/eventsContent';
 import { getRecentEvents } from './services/events.api';
 import { Event } from './models/events';
 
 import { FormattedMessage } from 'react-intl';
 
-const sectionStyle = {
-  height: '100vh',
-  backgroundImage: `url(${Background})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-};
-
 export const Events = () => {
   const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getRecentEvents().then(setEvents);
+    setIsLoading(true);
+    getRecentEvents()
+      .then(setEvents)
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   return (
-    <div style={sectionStyle}>
+    <CommunityEventsWrapper>
       <div className="body">
         <div className="title">
           <FormattedMessage id="page.events" />
         </div>
+        <Loader isLoading={isLoading}/>
         <EventsContent events={events} />
       </div>
-    </div>
+    </CommunityEventsWrapper>
   );
 };
