@@ -68,3 +68,4 @@ node_modules/
 .idea
 
 js-machine-app-key.json
+.config

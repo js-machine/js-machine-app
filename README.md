@@ -11,3 +11,6 @@ How to run firebase [functions](https://firebase.google.com/docs/functions/local
 Hot to run firebase [emulator](https://github.com/firebase/quickstart-nodejs/tree/master/firestore-emulator/javascript-quickstart)
 
 Link to [Azure DevOps](https://dev.azure.com/jsmachineteam/js-machine-app/_build). Here we have a build pipeline to check pull requests and release pipeline for deployment to Firebase.
+
+To proxy on the main server you should change proxy property at the package.json in js_machine_front:
+"proxy": "https://us-central1-js-machine-app.cloudfunctions.net/"
