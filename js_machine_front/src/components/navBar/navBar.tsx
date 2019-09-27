@@ -16,7 +16,7 @@ export class NavBar extends React.PureComponent {
       <div>
         <div className="logo-box">
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link menu__nav-link--logo"
             to="/"
           >
@@ -35,7 +35,7 @@ export class NavBar extends React.PureComponent {
         </label>
         <div className="menu">
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link"
             activeClassName="active-link"
             to="/about"
@@ -43,7 +43,7 @@ export class NavBar extends React.PureComponent {
             <FormattedMessage id="page.about" />
           </NavLink>
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link"
             activeClassName="active-link"
             to="/news"
@@ -51,7 +51,7 @@ export class NavBar extends React.PureComponent {
             <FormattedMessage id="page.news" />
           </NavLink>
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link"
             activeClassName="active-link"
             to="/events"
@@ -59,7 +59,7 @@ export class NavBar extends React.PureComponent {
             <FormattedMessage id="page.events" />
           </NavLink>
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link"
             activeClassName="active-link"
             to="/partners"
@@ -67,7 +67,7 @@ export class NavBar extends React.PureComponent {
             <FormattedMessage id="page.partners" />
           </NavLink>
           <NavLink
-            exact={true}
+            exact
             className="menu__nav-link"
             activeClassName="active-link"
             to="/authorization"

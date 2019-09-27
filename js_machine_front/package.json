@@ -3,13 +3,18 @@
   "version": "0.2.2",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.4.3",
+    "@material-ui/icons": "^4.4.3",
+    "@material-ui/styles": "^4.4.3",
+    "clsx": "^1.0.4",
+    "marked": "^0.7.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-intl": "^2.9.0",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.0",
     "react-spinners": "^0.6.1",
-    "react-transition-group": "^4.2.2",
-    "styled-components": "^4.3.2"
+    "react-transition-group": "^4.3.0",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "prestart": "npm run lint-ts",
@@ -43,28 +48,29 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.1",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
+    "@types/jest": "24.0.18",
+    "@types/marked": "^0.6.5",
+    "@types/node": "12.7.8",
+    "@types/react": "16.9.3",
+    "@types/react-dom": "16.9.1",
     "@types/react-intl": "^2.3.18",
-    "@types/react-router-dom": "^4.3.4",
+    "@types/react-router-dom": "^5.1.0",
     "@types/react-test-renderer": "^16.9.0",
     "@types/react-transition-group": "^4.2.2",
     "@types/styled-components": "^4.1.19",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "prettier": "^1.18.2",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.1.2",
     "react-test-renderer": "^16.9.0",
-    "tslint": "^5.17.0",
+    "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.0.0",
-    "typescript": "3.5.3"
+    "tslint-react": "^4.1.0",
+    "typescript": "3.6.3"
   },
-  "proxy": "http://localhost:5000/js-machine-app/us-central1/"
+  "proxy": "https://us-central1-js-machine-app.cloudfunctions.net/"
 }

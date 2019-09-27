@@ -25,6 +25,34 @@
           "function": "getRecentEvents"
         },
         {
+          "source": "/getDigests",
+          "function": "getDigests"
+        },
+        {
+          "source": "/createDigest",
+          "function": "createDigest"
+        },
+        {
+          "source": "/saveDigest",
+          "function": "saveDigest"
+        },
+        {
+          "source": "/deleteDigest",
+          "function": "deleteDigest"
+        },
+        {
+          "source": "/hideDigest",
+          "function": "hideDigest"
+        },
+        {
+          "source": "/showDigest",
+          "function": "showDigest"
+        },
+        {
+          "source": "/uploadDigestMd",
+          "function": "uploadDigestMd"
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }

@@ -8,7 +8,7 @@ export const NewsPresentation: React.FC<News> = (props) => {
 
   return (
     <div className="news__wrapper">
-      <Link to="/digestview">
+      <Link to="/digest">
         <div className="news__read">
           <div className="news__read-content">ЧИТАТЬ ></div>
         </div>

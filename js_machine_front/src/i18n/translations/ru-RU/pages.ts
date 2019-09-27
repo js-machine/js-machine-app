@@ -4,5 +4,4 @@ export const pages = {
     'page.events': 'СОБЫТИЯ',
     'page.partners': 'ПАРТНЕРЫ',
     'page.signIn': 'ВХОД',
-    'page.digestview': 'DIGEST VIEW',
 };
