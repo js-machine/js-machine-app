@@ -21,13 +21,7 @@ export const EditDigest = memo(
     const [editDigest, setEditDigest] = useState<DigestCycle>();
 
     useEffect(() => {
-      store
-        .findDigestById(digestId)
-        .then(digest => {
-          console.log(digest);
-          return digest;
-        })
-        .then(digest => setEditDigest(digest));
+      store.findDigestById(digestId).then(digest => setEditDigest(digest));
     }, [store, digestId]);
 
     const handleCreateClick = useCallback(

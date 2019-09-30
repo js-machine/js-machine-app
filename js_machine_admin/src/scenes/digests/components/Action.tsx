@@ -121,7 +121,7 @@ export const Action = observer(({ digest, actions }: Props) => {
             <Typography variant="inherit">Show</Typography>
           </MenuItem>
         )}
-        <UploadButton onUpload={handleUpload}>
+        <UploadButton onUpload={handleUpload} id={digest.id}>
           <MenuItem>
             <ListItemIcon>
               <CloudUploadIcon />
