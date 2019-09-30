@@ -1,43 +1,63 @@
-.eventsContent{
-    position: absolute;
-    right: 0;
-    top: 40%;
-    width: 75%;
-}
-
-.eventsContent__wrapper{
+.eventsContent {
     display: flex;
     flex-flow: row wrap;
+    position: absolute;
+    max-width: 70%;
+    height: 58%;
+    right: 70px;
+    top: 340px;
+    overflow-y: scroll;
+    color: white;
+    font-family: 'Exo', sans-serif;
 }
 
-.eventsContent__element{
-    width: 23%;
-    margin: 0 50px 45px;
+.eventsContent::-webkit-scrollbar {
+    width: 6px;
+}
+
+.eventsContent::-webkit-scrollbar-thumb {
+    background-color: #F2E14C;
+    border-radius: 3px;
+}
+
+.eventsContent__wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 33%;
+    min-height: 39%;
+    padding: 0 60px 45px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.eventsContent__element {
+    margin-bottom: 45px;
     display: flex;
     flex-flow: row nowrap;
     color: white;
-    font-family: 'Exo', sans-serif;  
+    font-family: 'Exo', sans-serif;
 }
 
-.eventsContent__date{
+.eventsContent__date {
     display: flex;
     flex-flow: column nowrap;
     margin: 0;
     padding: 0 24px 0 0;
 }
 
-.eventsContent__day{
+.eventsContent__day {
     margin: 0;
     padding: 0;
     font-weight: bold;
     font-size: 37px;
 }
 
-.eventsContent__month{
+.eventsContent__month {
     font-size: 14px;
 }
 
-.eventsContent__title{
+.eventsContent__title {
     margin: 0;
     padding: 5px 0 0;
     text-align: left;
@@ -45,9 +65,45 @@
     font-weight: bold;
 }
 
-.eventsContent__description{
+.eventsContent__description {
     margin: 14px 0 auto;
     display: block;
     text-align: left;
     font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+    .eventsContent {
+        max-width: 80%;
+    }
+
+    .eventsContent__wrapper {
+        padding: 0 30px 45px;
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .eventsContent {
+        max-width: 85%;
+        right: 35px;
+    }
+
+    .eventsContent__wrapper {
+        width: 50%;
+        padding: 0 30px 35px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .eventsContent {
+        max-width: 85%;
+        right: 10px;
+        top: 35%;
+    }
+
+    .eventsContent__wrapper {
+        width: 100%;
+        padding: 0 15px 25px;
+    }
 }

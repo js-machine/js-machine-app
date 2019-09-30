@@ -18,7 +18,7 @@ export const Loader = (props: LoaderProps) => {
     <LoaderContainer>
       <PacmanLoader
         sizeUnit={'px'}
-        size={80}
+        size={60}
         color={COLORS.MAIN_YELLOW}
         loading={props.isLoading}
       />
