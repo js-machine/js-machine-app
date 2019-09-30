@@ -28,7 +28,7 @@ export const Events = () => {
         <div className="title">
           <FormattedMessage id="page.events" />
         </div>
-        <Loader isLoading={isLoading}/>
+        <Loader isLoading={isLoading} />
         <EventsContent events={events} />
       </div>
     </CommunityEventsWrapper>

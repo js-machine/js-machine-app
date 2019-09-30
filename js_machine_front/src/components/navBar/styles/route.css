@@ -39,6 +39,7 @@
   font-family: 'Machine', sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
+  margin-left: 0;
 }
 
 .active-link {
