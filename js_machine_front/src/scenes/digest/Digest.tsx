@@ -77,7 +77,7 @@ export const Digest = memo(({history, match}: Props) => {
       .then(response => response.content)
       .then(text => setMarkdown(text))
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [match]);
 
   return (
     <Grid className={classes.root} container>
