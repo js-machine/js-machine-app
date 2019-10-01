@@ -43,7 +43,7 @@ export const getDigests = functions.https.onRequest(
   async (request, response) => {
     const snapshot = await firestore
       .collection('digests')
-      .orderBy('date', 'asc')
+      .orderBy('date', 'desc')
       .get();
 
     response.send(

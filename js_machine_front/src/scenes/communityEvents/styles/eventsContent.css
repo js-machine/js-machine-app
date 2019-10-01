@@ -107,3 +107,18 @@
         padding: 0 15px 25px;
     }
 }
+
+@media screen and  (max-height: 810px) {
+    .eventsContent {
+        max-width: 85%;
+        right: 10px;
+        top: 45%;
+        height: 53%;
+    }
+
+    .eventsContent__wrapper {
+        width: 100%;
+        padding: 0 15px 25px;
+    }
+}
+

@@ -1,5 +1,5 @@
 @media screen and (max-width: 1200px) {
-    .news{
+    .news {
         max-width: 80%;
     }
 
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 850px) {
-    .news{
+    .news {
         max-width: 85%;
         right: 35px;
     }
@@ -26,7 +26,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .news{
+    .news {
         max-width: 85%;
         right: 10px;
         top: 35%;
@@ -42,7 +42,25 @@
     }
 }
 
-@media (hover: none) and (pointer: coarse){
+@media screen and  (max-height: 810px) {
+    .news {
+        max-width: 85%;
+        right: 10px;
+        top: 45%;
+        height: 53%;
+    }
+
+    .news__wrapper {
+        width: 100%;
+        padding: 0 15px 25px;
+    }
+
+    .news__wrapper:hover .news__read {
+        width: 95%;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
     .news__read {
         display: none;
     }

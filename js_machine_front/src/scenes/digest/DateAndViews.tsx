@@ -25,8 +25,8 @@ export const DateAndView = memo(({ views }: Props) => {
   return (
     <div className={classes.root}>
       <span>5 АВГ</span>
-      <VisibilityIcon className={classes.icon} />
-      <span>{views}</span>
+      {/*<VisibilityIcon className={classes.icon} />*/}
+      {/*<span>{views}</span>*/}
     </div>
   );
 });
