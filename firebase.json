@@ -53,6 +53,10 @@
           "function": "getRecentEvents"
         },
         {
+          "source": "/getDigests",
+          "function": "getDigests"
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }
