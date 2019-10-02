@@ -43,7 +43,7 @@ export const getDigests = functions.https.onRequest(
   async (request, response) => {
     const snapshot = await firestore
       .collection('digests')
-      .orderBy('date', 'asc')
+      .orderBy('date', 'desc')
       .get();
 
     response.send(
@@ -53,6 +53,27 @@ export const getDigests = functions.https.onRequest(
         date: doc.data().date.toDate(),
       })),
     );
+  },
+);
+
+export const getDigestById = functions.https.onRequest(
+  async (request, response) => {
+    const digestId: string = request.body.digestId;
+
+    const snapshot = await firestore
+      .collection('digests')
+      .doc(digestId)
+      .get();
+
+    const data = snapshot.data();
+
+    data
+      ? response.send({
+          ...data,
+          id: snapshot.ref.id,
+          date: data.date.toDate(),
+        })
+      : response.sendStatus(500);
   },
 );
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import { News } from '../models/news';
+import { DigestCycle } from '../models/news';
 import { Link } from 'react-router-dom';
 
-export const NewsPresentation: React.FC<News> = (props) => {
+export const NewsPresentation: React.FC<DigestCycle> = (props) => {
   const newsDate: number = new Date(props.date).getDate();
   const newsMonth: string = new Date(props.date).toLocaleString('ru', {month: 'short'}).toUpperCase();
 
   return (
     <div className="news__wrapper">
-      <Link to="/digest">
+      <Link to={`/digest/${props.id}`}>
         <div className="news__read">
           <div className="news__read-content">ЧИТАТЬ ></div>
         </div>

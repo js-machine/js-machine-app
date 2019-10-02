@@ -1,15 +1,18 @@
 import React from 'react';
-import { NewsModel, News } from '../models/news';
+import { NewsModel, DigestCycle } from '../models/news';
 import { NewsPresentation } from './newsPresentation';
 import '../styles/newsContainer.css';
 import '../styles/newsContainerMedia.css';
 
-export const EventsContainer: React.FC<NewsModel> = (props: NewsModel) => {
-    return (
-        <div className="news">
-            {
-                props.newsData.map((news: News) => <NewsPresentation key={news.id} id={news.id} description={news.description} date={news.date} title={news.title} />)
-            }
-        </div>
-    );
+export const NewsContainer: React.FC<NewsModel> = (props: NewsModel) => {
+  return (
+    <div className="news">
+      {
+        props.newsData.map((news: DigestCycle) =>
+          news.visible &&
+            <NewsPresentation
+                key={news.id}  {...news} />)
+      }
+    </div>
+  );
 };

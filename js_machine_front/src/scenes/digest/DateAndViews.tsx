@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+// import VisibilityIcon from '@material-ui/icons/Visibility';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
@@ -25,8 +25,8 @@ export const DateAndView = memo(({ views }: Props) => {
   return (
     <div className={classes.root}>
       <span>5 АВГ</span>
-      <VisibilityIcon className={classes.icon} />
-      <span>{views}</span>
+      {/*<VisibilityIcon className={classes.icon} />*/}
+      {/*<span>{views}</span>*/}
     </div>
   );
 });

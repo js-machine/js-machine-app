@@ -10,6 +10,8 @@ import { Markdown } from './Markdown';
 import { Options } from './Options';
 import { Theme } from '@material-ui/core/styles';
 import image from './news.jpg';
+import { getDigest } from './services/digest.api';
+import { Loader } from 'components/loader/loader';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -61,19 +63,21 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface Props {
   history: History;
+  match: any;
 }
 
-export const Digest = memo(({ history }: Props) => {
+export const Digest = memo(({history, match}: Props) => {
   const classes = useStyles();
   const [markdown, setMarkdown] = useState();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const readmePath = require('./Digest.md');
-
-    fetch(readmePath)
-      .then(response => response.text())
-      .then(text => setMarkdown(text));
-  }, []);
+    setIsLoading(true);
+    getDigest(match.params.id)
+      .then(response => response.content)
+      .then(text => setMarkdown(text))
+      .finally(() => setIsLoading(false));
+  }, [match]);
 
   return (
     <Grid className={classes.root} container>
@@ -87,6 +91,7 @@ export const Digest = memo(({ history }: Props) => {
       </Hidden>
       <Grid className={classes.rightSide} item md={9}>
         <DateAndView views={25} />
+        <Loader isLoading={isLoading} />
         <Markdown markdown={markdown} />
       </Grid>
     </Grid>

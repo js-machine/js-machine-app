@@ -39,7 +39,7 @@ const App: React.FC = () => {
               <Route exact path="/events" component={Events} />
               <Route exact path="/partners" component={Partners} />
               <Route exact path="/authorization" component={Authorization} />
-              <Route exact path="/digest" component={Digest} />
+              <Route exact path="/digest/:id" component={Digest} />
               <Redirect to={'/'} />
             </Switch>
           </ErrorBoundary>

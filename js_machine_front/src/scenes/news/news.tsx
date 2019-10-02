@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Background from './images/news.jpg';
 import { FormattedMessage } from 'react-intl';
 import './styles/news.css';
 
-import { EventsContainer } from './components/newsContainer';
-import { NewsModel } from './models/news';
-import { getNewsData } from './services/mocksNewsData';
+import { NewsContainer } from './components/newsContainer';
+import { DigestCycle } from './models/news';
+import { getDigests } from './services/news.api';
+import { Loader } from 'components/loader/loader';
 
 const sectionStyle = {
   height: '100vh',
@@ -15,24 +16,31 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export class News extends React.PureComponent<{}, NewsModel> {
-  public state: NewsModel = { newsData: [] };
+export const News = () => {
+  const [news, setNews] = useState<DigestCycle[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  public componentDidMount = async () => {
-    const response = await getNewsData();
-    this.setState(() => ({ newsData: response }));
-  };
+  useEffect(() => {
+    setIsLoading(true);
+    getDigests()
+      .then(setNews)
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
-  public render(): JSX.Element {
-    return (
-      <div style={sectionStyle}>
-        <div className="body">
-          <div className="title">
-            <FormattedMessage id="page.news" />
-          </div>
-          <EventsContainer newsData={this.state.newsData}/>
+  return (
+    <div style={sectionStyle}>
+      <div className="body">
+        <div className="title">
+          <FormattedMessage id="page.news" />
         </div>
+        {
+          isLoading ?
+            <Loader isLoading={isLoading} />
+            : <NewsContainer newsData={news} />
+        }
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
