@@ -65,15 +65,21 @@ export const getDigestById = functions.https.onRequest(
       .doc(digestId)
       .get();
 
-    response.send(
-      snapshot.data(),
-    );
+    const data = snapshot.data();
+
+    data
+      ? response.send({
+          ...data,
+          id: snapshot.ref.id,
+          date: data.date.toDate(),
+        })
+      : response.sendStatus(500);
   },
 );
 
 export const createDigest = functions.https.onRequest(
   async (request, response) => {
-    const {id, ...digest} = request.body.digest;
+    const { id, ...digest } = request.body.digest;
 
     try {
       const res = await firestore.collection('digests').add({
@@ -81,7 +87,7 @@ export const createDigest = functions.https.onRequest(
         date: admin.firestore.Timestamp.fromDate(new Date(digest.date)),
       });
 
-      response.status(201).send({id: res.id});
+      response.status(201).send({ id: res.id });
     } catch {
       response.sendStatus(500);
     }
@@ -90,7 +96,7 @@ export const createDigest = functions.https.onRequest(
 
 export const saveDigest = functions.https.onRequest(
   async (request, response) => {
-    const {id, ...digest} = request.body.digest;
+    const { id, ...digest } = request.body.digest;
 
     try {
       await firestore
@@ -101,7 +107,7 @@ export const saveDigest = functions.https.onRequest(
             ...digest,
             date: admin.firestore.Timestamp.fromDate(new Date(digest.date)),
           },
-          {merge: true},
+          { merge: true },
         );
 
       response.sendStatus(204);
@@ -136,7 +142,7 @@ export const hideDigest = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({visible: false}, {merge: true});
+        .set({ visible: false }, { merge: true });
 
       response.sendStatus(204);
     } catch {
@@ -153,7 +159,7 @@ export const showDigest = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({visible: true}, {merge: true});
+        .set({ visible: true }, { merge: true });
 
       response.sendStatus(204);
     } catch {
@@ -171,7 +177,7 @@ export const uploadDigestMd = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({content}, {merge: true});
+        .set({ content }, { merge: true });
 
       response.sendStatus(204);
     } catch {
