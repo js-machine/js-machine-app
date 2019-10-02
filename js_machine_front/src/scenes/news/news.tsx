@@ -35,8 +35,11 @@ export const News = () => {
         <div className="title">
           <FormattedMessage id="page.news" />
         </div>
-        <Loader isLoading={isLoading} />
-        <NewsContainer newsData={news} />
+        {
+          isLoading ?
+            <Loader isLoading={isLoading} />
+            : <NewsContainer newsData={news} />
+        }
       </div>
     </div>
   );
