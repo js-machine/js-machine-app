@@ -6,7 +6,7 @@ import './styles/news.css';
 import { NewsContainer } from './components/newsContainer';
 import { DigestCycle } from './models/news';
 import { getDigests } from './services/news.api';
-import { Loader } from '../../components/loader/loader';
+import { Loader } from 'components/loader/loader';
 
 const sectionStyle = {
   height: '100vh',

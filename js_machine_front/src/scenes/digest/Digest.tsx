@@ -11,7 +11,7 @@ import { Options } from './Options';
 import { Theme } from '@material-ui/core/styles';
 import image from './news.jpg';
 import { getDigest } from './services/digest.api';
-import { Loader } from '../../components/loader/loader';
+import { Loader } from 'components/loader/loader';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
