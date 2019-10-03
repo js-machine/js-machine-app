@@ -8,7 +8,8 @@ export const TileElement: React.FC<PropsTileElement> = (props: PropsTileElement)
   return (
     <div className="tile-element">
       <div className="tile-element__title">{props.title}</div>
-      <p className="tile-element__description">{props.description}</p>
+      <p className="tile-element__description"
+         dangerouslySetInnerHTML={{__html: props.description.replace(/(?:\r\n|\r|\n)/g, '<br>')}} />
     </div>
   );
 };

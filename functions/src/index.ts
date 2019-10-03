@@ -8,7 +8,7 @@ export const getAllEvents = functions.https.onRequest(
   async (request, response) => {
     const snapshot = await firestore
       .collection('events')
-      .orderBy('date', 'asc')
+      .orderBy('date', 'desc')
       .get();
 
     response.send(
@@ -25,8 +25,8 @@ export const getRecentEvents = functions.https.onRequest(
   async (request, response) => {
     const snapshot = await firestore
       .collection('events')
-      .orderBy('date', 'asc')
-      .limit(7)
+      .orderBy('date', 'desc')
+      .limit(5)
       .get();
 
     response.send(
