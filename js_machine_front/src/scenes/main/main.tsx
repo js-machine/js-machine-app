@@ -1,10 +1,13 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Background from './images/main.jpg';
 import './styles/main.css';
 import './styles/mainMedia.css';
 import { useSnackbar } from 'notistack';
 
 import { SocialLinks, RecentEvents } from './';
+import { getRecentEvents } from '../communityEvents/services/events.api';
+import { Event } from '../communityEvents/models/events';
+import { Loader } from 'components/loader/loader';
 
 const sectionStyle = {
   height: '100%',
@@ -14,53 +17,45 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-const events = [
-  {
-    id: '0',
-    date: '04/20/2019',
-    title: 'MITCone 2019',
-    description: 'Одна из самых масштабных конференций Могилева, спикеры из Минска, Гомеля, и других городов',
-  },
-  {
-    id: '1',
-    date: '05/30/2019',
-    title: 'JS JUNGLE',
-    description: 'Отпразнуем День JS разработчика вместе. Вопросы по JS/Front-End и It в целом. Победителям подарки!',
-  },
-  {
-    id: '2',
-    date: '06/29/2019',
-    title: 'Городской пикник',
-    description: 'Встреча могилевских IT-компаний на открытом воздухе в парке Подниколье',
-  },
-  {
-    id: '3',
-    date: '08/09/2019',
-    title: 'The Rolling Scopes Conference',
-    description: 'Интересные доклады, живое общение и конечно же призы!',
-  },
-];
-
 export const Main: React.FC = memo(() => {
   const {enqueueSnackbar} = useSnackbar();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getRecentEvents()
+      .then(setEvents)
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <div style={sectionStyle}>
-      <SocialLinks
-        onSendFeedbackSuccess={() => {
-          enqueueSnackbar('Фидбек успешно отправлен!', {
-            variant: 'success',
-            anchorOrigin: {vertical: 'top', horizontal: 'right'},
-          });
-        }}
-        onSendFeedbackError={() => {
-          enqueueSnackbar('Произошла ошибка отправки фидбека!', {
-            variant: 'warning', anchorOrigin: {vertical: 'top', horizontal: 'right'},
-          });
-        }} />
-      <div className="main__events">
-        <RecentEvents events={events} />
-      </div>
+      {isLoading ? (
+          <Loader isLoading={isLoading} />
+        ) :
+        (
+          <>
+            <SocialLinks
+              onSendFeedbackSuccess={() => {
+                enqueueSnackbar('Фидбек успешно отправлен!', {
+                  variant: 'success',
+                  anchorOrigin: {vertical: 'top', horizontal: 'right'},
+                });
+              }}
+              onSendFeedbackError={() => {
+                enqueueSnackbar('Произошла ошибка отправки фидбека!', {
+                  variant: 'warning', anchorOrigin: {vertical: 'top', horizontal: 'right'},
+                });
+              }} />
+            <div className="main__events">
+              <RecentEvents events={events} />
+            </div>
+          </>
+        )
+      }
     </div>
   );
 });

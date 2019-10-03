@@ -4,7 +4,7 @@ import './styles/events.css';
 import { Loader } from 'components/loader/loader';
 import { CommunityEventsWrapper } from './components/communityEventsWrapper';
 import { EventsContent } from './components/eventsContent';
-import { getRecentEvents } from './services/events.api';
+import { getAllEvents } from './services/events.api';
 import { Event } from './models/events';
 
 import { FormattedMessage } from 'react-intl';
@@ -15,7 +15,7 @@ export const Events = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getRecentEvents()
+    getAllEvents()
       .then(setEvents)
       .finally(() => {
         setIsLoading(false);
