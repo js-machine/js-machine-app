@@ -17,6 +17,12 @@ export const EventsContent: React.FC<Props> = memo(({events}) => {
 
         return (
           <div key={event.id} className="eventsContent__wrapper">
+            <a href={event.link}>
+              <div className="eventsContent__read">
+                <div className="eventsContent__read-content">ПЕРЕЙТИ ></div>
+              </div>
+            </a>
+
             <div className="eventsContent__element">
               <div className="eventsContent__date">
                 <p className="eventsContent__day">{eventDate}</p>

@@ -3,4 +3,5 @@ export interface Event {
   date: string;
   title: string;
   description: string;
+  link: string;
 }
