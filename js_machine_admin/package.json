@@ -52,5 +52,5 @@
     "react-scripts": "3.1.2",
     "typescript": "3.6.3"
   },
-  "proxy": "http://localhost:5001/js-machine-app/us-central1"
+  "proxy": "https://us-central1-js-machine-app.cloudfunctions.net/"
 }
