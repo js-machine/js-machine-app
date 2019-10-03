@@ -54,7 +54,9 @@ export const Main: React.FC = memo(() => {
           });
         }}
         onSendFeedbackError={() => {
-          enqueueSnackbar('Произошла ошибка отправки фидбека!', {variant: 'warning'});
+          enqueueSnackbar('Произошла ошибка отправки фидбека!', {
+            variant: 'warning', anchorOrigin: {vertical: 'top', horizontal: 'right'},
+          });
         }} />
       <div className="main__events">
         <RecentEvents events={events} />
