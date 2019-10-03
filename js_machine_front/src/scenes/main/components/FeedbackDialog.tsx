@@ -45,7 +45,10 @@ export function FeedbackDialog(props: FeedbackDialogProps): JSX.Element {
             rows="5"
             onChange={(event) => setFeedbackText(event.target.value)} />
           <Button disabled={!feedbackText} className="feedback-dialog__btn"
-                  onClick={() => props.onSend(feedbackText)}>Отправить</Button>
+                  onClick={() => {
+                    props.onSend(feedbackText);
+                    setFeedbackText('');
+                  }}>Отправить</Button>
         </div>
       </form>
     </Popover>
