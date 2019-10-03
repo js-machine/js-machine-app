@@ -24,11 +24,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   width: fit-content;
+  align-items: center;
 }
 
 .menu__nav-link {
   margin-left: 60px;
-  font-family: 'Exo', sans-serif;
   font-size: 16px;
   color: white;
   text-decoration: none;
