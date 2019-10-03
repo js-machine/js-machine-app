@@ -1,13 +1,14 @@
-@media screen and (max-width: 500px), (max-height: 850px){
-    .partners__title{
+@media screen and (max-width: 500px), (max-height: 850px) {
+    .partners__title {
         top: 100px;
+        left: 30px;
         font-size: 49px;
     }
 
 }
 
-@media screen and (max-width: 370px){
-    .partners__title{
+@media screen and (max-width: 370px) {
+    .partners__title {
         left: 30px;
     }
 }
