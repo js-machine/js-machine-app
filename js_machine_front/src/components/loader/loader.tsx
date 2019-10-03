@@ -1,27 +1,47 @@
-import styled from 'styled-components';
+import React, { memo } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import PacmanLoader from 'react-spinners/PacmanLoader';
-import React from 'react';
-
-import { LoaderProps } from './models/loaderProps';
 import { COLORS } from '../../constants/colors';
 
-const LoaderContainer = styled.div`
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%)  translateX(-50%);
-`;
+const useStyles = makeStyles({
+  root: {
+    display: 'block',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translateY(-50%) translateX(-50%)',
 
-export const Loader = (props: LoaderProps) => {
+    '& >div > div:nth-child(3)': {
+      animationDelay: '0s',
+    },
+    '& >div > div:nth-child(4)': {
+      animationDelay: '-0.25s',
+    },
+    '& >div > div:nth-child(5)': {
+      animationDelay: '-0.5s',
+    },
+    '& >div > div:nth-child(6)': {
+      animationDelay: '-0.75s',
+    },
+  },
+});
+
+interface Props {
+  isLoading: boolean;
+}
+
+export const Loader = memo(({ isLoading }: Props) => {
+  const classes = useStyles();
+
   return (
-    <LoaderContainer>
+    <Box className={classes.root}>
       <PacmanLoader
-        sizeUnit={'px'}
+        sizeUnit="px"
         size={60}
         color={COLORS.MAIN_YELLOW}
-        loading={props.isLoading}
+        loading={isLoading}
       />
-    </LoaderContainer>
+    </Box>
   );
-};
+});
