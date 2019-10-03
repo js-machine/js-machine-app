@@ -8,6 +8,7 @@
     "@material-ui/styles": "^4.4.3",
     "clsx": "^1.0.4",
     "marked": "^0.7.0",
+    "notistack": "^0.9.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-intl": "^2.9.0",
@@ -72,5 +73,5 @@
     "tslint-react": "^4.1.0",
     "typescript": "3.6.3"
   },
-  "proxy": "https://us-central1-js-machine-app.cloudfunctions.net/"
+  "proxy": "http://localhost:5001/js-machine-app/us-central1"
 }

@@ -12,6 +12,7 @@ import { Authorization } from 'scenes/authorization/authorization';
 import { Route, Redirect, Switch } from 'react-router';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { SnackbarProvider } from 'notistack';
 
 // Internationalization
 import { messages } from 'i18n/messages';
@@ -29,21 +30,23 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <IntlProvider locale={locale} messages={messages[locale]}>
-        <div className="app">
-          <NavBar />
-          <ErrorBoundary>
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/news" component={News} />
-              <Route exact path="/events" component={Events} />
-              <Route exact path="/partners" component={Partners} />
-              <Route exact path="/authorization" component={Authorization} />
-              <Route exact path="/digest/:id" component={Digest} />
-              <Redirect to={'/'} />
-            </Switch>
-          </ErrorBoundary>
-        </div>
+        <SnackbarProvider maxSnack={3}>
+          <div className="app">
+            <NavBar />
+            <ErrorBoundary>
+              <Switch>
+                <Route exact path="/" component={Main} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/events" component={Events} />
+                <Route exact path="/partners" component={Partners} />
+                <Route exact path="/authorization" component={Authorization} />
+                <Route exact path="/digest/:id" component={Digest} />
+                <Redirect to={'/'} />
+              </Switch>
+            </ErrorBoundary>
+          </div>
+        </SnackbarProvider>
       </IntlProvider>
     </ThemeProvider>
   );

@@ -53,14 +53,14 @@ export const NavBar = memo(() => {
         >
           <FormattedMessage id="page.events" />
         </NavLink>
-        <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/partners"
-        >
-          <FormattedMessage id="page.partners" />
-        </NavLink>
+        {/*<NavLink*/}
+        {/*  exact*/}
+        {/*  className="menu__nav-link"*/}
+        {/*  activeClassName="active-link"*/}
+        {/*  to="/partners"*/}
+        {/*>*/}
+        {/*  <FormattedMessage id="page.partners" />*/}
+        {/*</NavLink>*/}
         <NavLink
           exact
           className="menu__nav-link"

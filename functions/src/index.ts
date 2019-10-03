@@ -58,7 +58,7 @@ export const getDigests = functions.https.onRequest(
 
 export const getDigestById = functions.https.onRequest(
   async (request, response) => {
-    const digestId: string = request.body.digestId;
+    const digestId: string = request.query.digestId;
 
     const snapshot = await firestore
       .collection('digests')
@@ -69,17 +69,17 @@ export const getDigestById = functions.https.onRequest(
 
     data
       ? response.send({
-          ...data,
-          id: snapshot.ref.id,
-          date: data.date.toDate(),
-        })
+        ...data,
+        id: snapshot.ref.id,
+        date: data.date.toDate(),
+      })
       : response.sendStatus(500);
   },
 );
 
 export const createDigest = functions.https.onRequest(
   async (request, response) => {
-    const { id, ...digest } = request.body.digest;
+    const {id, ...digest} = request.body.digest;
 
     try {
       const res = await firestore.collection('digests').add({
@@ -87,7 +87,7 @@ export const createDigest = functions.https.onRequest(
         date: admin.firestore.Timestamp.fromDate(new Date(digest.date)),
       });
 
-      response.status(201).send({ id: res.id });
+      response.status(201).send({id: res.id});
     } catch {
       response.sendStatus(500);
     }
@@ -96,7 +96,7 @@ export const createDigest = functions.https.onRequest(
 
 export const saveDigest = functions.https.onRequest(
   async (request, response) => {
-    const { id, ...digest } = request.body.digest;
+    const {id, ...digest} = request.body.digest;
 
     try {
       await firestore
@@ -107,7 +107,7 @@ export const saveDigest = functions.https.onRequest(
             ...digest,
             date: admin.firestore.Timestamp.fromDate(new Date(digest.date)),
           },
-          { merge: true },
+          {merge: true},
         );
 
       response.sendStatus(204);
@@ -142,7 +142,7 @@ export const hideDigest = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({ visible: false }, { merge: true });
+        .set({visible: false}, {merge: true});
 
       response.sendStatus(204);
     } catch {
@@ -159,7 +159,7 @@ export const showDigest = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({ visible: true }, { merge: true });
+        .set({visible: true}, {merge: true});
 
       response.sendStatus(204);
     } catch {
@@ -177,9 +177,41 @@ export const uploadDigestMd = functions.https.onRequest(
       await firestore
         .collection('digests')
         .doc(digestId)
-        .set({ content }, { merge: true });
+        .set({content}, {merge: true});
 
       response.sendStatus(204);
+    } catch {
+      response.sendStatus(500);
+    }
+  },
+);
+export const getFeedbacks = functions.https.onRequest(
+  async (request, response) => {
+    const snapshot = await firestore
+      .collection('feedbacks')
+      .orderBy('date', 'desc')
+      .get();
+
+    response.send(
+      snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.ref.id,
+        date: doc.data().date.toDate(),
+      })),
+    );
+  },
+);
+export const sendFeedback = functions.https.onRequest(
+  async (request, response) => {
+    const text = request.body.text;
+
+    try {
+      const res = await firestore.collection('feedbacks').add({
+        text,
+        date: admin.firestore.Timestamp.fromDate(new Date()),
+      });
+
+      response.status(201).send({id: res.id});
     } catch {
       response.sendStatus(500);
     }
