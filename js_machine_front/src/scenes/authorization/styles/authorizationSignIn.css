@@ -18,6 +18,7 @@
 }
 
 .sign-in__title{
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
     margin: 39px 0 23px 0;

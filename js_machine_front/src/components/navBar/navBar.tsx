@@ -1,20 +1,28 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import './styles/route.css';
 import './styles/routeMedia.css';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import { useStore } from 'stores';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import { observer } from 'mobx-react-lite';
 
-export const NavBar = memo(() => {
+const useStyles = makeStyles(theme => ({
+  avatar: {
+    marginLeft: 60,
+  },
+}));
+
+export const NavBar = observer(() => {
+  const classes = useStyles();
+  const { authStore } = useStore();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   return (
     <div>
       <div className="logo-box">
-        <NavLink
-          exact
-          className="menu__nav-link menu__nav-link--logo"
-          to="/"
-        >
+        <NavLink exact className="menu__nav-link menu__nav-link--logo" to="/">
           JS MACHINE
         </NavLink>
       </div>
@@ -61,14 +69,22 @@ export const NavBar = memo(() => {
         {/*>*/}
         {/*  <FormattedMessage id="page.partners" />*/}
         {/*</NavLink>*/}
-        <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/authorization"
-        >
-          <FormattedMessage id="page.signIn" />
-        </NavLink>
+        {authStore.user ? (
+          authStore.user.photoURL ? (
+            <Avatar className={classes.avatar} src={authStore.user.photoURL} />
+          ) : (
+            <Avatar className={classes.avatar}>US</Avatar>
+          )
+        ) : (
+          <NavLink
+            exact
+            className="menu__nav-link"
+            activeClassName="active-link"
+            to="/authorization"
+          >
+            <FormattedMessage id="page.signIn" />
+          </NavLink>
+        )}
       </div>
     </div>
   );
