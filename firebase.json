@@ -3,7 +3,11 @@
     {
       "target": "js-machine-admin",
       "public": "js_machine_admin/build",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
       "rewrites": [
         {
           "source": "/getDigests",
@@ -34,6 +38,10 @@
           "function": "uploadDigestMd"
         },
         {
+          "source": "/getFeedbacks",
+          "function": "getFeedbacks"
+        },
+        {
           "source": "**",
           "destination": "/index.html"
         }
@@ -42,7 +50,11 @@
     {
       "target": "js-machine-app",
       "public": "js_machine_front/build",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
       "rewrites": [
         {
           "source": "/getAllEvents",
@@ -55,6 +67,10 @@
         {
           "source": "/getDigests",
           "function": "getDigests"
+        },
+        {
+          "source": "/sendFeedback",
+          "function": "sendFeedback"
         },
         {
           "source": "**",

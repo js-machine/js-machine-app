@@ -2,8 +2,9 @@ import React, { memo } from 'react';
 import Background from './images/main.jpg';
 import './styles/main.css';
 import './styles/mainMedia.css';
+import { useSnackbar } from 'notistack';
 
-import { SocialLinks, RecentEvents  } from './';
+import { SocialLinks, RecentEvents } from './';
 
 const sectionStyle = {
   height: '100%',
@@ -41,9 +42,22 @@ const events = [
 ];
 
 export const Main: React.FC = memo(() => {
+  const {enqueueSnackbar} = useSnackbar();
+
   return (
     <div style={sectionStyle}>
-      <SocialLinks />
+      <SocialLinks
+        onSendFeedbackSuccess={() => {
+          enqueueSnackbar('Фидбек успешно отправлен!', {
+            variant: 'success',
+            anchorOrigin: {vertical: 'top', horizontal: 'right'},
+          });
+        }}
+        onSendFeedbackError={() => {
+          enqueueSnackbar('Произошла ошибка отправки фидбека!', {
+            variant: 'warning', anchorOrigin: {vertical: 'top', horizontal: 'right'},
+          });
+        }} />
       <div className="main__events">
         <RecentEvents events={events} />
       </div>
