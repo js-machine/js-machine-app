@@ -69,6 +69,10 @@
           "function": "getDigests"
         },
         {
+          "source": "/getDigestById",
+          "function": "getDigestById"
+        },
+        {
           "source": "/sendFeedback",
           "function": "sendFeedback"
         },

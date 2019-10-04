@@ -4,6 +4,13 @@
     }
 }
 
+@media screen and (max-width: 500px), (max-height: 850px) {
+    .logo-box {
+        left: 30px;
+    }
+}
+
+
 @media screen and (max-width: 895px) {
     .menu__nav-link {
         margin-left: 20px;
@@ -15,25 +22,31 @@
         left: 30px;
         top: 30px;
     }
+
     #menu__toggle {
         display: none;
     }
-    #menu__toggle:checked~.menu__btn>span {
+
+    #menu__toggle:checked ~ .menu__btn > span {
         transform: rotate(45deg);
     }
-    #menu__toggle:checked~.menu__btn>span::before {
+
+    #menu__toggle:checked ~ .menu__btn > span::before {
         top: 0;
         transform: rotate(0);
     }
-    #menu__toggle:checked~.menu__btn>span::after {
+
+    #menu__toggle:checked ~ .menu__btn > span::after {
         top: 0;
         transform: rotate(90deg);
     }
-    #menu__toggle:checked~.menu {
+
+    #menu__toggle:checked ~ .menu {
         visibility: visible;
         right: 0;
         z-index: 100;
     }
+
     .menu__btn {
         display: flex;
         align-items: center;
@@ -45,7 +58,8 @@
         cursor: pointer;
         z-index: 101;
     }
-    .menu__btn>span, .menu__btn>span::before, .menu__btn>span::after {
+
+    .menu__btn > span, .menu__btn > span::before, .menu__btn > span::after {
         display: block;
         position: absolute;
         width: 100%;
@@ -53,14 +67,17 @@
         background-color: #FFFFFF;
         transition-duration: .25s;
     }
-    .menu__btn>span::before {
+
+    .menu__btn > span::before {
         content: '';
         top: -8px;
     }
-    .menu__btn>span::after {
+
+    .menu__btn > span::after {
         content: '';
         top: 8px;
     }
+
     .menu {
         display: block;
         position: fixed;
@@ -76,6 +93,7 @@
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
         transition-duration: .25s;
     }
+
     .menu__nav-link {
         display: block;
         padding: 12px 24px;
@@ -86,6 +104,7 @@
         text-decoration: none;
         transition-duration: .25s;
     }
+
     .menu__nav-link--logo {
         color: white;
         font-family: 'Machine', sans-serif;

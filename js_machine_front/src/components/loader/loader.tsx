@@ -38,7 +38,7 @@ export const Loader = memo(({ isLoading }: Props) => {
     <Box className={classes.root}>
       <PacmanLoader
         sizeUnit="px"
-        size={60}
+        size={45}
         color={COLORS.MAIN_YELLOW}
         loading={isLoading}
       />
