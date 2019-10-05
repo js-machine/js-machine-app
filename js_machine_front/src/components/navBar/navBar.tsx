@@ -3,20 +3,20 @@ import './styles/route.css';
 import './styles/routeMedia.css';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { useStore } from 'stores';
-import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core/styles';
+// import { useStore } from 'stores';
+// import Avatar from '@material-ui/core/Avatar';
+// import { makeStyles } from '@material-ui/core/styles';
 import { observer } from 'mobx-react-lite';
 
-const useStyles = makeStyles(theme => ({
-  avatar: {
-    marginLeft: 60,
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   avatar: {
+//     marginLeft: 60,
+//   },
+// }));
 
 export const NavBar = observer(() => {
-  const classes = useStyles();
-  const { authStore } = useStore();
+  // const classes = useStyles();
+  // const { authStore } = useStore();
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   return (
@@ -69,22 +69,22 @@ export const NavBar = observer(() => {
         {/*>*/}
         {/*  <FormattedMessage id="page.partners" />*/}
         {/*</NavLink>*/}
-        {authStore.user ? (
-          authStore.user.photoURL ? (
-            <Avatar className={classes.avatar} src={authStore.user.photoURL} />
-          ) : (
-            <Avatar className={classes.avatar}>US</Avatar>
-          )
-        ) : (
-          <NavLink
-            exact
-            className="menu__nav-link"
-            activeClassName="active-link"
-            to="/authorization"
-          >
-            <FormattedMessage id="page.signIn" />
-          </NavLink>
-        )}
+        {/*{authStore.user ? (*/}
+        {/*  authStore.user.photoURL ? (*/}
+        {/*    <Avatar className={classes.avatar} src={authStore.user.photoURL} />*/}
+        {/*  ) : (*/}
+        {/*    <Avatar className={classes.avatar}>US</Avatar>*/}
+        {/*  )*/}
+        {/*) : (*/}
+        {/*  <NavLink*/}
+        {/*    exact*/}
+        {/*    className="menu__nav-link"*/}
+        {/*    activeClassName="active-link"*/}
+        {/*    to="/authorization"*/}
+        {/*  >*/}
+        {/*    <FormattedMessage id="page.signIn" />*/}
+        {/*  </NavLink>*/}
+        {/*)}*/}
       </div>
     </div>
   );
