@@ -9,7 +9,7 @@ import { FeedbackDialog } from './FeedbackDialog';
 import { sendFeedback } from '../services/main.api';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { observer } from 'mobx-react-lite';
-import { useStore } from 'stores';
+// import { useStore } from 'stores';
 
 const sectionStyle = {
   height: '100%',
@@ -23,7 +23,7 @@ interface SocialLinksProps {
 }
 
 export const SocialLinks = observer((props: SocialLinksProps) => {
-  const { authStore } = useStore();
+  // const {authStore} = useStore();
   const [isFeedbackOpened, setIsFeedbackOpened] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null,
@@ -81,24 +81,22 @@ export const SocialLinks = observer((props: SocialLinksProps) => {
         >
           <img className="social-links__img" src={InstaIcon} alt="inst-icon" />
         </a>
-        {authStore.user && (
-          <>
-            <ChatBubbleIcon
-              className="social-links__img"
-              onClick={event => handleClick(event as any)}
-            />
-            <FeedbackDialog
-              onSend={handleSend}
-              anchorEl={anchorEl}
-              open={isFeedbackOpened}
-              setClose={handleClose}
-            >
-              <div style={{ padding: '10px' }}>
-                {isLoading && <LinearProgress variant="query" />}
-              </div>
-            </FeedbackDialog>
-          </>
-        )}
+        <>
+          <ChatBubbleIcon
+            className="social-links__img"
+            onClick={event => handleClick(event as any)}
+          />
+          <FeedbackDialog
+            onSend={handleSend}
+            anchorEl={anchorEl}
+            open={isFeedbackOpened}
+            setClose={handleClose}
+          >
+            <div style={{padding: '10px'}}>
+              {isLoading && <LinearProgress variant="query" />}
+            </div>
+          </FeedbackDialog>
+        </>
       </div>
     </div>
   );
