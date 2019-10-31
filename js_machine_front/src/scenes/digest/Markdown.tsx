@@ -22,6 +22,9 @@ const useStyles = makeStyles({
       textDecoration: 'none',
       color: '#f2e14c',
     },
+    '& img': {
+      maxWidth: '100%',
+    },
   },
 });
 
