@@ -6,7 +6,7 @@
     "js-machine-app": {
       "hosting": {
         "js-machine-app": [
-          "js-machine-app"
+          "js-machine-app-staging"
         ],
         "js-machine-admin": [
           "js-machine-admin"

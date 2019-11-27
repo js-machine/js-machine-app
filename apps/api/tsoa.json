@@ -1,0 +1,22 @@
+{
+  "swagger": {
+    "outputDirectory": "./apps/api",
+    "entryFile": "./apps/api/src/app/server.ts",
+    "basePath": "/api",
+    "specVersion": 2
+  },
+  "routes": {
+    "basePath": "",
+    "entryFile": "./apps/api/src/app/server.ts",
+    "routesDir": "./apps/api/src/app",
+    "middleware": "express"
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@js-machine-app/models": ["libs/models/src/index.ts"],
+      "@js-machine-app/api/*": ["apps/api/src/app/*"]
+    }
+  },
+  "ignore": ["**/node_modules/**"]
+}
