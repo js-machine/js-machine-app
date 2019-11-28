@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import './styles/partners.css';
 import './styles/partnersMedia.css';
-import { PartnersLogo } from './components/partnersLogo';
+import { PartnersLogo } from './components/PartnersLogo';
 
 import { FormattedMessage } from 'react-intl';
 

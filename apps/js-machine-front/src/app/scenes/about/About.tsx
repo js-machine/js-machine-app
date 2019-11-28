@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import './styles/about.css';
 import './styles/aboutMedia.css';
 import { Tile } from './models/tile';
-import { TileContent } from './components/tileContent';
+import { TileContent } from './components/TileContent';
 import { FormattedMessage } from 'react-intl';
 
 const sectionStyle = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TileElement } from './tileElement';
+import { TileElement } from './TileElement';
 import { Tile } from '../models/tile';
 import { PropsTileContent } from '../models/tileContent';
 import '../styles/tileContent.css';

@@ -4,7 +4,7 @@ import './styles/events.css';
 import { Event } from '@js-machine-app/models';
 import { getEvents } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
-import { EventsContent } from './components/eventsContent';
+import { EventsContent } from './components/EventsContent';
 
 import { FormattedMessage } from 'react-intl';
 

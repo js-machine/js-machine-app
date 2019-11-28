@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import './styles/news.css';
 
-import { NewsContainer } from './components/newsContainer';
+import { NewsContainer } from './components/NewsContainer';
 import { Digest } from '@js-machine-app/models';
 import { getDigests } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';

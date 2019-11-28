@@ -1,6 +1,6 @@
 import React from 'react';
 import { Digest } from '@js-machine-app/models';
-import { NewsPresentation } from './newsPresentation';
+import { NewsPresentation } from './NewsPresentation';
 import '../styles/newsContainer.css';
 import '../styles/newsContainerMedia.css';
 
