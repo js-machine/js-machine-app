@@ -25,7 +25,6 @@ import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
-  MaterialUiPickersDate,
 } from '@material-ui/pickers';
 import Hidden from '@material-ui/core/Hidden';
 import Collapse from '@material-ui/core/Collapse';
@@ -96,7 +95,7 @@ export const CreateEditDigest = memo(
     );
 
     const handleDateChange = useCallback(
-      (date: MaterialUiPickersDate) => {
+      (date: Date | null) => {
         setEditDigest({
           ...editDigest,
           date: (date as Date).toString(),
