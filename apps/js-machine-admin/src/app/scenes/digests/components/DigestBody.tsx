@@ -11,7 +11,7 @@ interface Props {
   digest: Digest;
 }
 
-export const DigestBody = observer(({ digest }: Props) => {
+export const DigestBody = observer(function DigestBody({ digest }: Props) {
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = useCallback(() => {
@@ -35,5 +35,3 @@ export const DigestBody = observer(({ digest }: Props) => {
     </>
   );
 });
-
-DigestBody.displayName = 'DigestBody';

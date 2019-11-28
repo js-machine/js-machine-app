@@ -1,4 +1,4 @@
-import React, { memo, useState, useCallback } from 'react';
+import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { TopBar } from './TopBar';
 import { SideBar } from './SideBar';
@@ -24,16 +24,11 @@ const useStyles = makeStyles(theme => ({
 
 export const Shell = memo(({ children }) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = useCallback(() => {
-    setOpen(!open);
-  }, [open, setOpen]);
 
   return (
     <Box className={classes.root}>
-      <TopBar onClick={handleDrawerOpen} />
-      <SideBar open={open} toggleDrawer={handleDrawerOpen} />
+      <TopBar />
+      <SideBar />
       <Container className={classes.content} fixed>
         <div className={classes.toolbar} />
         {children}

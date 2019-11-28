@@ -8,7 +8,7 @@ interface Props {
   history: History;
 }
 
-export const NewDigest = memo(({ history }: Props) => {
+export const NewDigest = memo(function NewDigest({ history }: Props) {
   const store = useDigestStore();
 
   const handleCreateClick = useCallback(

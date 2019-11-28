@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const ModifyDigest = memo(() => {
+export const ModifyDigest = memo(function ModifyDigest() {
   const classes = useStyles();
   const [title, setTitle] = useState('');
 

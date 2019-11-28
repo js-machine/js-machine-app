@@ -20,7 +20,11 @@ interface Props {
   actions: Actions;
 }
 
-export const DigestCard = observer(({ className, digest, actions }: Props) => {
+export const DigestCard = observer(function DigestCard({
+  className,
+  digest,
+  actions,
+}: Props) {
   const classes = useStyles();
 
   return (
@@ -30,5 +34,3 @@ export const DigestCard = observer(({ className, digest, actions }: Props) => {
     </Card>
   );
 });
-
-DigestCard.displayName = 'Digest';

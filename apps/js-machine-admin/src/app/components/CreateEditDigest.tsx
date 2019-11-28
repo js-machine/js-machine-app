@@ -53,201 +53,203 @@ const emptyDigest: Digest = {
   visible: true,
 };
 
-export const CreateEditDigest = memo(
-  ({ digest = emptyDigest, onCreate, submitText }: Props) => {
-    const classes = useStyles();
+export const CreateEditDigest = memo(function CreateEditDigest({
+  digest = emptyDigest,
+  onCreate,
+  submitText,
+}: Props) {
+  const classes = useStyles();
 
-    const [editDigest, setEditDigest] = useState(digest);
-    const [previewExpanded, setPreviewExpanded] = useState(false);
+  const [editDigest, setEditDigest] = useState(digest);
+  const [previewExpanded, setPreviewExpanded] = useState(false);
 
-    useEffect(() => {
-      setEditDigest(digest);
-    }, [digest]);
+  useEffect(() => {
+    setEditDigest(digest);
+  }, [digest]);
 
-    const handleTitleChange = useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setEditDigest({
-          ...editDigest,
-          title: event.target.value,
-        });
-      },
-      [editDigest],
-    );
+  const handleTitleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEditDigest({
+        ...editDigest,
+        title: event.target.value,
+      });
+    },
+    [editDigest],
+  );
 
-    const handleDescriptionChange = useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setEditDigest({
-          ...editDigest,
-          description: event.target.value,
-        });
-      },
-      [editDigest],
-    );
+  const handleDescriptionChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEditDigest({
+        ...editDigest,
+        description: event.target.value,
+      });
+    },
+    [editDigest],
+  );
 
-    const handleVisibleChange = useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setEditDigest({
-          ...editDigest,
-          visible: event.target.checked,
-        });
-      },
-      [editDigest],
-    );
+  const handleVisibleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEditDigest({
+        ...editDigest,
+        visible: event.target.checked,
+      });
+    },
+    [editDigest],
+  );
 
-    const handleDateChange = useCallback(
-      (date: Date | null) => {
-        setEditDigest({
-          ...editDigest,
-          date: (date as Date).toString(),
-        });
-      },
-      [editDigest],
-    );
+  const handleDateChange = useCallback(
+    (date: Date | null) => {
+      setEditDigest({
+        ...editDigest,
+        date: (date as Date).toString(),
+      });
+    },
+    [editDigest],
+  );
 
-    const handleMobileDateChange = useCallback(
-      (event: ChangeEvent<HTMLInputElement>) => {
-        setEditDigest({
-          ...editDigest,
-          date: new Date(event.target.value).toString(),
-        });
-      },
-      [editDigest],
-    );
+  const handleMobileDateChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setEditDigest({
+        ...editDigest,
+        date: new Date(event.target.value).toString(),
+      });
+    },
+    [editDigest],
+  );
 
-    const handleUpload = useCallback(
-      async (file: File) => {
-        setEditDigest({
-          ...editDigest,
-          content: await readMdFromFile(file),
-        });
-      },
-      [editDigest],
-    );
+  const handleUpload = useCallback(
+    async (file: File) => {
+      setEditDigest({
+        ...editDigest,
+        content: await readMdFromFile(file),
+      });
+    },
+    [editDigest],
+  );
 
-    const handlePreviewClick = useCallback(() => {
-      setPreviewExpanded(!previewExpanded);
-    }, [previewExpanded, setPreviewExpanded]);
+  const handlePreviewClick = useCallback(() => {
+    setPreviewExpanded(!previewExpanded);
+  }, [previewExpanded, setPreviewExpanded]);
 
-    const handleCreateClick = useCallback(() => {
-      onCreate(editDigest);
-    }, [onCreate, editDigest]);
+  const handleCreateClick = useCallback(() => {
+    onCreate(editDigest);
+  }, [onCreate, editDigest]);
 
-    const createDisabled = useMemo(
-      () =>
-        !editDigest.title ||
-        !editDigest.description ||
-        !editDigest.content ||
-        !editDigest.date,
-      [editDigest],
-    );
+  const createDisabled = useMemo(
+    () =>
+      !editDigest.title ||
+      !editDigest.description ||
+      !editDigest.content ||
+      !editDigest.date,
+    [editDigest],
+  );
 
-    const previewDisabled = useMemo(() => !editDigest.content, [editDigest]);
+  const previewDisabled = useMemo(() => !editDigest.content, [editDigest]);
 
-    return (
-      <Card className={classes.card}>
-        <CardContent>
-          <Box>
-            <FormControl>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={editDigest.visible}
-                    onChange={handleVisibleChange}
-                    color="primary"
-                  />
-                }
-                label="Visibility"
-              />
-            </FormControl>
-          </Box>
-          <Hidden smDown>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-              <KeyboardDatePicker
-                disableToolbar
-                variant="inline"
-                format="MM/dd/yyyy"
-                margin="normal"
-                label="Date"
-                value={editDigest.date}
-                onChange={handleDateChange}
-                KeyboardButtonProps={{
-                  'aria-label': 'change date',
-                }}
-              />
-            </MuiPickersUtilsProvider>
-          </Hidden>
-          <Hidden mdUp>
-            <Box>
-              <TextField
-                label="Date"
-                type="date"
-                margin="dense"
-                value={
-                  editDigest.date &&
-                  new Date(editDigest.date).toISOString().slice(0, 10)
-                }
-                onChange={handleMobileDateChange}
-                InputLabelProps={{ shrink: true }}
-              />
-            </Box>
-          </Hidden>
+  return (
+    <Card className={classes.card}>
+      <CardContent>
+        <Box>
+          <FormControl>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={editDigest.visible}
+                  onChange={handleVisibleChange}
+                  color="primary"
+                />
+              }
+              label="Visibility"
+            />
+          </FormControl>
+        </Box>
+        <Hidden smDown>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              label="Date"
+              value={editDigest.date}
+              onChange={handleDateChange}
+              KeyboardButtonProps={{
+                'aria-label': 'change date',
+              }}
+            />
+          </MuiPickersUtilsProvider>
+        </Hidden>
+        <Hidden mdUp>
           <Box>
             <TextField
-              label="Title"
-              value={editDigest.title}
-              onChange={handleTitleChange}
+              label="Date"
+              type="date"
               margin="dense"
-              variant="outlined"
-              fullWidth
+              value={
+                editDigest.date &&
+                new Date(editDigest.date).toISOString().slice(0, 10)
+              }
+              onChange={handleMobileDateChange}
+              InputLabelProps={{ shrink: true }}
             />
           </Box>
-          <Box>
-            <TextField
-              label="Description"
-              value={editDigest.description}
-              onChange={handleDescriptionChange}
-              multiline
-              margin="dense"
-              variant="outlined"
-              fullWidth
-            />
-          </Box>
-          <Box>
-            <FormControl margin="dense">
-              <UploadButton onUpload={handleUpload}>
-                <Button component="span">
-                  Upload
-                  <CloudUploadIcon
-                    className={classes.rightIcon}
-                    color="primary"
-                  />
-                </Button>
-              </UploadButton>
-            </FormControl>
-            <FormControl margin="dense">
-              <Button
-                onClick={handlePreviewClick}
-                component="span"
-                disabled={previewDisabled}
-              >
-                Preview MD
+        </Hidden>
+        <Box>
+          <TextField
+            label="Title"
+            value={editDigest.title}
+            onChange={handleTitleChange}
+            margin="dense"
+            variant="outlined"
+            fullWidth
+          />
+        </Box>
+        <Box>
+          <TextField
+            label="Description"
+            value={editDigest.description}
+            onChange={handleDescriptionChange}
+            multiline
+            margin="dense"
+            variant="outlined"
+            fullWidth
+          />
+        </Box>
+        <Box>
+          <FormControl margin="dense">
+            <UploadButton onUpload={handleUpload}>
+              <Button component="span">
+                Upload
+                <CloudUploadIcon
+                  className={classes.rightIcon}
+                  color="primary"
+                />
               </Button>
-            </FormControl>
-          </Box>
-          <Collapse in={previewExpanded} timeout="auto" unmountOnExit>
-            <Markdown markdown={editDigest.content} />
-          </Collapse>
-        </CardContent>
-        <CardActions>
-          <Button
-            onClick={handleCreateClick}
-            color="primary"
-            disabled={createDisabled}
-          >
-            {submitText || 'Create'}
-          </Button>
-        </CardActions>
-      </Card>
-    );
-  },
-);
+            </UploadButton>
+          </FormControl>
+          <FormControl margin="dense">
+            <Button
+              onClick={handlePreviewClick}
+              component="span"
+              disabled={previewDisabled}
+            >
+              Preview MD
+            </Button>
+          </FormControl>
+        </Box>
+        <Collapse in={previewExpanded} timeout="auto" unmountOnExit>
+          <Markdown markdown={editDigest.content} />
+        </Collapse>
+      </CardContent>
+      <CardActions>
+        <Button
+          onClick={handleCreateClick}
+          color="primary"
+          disabled={createDisabled}
+        >
+          {submitText || 'Create'}
+        </Button>
+      </CardActions>
+    </Card>
+  );
+});

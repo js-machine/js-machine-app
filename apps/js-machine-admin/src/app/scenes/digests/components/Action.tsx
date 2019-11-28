@@ -39,7 +39,7 @@ export interface Actions {
   delete: (digest: Digest) => void;
 }
 
-export const Action = observer(({ digest, actions }: Props) => {
+export const Action = observer(function Action({ digest, actions }: Props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -146,5 +146,3 @@ export const Action = observer(({ digest, actions }: Props) => {
     </>
   );
 });
-
-Action.displayName = 'Action';

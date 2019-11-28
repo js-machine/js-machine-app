@@ -8,10 +8,11 @@ import { Digests } from '@js-machine-app/admin/scenes/digests';
 import { Users } from '@js-machine-app/admin/scenes/users';
 import { NewDigest } from '@js-machine-app/admin/scenes/new-digest';
 import { EditDigest } from '@js-machine-app/admin/scenes/edit-digest';
+import 'mobx-react-lite/optimizeForReactDom';
 
 const theme = createMuiTheme();
 
-export const App = memo(() => {
+export const App = memo(function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -29,5 +30,3 @@ export const App = memo(() => {
     </ThemeProvider>
   );
 });
-
-App.displayName = 'App';

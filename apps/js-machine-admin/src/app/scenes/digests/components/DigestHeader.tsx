@@ -26,7 +26,10 @@ interface Props {
   actions: Actions;
 }
 
-export const DigestHeader = observer(({ digest, actions }: Props) => {
+export const DigestHeader = observer(function DigestHeader({
+  digest,
+  actions,
+}: Props) {
   const classes = useStyles();
 
   const formatedDate = useMemo(() => {
@@ -61,5 +64,3 @@ export const DigestHeader = observer(({ digest, actions }: Props) => {
     </>
   );
 });
-
-DigestHeader.displayName = 'DigestHeader';

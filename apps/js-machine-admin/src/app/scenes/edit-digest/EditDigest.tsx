@@ -10,34 +10,32 @@ interface Props {
   match: match<{ digestId: string }>;
 }
 
-export const EditDigest = memo(
-  ({
-    history,
-    match: {
-      params: { digestId },
-    },
-  }: Props) => {
-    const store = useDigestStore();
-    const [editDigest, setEditDigest] = useState<Digest>();
-
-    useEffect(() => {
-      store.findDigestById(digestId).then(digest => setEditDigest(digest));
-    }, [store, digestId]);
-
-    const handleCreateClick = useCallback(
-      async (digest: Digest) => {
-        await store.saveDigest(digest);
-        history.push('/digests');
-      },
-      [store, history],
-    );
-
-    return (
-      <CreateEditDigest
-        digest={editDigest}
-        onCreate={handleCreateClick}
-        submitText="save"
-      />
-    );
+export const EditDigest = memo(function EditDigest({
+  history,
+  match: {
+    params: { digestId },
   },
-);
+}: Props) {
+  const store = useDigestStore();
+  const [editDigest, setEditDigest] = useState<Digest>();
+
+  useEffect(() => {
+    store.findDigestById(digestId).then(digest => setEditDigest(digest));
+  }, [store, digestId]);
+
+  const handleCreateClick = useCallback(
+    async (digest: Digest) => {
+      await store.saveDigest(digest);
+      history.push('/digests');
+    },
+    [store, history],
+  );
+
+  return (
+    <CreateEditDigest
+      digest={editDigest}
+      onCreate={handleCreateClick}
+      submitText="save"
+    />
+  );
+});

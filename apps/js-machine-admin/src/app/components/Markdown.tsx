@@ -29,7 +29,7 @@ interface Props {
   markdown?: string;
 }
 
-export const Markdown = memo(({ markdown }: Props) => {
+export const Markdown = memo(function Markdown({ markdown }: Props) {
   const classes = useStyles();
 
   const formatedMarkdown = useMemo(
@@ -47,5 +47,3 @@ export const Markdown = memo(({ markdown }: Props) => {
     />
   );
 });
-
-Markdown.displayName = 'Markdown';

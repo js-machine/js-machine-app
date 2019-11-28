@@ -1,4 +1,4 @@
-import React, { memo, useCallback, KeyboardEvent, MouseEvent } from 'react';
+import React, { useCallback, KeyboardEvent, MouseEvent } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -7,6 +7,8 @@ import clsx from 'clsx';
 import { SideList } from './SideList';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import { useStore } from '@js-machine-app/admin/store';
+import { observer } from 'mobx-react-lite';
 
 const drawerWidth = 240;
 
@@ -42,13 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-interface Props {
-  open: boolean;
-  toggleDrawer: () => void;
-}
-
-export const SideBar = memo(({ open, toggleDrawer }: Props) => {
+export const SideBar = observer(() => {
   const classes = useStyles();
+  const { uiStore } = useStore();
 
   const handleListClick = useCallback(
     (event: KeyboardEvent | MouseEvent) => {
@@ -61,9 +59,9 @@ export const SideBar = memo(({ open, toggleDrawer }: Props) => {
         return;
       }
 
-      toggleDrawer();
+      uiStore.toggleDrawer();
     },
-    [toggleDrawer],
+    [uiStore],
   );
 
   return (
@@ -71,17 +69,17 @@ export const SideBar = memo(({ open, toggleDrawer }: Props) => {
       <Hidden xsDown>
         <Drawer
           className={clsx(classes.drawer, {
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open,
+            [classes.drawerOpen]: uiStore.drawerOpen,
+            [classes.drawerClose]: !uiStore.drawerOpen,
           })}
           classes={{
             paper: clsx({
-              [classes.drawerOpen]: open,
-              [classes.drawerClose]: !open,
+              [classes.drawerOpen]: uiStore.drawerOpen,
+              [classes.drawerClose]: !uiStore.drawerOpen,
             }),
           }}
           variant="permanent"
-          open={open}
+          open={uiStore.drawerOpen}
         >
           <div className={classes.toolbar} />
           <SideList />
@@ -98,9 +96,9 @@ export const SideBar = memo(({ open, toggleDrawer }: Props) => {
             }),
           }}
           variant="temporary"
-          open={open}
-          onClose={toggleDrawer}
-          onOpen={toggleDrawer}
+          open={uiStore.drawerOpen}
+          onClose={uiStore.toggleDrawer}
+          onOpen={uiStore.toggleDrawer}
         >
           <div className={classes.toolbarMobile}>
             <Typography variant="h6">JS Machine Admin</Typography>

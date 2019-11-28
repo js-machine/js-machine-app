@@ -18,7 +18,7 @@ interface Props {
   history: History;
 }
 
-export const Digests = observer(({ history }: Props) => {
+export const Digests = observer(function Digests({ history }: Props) {
   const classes = useStyles();
   const store = useDigestStore();
 
@@ -60,5 +60,3 @@ export const Digests = observer(({ history }: Props) => {
     </>
   );
 });
-
-Digests.displayName = 'Digests';

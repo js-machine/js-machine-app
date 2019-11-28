@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export const Dial = memo((props: FabProps) => {
+export const Dial = memo(function Dial(props: FabProps) {
   const classes = useStyles();
 
   return (
@@ -24,5 +24,3 @@ export const Dial = memo((props: FabProps) => {
     </Fab>
   );
 });
-
-Dial.displayName = 'Dial';
