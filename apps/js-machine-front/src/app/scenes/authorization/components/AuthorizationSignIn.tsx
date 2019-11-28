@@ -1,6 +1,6 @@
 import React from 'react';
-import { SocialAuth } from './socialAuth';
-import { SignInFrom } from './signInFrom';
+import { SocialAuth } from './SocialAuth';
+import { SignInFrom } from './SignInFrom';
 import { FormattedMessage } from 'react-intl';
 
 import '../styles/authorizationSignIn.css';
