@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Route, Redirect, Switch } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { Shell } from '@js-machine-app/admin/shell';
@@ -13,16 +14,18 @@ const theme = createMuiTheme();
 export const App = memo(() => {
   return (
     <ThemeProvider theme={theme}>
-      <Shell>
-        <Switch>
-          <Route exact path="/" render={() => <Redirect to={'/digests'} />} />
-          <Route exact path="/digests" component={Digests} />
-          <Route exact path="/digests/:digestId" component={EditDigest} />
-          <Route exact path="/new-digest" component={NewDigest} />
-          <Route exact path="/users" component={Users} />
-          <Redirect to={'/'} />
-        </Switch>
-      </Shell>
+      <Router>
+        <Shell>
+          <Switch>
+            <Route exact path="/" render={() => <Redirect to={'/digests'} />} />
+            <Route exact path="/digests" component={Digests} />
+            <Route exact path="/digests/:digestId" component={EditDigest} />
+            <Route exact path="/new-digest" component={NewDigest} />
+            <Route exact path="/users" component={Users} />
+            <Redirect to={'/'} />
+          </Switch>
+        </Shell>
+      </Router>
     </ThemeProvider>
   );
 });
