@@ -1,4 +1,22 @@
-# JsMachineApp
+# js-machine-app
+
+[![Build Status](https://vsrm.dev.azure.com/jsmachineteam/_apis/public/Release/badge/ad2851f3-4ffc-403c-a1bc-1af9ecf2cd08/1/1)](https://dev.azure.com/jsmachineteam/js-machine-app/_release?view=mine&definitionId=1)
+
+https://js-machine-app.web.app/
+
+Link to [Azure DevOps](https://dev.azure.com/jsmachineteam/js-machine-app/_build)
+
+To proxy to the main server you should change "target" property at the proxy.conf.json:
+
+```
+{
+  "/api": {
+    "target": "https://europe-west1-js-machine-app.cloudfunctions.net",
+    "secure": false
+  }
+}
+
+```
 
 This project was generated using [Nx](https://nx.dev).
 
