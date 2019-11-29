@@ -1,0 +1,26 @@
+.partners-logo {
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+  display: flex;
+}
+
+.partners-logo__img {
+  width: 260px;
+  height: 90px;
+  margin-left: 95px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.partners-logo__img_epam {
+  background-image: url('../images/epam-icon.png');
+}
+
+.partners-logo__img_dev-by {
+  background-image: url('../images/dev-by-icon.png');
+}
+
+.partners-logo__img_streamline {
+  background-image: url('../images/streamline-icon.png');
+}

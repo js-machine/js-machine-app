@@ -2,44 +2,12 @@
   "hosting": [
     {
       "target": "js-machine-admin",
-      "public": "js_machine_admin/build",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "public": "./dist/apps/js-machine-admin",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
-          "source": "/getDigests",
-          "function": "getDigests"
-        },
-        {
-          "source": "/createDigest",
-          "function": "createDigest"
-        },
-        {
-          "source": "/saveDigest",
-          "function": "saveDigest"
-        },
-        {
-          "source": "/deleteDigest",
-          "function": "deleteDigest"
-        },
-        {
-          "source": "/hideDigest",
-          "function": "hideDigest"
-        },
-        {
-          "source": "/showDigest",
-          "function": "showDigest"
-        },
-        {
-          "source": "/uploadDigestMd",
-          "function": "uploadDigestMd"
-        },
-        {
-          "source": "/getFeedbacks",
-          "function": "getFeedbacks"
+          "source": "/api",
+          "function": "api"
         },
         {
           "source": "**",
@@ -49,32 +17,12 @@
     },
     {
       "target": "js-machine-app",
-      "public": "js_machine_front/build",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "public": "./dist/apps/js-machine-front",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
-          "source": "/getAllEvents",
-          "function": "getAllEvents"
-        },
-        {
-          "source": "/getRecentEvents",
-          "function": "getRecentEvents"
-        },
-        {
-          "source": "/getDigests",
-          "function": "getDigests"
-        },
-        {
-          "source": "/getDigestById",
-          "function": "getDigestById"
-        },
-        {
-          "source": "/sendFeedback",
-          "function": "sendFeedback"
+          "source": "/api",
+          "function": "api"
         },
         {
           "source": "**",
@@ -83,13 +31,7 @@
       ]
     }
   ],
-  "functions": {},
-  "firestore": {
-    "rules": "firestore.rules"
-  },
-  "emulators": {
-    "firestore": {
-      "port": "5002"
-    }
+  "functions": {
+    "source": "/"
   }
 }

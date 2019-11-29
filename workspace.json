@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "projects": {
+    "js-machine-front": {
+      "root": "apps/js-machine-front",
+      "sourceRoot": "apps/js-machine-front/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/js-machine-front",
+            "index": "apps/js-machine-front/src/index.html",
+            "main": "apps/js-machine-front/src/main.tsx",
+            "polyfills": "apps/js-machine-front/src/polyfills.ts",
+            "tsConfig": "apps/js-machine-front/tsconfig.app.json",
+            "assets": [
+              "apps/js-machine-front/src/favicon.ico",
+              "apps/js-machine-front/src/assets",
+              "apps/js-machine-front/src/fonts",
+              "apps/js-machine-front/src/manifest.json",
+              "apps/js-machine-front/src/robots.txt"
+            ],
+            "styles": ["apps/js-machine-front/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/js-machine-front/src/environments/environment.ts",
+                  "with": "apps/js-machine-front/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "js-machine-front:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "js-machine-front:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/js-machine-front/.eslintrc",
+            "tsConfig": [
+              "apps/js-machine-front/tsconfig.app.json",
+              "apps/js-machine-front/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/js-machine-front/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/js-machine-front/jest.config.js",
+            "tsConfig": "apps/js-machine-front/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "js-machine-front-e2e": {
+      "root": "apps/js-machine-front-e2e",
+      "sourceRoot": "apps/js-machine-front-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/js-machine-front-e2e/cypress.json",
+            "tsConfig": "apps/js-machine-front-e2e/tsconfig.e2e.json",
+            "devServerTarget": "js-machine-front:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "js-machine-front:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/js-machine-front-e2e/.eslintrc",
+            "tsConfig": ["apps/js-machine-front-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/js-machine-front-e2e/**"]
+          }
+        }
+      }
+    },
+    "api": {
+      "root": "apps/api",
+      "sourceRoot": "apps/api/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/api",
+            "main": "apps/api/src/main.ts",
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "assets": ["apps/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/src/environments/environment.ts",
+                  "with": "apps/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/api/.eslintrc",
+            "tsConfig": [
+              "apps/api/tsconfig.app.json",
+              "apps/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/api/jest.config.js",
+            "tsConfig": "apps/api/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "js-machine-admin": {
+      "root": "apps/js-machine-admin",
+      "sourceRoot": "apps/js-machine-admin/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/js-machine-admin",
+            "index": "apps/js-machine-admin/src/index.html",
+            "main": "apps/js-machine-admin/src/main.tsx",
+            "polyfills": "apps/js-machine-admin/src/polyfills.ts",
+            "tsConfig": "apps/js-machine-admin/tsconfig.app.json",
+            "assets": [
+              "apps/js-machine-admin/src/favicon.ico",
+              "apps/js-machine-admin/src/assets",
+              "apps/js-machine-admin/src/manifest.json",
+              "apps/js-machine-admin/src/robots.txt"
+            ],
+            "styles": ["apps/js-machine-admin/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/js-machine-admin/src/environments/environment.ts",
+                  "with": "apps/js-machine-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "js-machine-admin:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "js-machine-admin:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/js-machine-admin/.eslintrc",
+            "tsConfig": [
+              "apps/js-machine-admin/tsconfig.app.json",
+              "apps/js-machine-admin/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/js-machine-admin/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/js-machine-admin/jest.config.js",
+            "tsConfig": "apps/js-machine-admin/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "js-machine-admin-e2e": {
+      "root": "apps/js-machine-admin-e2e",
+      "sourceRoot": "apps/js-machine-admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/js-machine-admin-e2e/cypress.json",
+            "tsConfig": "apps/js-machine-admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "js-machine-admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "js-machine-admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/js-machine-admin-e2e/.eslintrc",
+            "tsConfig": ["apps/js-machine-admin-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/js-machine-admin-e2e/**"]
+          }
+        }
+      }
+    },
+    "models": {
+      "root": "libs/models",
+      "sourceRoot": "libs/models/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/models/.eslintrc",
+            "tsConfig": [
+              "libs/models/tsconfig.lib.json",
+              "libs/models/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/models/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/models/jest.config.js",
+            "tsConfig": "libs/models/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "data-service": {
+      "root": "libs/data-service",
+      "sourceRoot": "libs/data-service/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/data-service/.eslintrc",
+            "tsConfig": [
+              "libs/data-service/tsconfig.lib.json",
+              "libs/data-service/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/data-service/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/data-service/jest.config.js",
+            "tsConfig": "libs/data-service/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/web": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "js-machine-front"
+}

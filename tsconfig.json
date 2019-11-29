@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@js-machine-app/models": ["libs/models/src/index.ts"],
+      "@js-machine-app/api/*": ["apps/api/src/app/*"],
+      "@js-machine-app/admin/*": ["apps/js-machine-admin/src/app/*"],
+      "@js-machine-app/data-service": ["libs/data-service/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
