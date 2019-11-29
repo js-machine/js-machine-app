@@ -1,5 +1,0 @@
-[run]
-include = js_machine/*
-omit = *migrations*, *tests*
-plugins =
-    django_coverage_plugin

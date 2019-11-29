@@ -1,0 +1,33 @@
+{
+  "npmScope": "js-machine-app",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "js-machine-front": {
+      "tags": []
+    },
+    "js-machine-front-e2e": {
+      "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "js-machine-admin": {
+      "tags": []
+    },
+    "js-machine-admin-e2e": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "data-service": {
+      "tags": []
+    }
+  }
+}
