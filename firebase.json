@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "js-machine-admin",
-      "public": "dist/apps/js-machine-admin",
+      "public": "./dist/apps/js-machine-admin",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -17,7 +17,7 @@
     },
     {
       "target": "js-machine-app",
-      "public": "dist/apps/js-machine-front",
+      "public": "./dist/apps/js-machine-front",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {

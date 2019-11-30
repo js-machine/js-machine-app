@@ -4,15 +4,13 @@ import { RootStore } from './root.store';
 
 configure({ enforceActions: 'always' });
 
-const providerGmail = new firebase.auth.GoogleAuthProvider();
-
 export class AuthStore {
   @observable public user?: firebase.User | null;
 
   public constructor(private rootStore: RootStore) {
-    firebase.auth().onAuthStateChanged(user => {
-      runInAction(() => (this.user = user));
-    });
+    // firebase.auth().onAuthStateChanged(user => {
+    //   runInAction(() => (this.user = user));
+    // });
   }
 
   @action public register = async (login: string, password: string) => {
@@ -46,7 +44,7 @@ export class AuthStore {
   @action public loginGmail = async () => {
     await firebase
       .auth()
-      .signInWithPopup(providerGmail)
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(res => {
         const user = res.user;
 
