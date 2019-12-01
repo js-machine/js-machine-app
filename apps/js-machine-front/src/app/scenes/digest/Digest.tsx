@@ -82,7 +82,7 @@ export const Digest = memo(({ history, match }: Props) => {
     <Grid className={classes.root} container>
       <Hidden smDown>
         <Grid className={classes.leftSide} item md={3}>
-          <BackButton className={classes.backButton} onClick={history.goBack}>
+          <BackButton className={classes.backButton} onClick={ () => history.push('/news') }>
             <FormattedMessage id="digest.back" />
           </BackButton>
           <Options className={classes.options} />
