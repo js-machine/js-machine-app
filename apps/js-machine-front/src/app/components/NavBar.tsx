@@ -61,14 +61,14 @@ export const NavBar = observer(() => {
         >
           <FormattedMessage id="page.events" />
         </NavLink>
-        <NavLink
+        {/* <NavLink
           exact
           className="menu__nav-link"
           activeClassName="active-link"
           to="/partners"
         >
           <FormattedMessage id="page.partners" />
-        </NavLink>
+        </NavLink> */}
         {/* {authStore.user ? (
           authStore.user.photoURL ? (
             <Avatar className={classes.avatar} src={authStore.user.photoURL} />
