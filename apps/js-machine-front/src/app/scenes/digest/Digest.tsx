@@ -82,8 +82,8 @@ export const Digest = memo(({ history, match }: Props) => {
     () => {
       history.push('/news');
     },
-    []
-  )
+    [history],
+  );
 
   return (
     <Grid className={classes.root} container>
