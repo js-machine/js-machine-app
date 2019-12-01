@@ -1,3 +1,7 @@
+.digest-link{
+    text-decoration: none;
+}
+
 .news {
     display: flex;
     flex-flow: row wrap;
@@ -7,7 +11,6 @@
     right: 70px;
     top: 340px;
     overflow-y: scroll;
-    color: white;
     font-family: 'Exo', sans-serif;
 }
 
@@ -29,6 +32,10 @@
     padding: 0 60px 45px;
     box-sizing: border-box;
     cursor: pointer;
+}
+
+.news__content{
+    color: white;
 }
 
 .news__day {
