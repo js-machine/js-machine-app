@@ -3,7 +3,7 @@ import './App.css';
 
 import './firebase.conf';
 import { NavBar } from './components/NavBar';
-import { Partners } from './scenes/partnersLogo/Partners';
+// import { Partners } from './scenes/partnersLogo/Partners';
 import { Events } from './scenes/communityEvents/CommunityEvents';
 import { News } from './scenes/news/News';
 import { About } from './scenes/about/About';
@@ -50,7 +50,7 @@ export const App: React.FC = observer(() => {
                   <Route exact path="/about" component={About} />
                   <Route exact path="/news" component={News} />
                   <Route exact path="/events" component={Events} />
-                  <Route exact path="/partners" component={Partners} />
+                  {/* <Route exact path="/partners" component={Partners} /> */}
                   <Route
                     exact
                     path="/authorization"
