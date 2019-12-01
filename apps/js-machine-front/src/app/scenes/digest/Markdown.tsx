@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
     '& a': {
       textDecoration: 'none',
-      color: '#f2e14c',
+      color: '#2F5C7C',
     },
   },
 });
