@@ -20,7 +20,7 @@
     margin-right: 22px;
     margin-top: 60px;
     overflow-y: scroll;
-    height: 55%;
+    height: calc(71vh - 60px);;
 }
 
 .tile-content__container_flex-container::-webkit-scrollbar{
