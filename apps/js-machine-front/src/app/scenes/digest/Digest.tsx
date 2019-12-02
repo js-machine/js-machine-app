@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { History } from 'history';
 import { makeStyles } from '@material-ui/styles';
@@ -78,11 +78,18 @@ export const Digest = memo(({ history, match }: Props) => {
       .finally(() => setIsLoading(false));
   }, [match]);
 
+  const handleBackButton = useCallback(
+    () => {
+      history.push('/news');
+    },
+    [history],
+  );
+
   return (
     <Grid className={classes.root} container>
       <Hidden smDown>
         <Grid className={classes.leftSide} item md={3}>
-          <BackButton className={classes.backButton} onClick={history.goBack}>
+          <BackButton className={classes.backButton} onClick={ handleBackButton }>
             <FormattedMessage id="digest.back" />
           </BackButton>
           <Options className={classes.options} />

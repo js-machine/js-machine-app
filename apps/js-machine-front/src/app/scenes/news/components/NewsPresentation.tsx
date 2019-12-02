@@ -10,25 +10,25 @@ export const NewsPresentation: React.FC<Digest> = props => {
 
   return (
     <div className="news__wrapper">
-      <Link to={`/digest/${props.id}`}>
+      <Link to={`/digest/${props.id}`} className="digest-link">
         <div className="news__read">
           <div className="news__read-content">ЧИТАТЬ ></div>
         </div>
-      </Link>
 
-      <div className="news__content">
-        <div>
-          <p className="news__day">
-            {newsDate} {newsMonth}
-          </p>
+        <div className="news__content">
+          <div>
+            <p className="news__day">
+              {newsDate} {newsMonth}
+            </p>
+          </div>
+          <div>
+            <p className="news__title">{props.title}</p>
+          </div>
+          <div>
+            <p className="news__description">{props.description}</p>
+          </div>
         </div>
-        <div>
-          <p className="news__title">{props.title}</p>
-        </div>
-        <div>
-          <p className="news__description">{props.description}</p>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 };
