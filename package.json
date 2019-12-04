@@ -29,8 +29,10 @@
     "build:api": "npm run tsoa:gen && nx build api",
     "build:api:watch": "npm run tsoa:gen && nx build api --watch",
     "build:front": "nx build js-machine-front",
+    "build:front:staging": "nx build js-machine-front && npm run worker:front",
     "build:front:prod": "nx build js-machine-front --configuration=production && npm run worker:front",
     "build:admin": "nx build js-machine-admin",
+    "build:admin:staging": "nx build js-machine-admin && npm run worker:admin",
     "build:admin:prod": "nx build js-machine-admin --configuration=production && npm run worker:admin",
     "worker:front": "npx workbox-cli generateSW apps/js-machine-front/src/workbox-config.js",
     "worker:admin": "npx workbox-cli generateSW apps/js-machine-admin/src/workbox-config.js",
@@ -38,6 +40,7 @@
     "start:admin": "nx serve js-machine-admin --port 4201",
     "start:api": "npm run build:api && firebase serve --only functions",
     "firebase:deploy": "firebase deploy",
+    "firebase:emulators": "firebase emulators:start",
     "tsoa:gen": "tsoa swagger -c ./apps/api/tsoa.json && tsoa routes -c ./apps/api/tsoa.json"
   },
   "main": "dist/apps/api/main.js",

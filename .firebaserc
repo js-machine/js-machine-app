@@ -1,6 +1,7 @@
 {
   "projects": {
-    "default": "js-machine-app"
+    "default": "js-machine-app",
+    "staging": "js-machine-dev"
   },
   "targets": {
     "js-machine-app": {
@@ -10,6 +11,16 @@
         ],
         "js-machine-admin": [
           "js-machine-admin"
+        ]
+      }
+    },
+    "js-machine-dev": {
+      "hosting": {
+        "js-machine-app": [
+          "js-machine-dev"
+        ],
+        "js-machine-admin": [
+          "js-machine-admin-dev"
         ]
       }
     }
