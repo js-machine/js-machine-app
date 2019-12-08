@@ -9,7 +9,7 @@ import { Event } from '@js-machine-app/models';
 import { Loader } from '../../components/Loader';
 
 const sectionStyle = {
-  height: '100%',
+  height: '100vh',
   backgroundImage: `url('assets/main.jpg')`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',

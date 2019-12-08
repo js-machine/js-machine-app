@@ -1,14 +1,14 @@
 .body {
-    background-color: rgba(0,0,0,0.6);
-    font-family: 'Exo', sans-serif;    
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Exo', sans-serif;
 }
 
 .title {
-    position: absolute;
-    top: 200px;
-    left: 60px;
-    color: #F2E14C;
-    font-size: 60px;
-    font-weight: bold;
-    letter-spacing: 2px;
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  color: #f2e14c;
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }

@@ -15,6 +15,7 @@ import { Loader } from '../../components/Loader';
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     position: 'relative',
+    height: '100vh',
     minHeight: '100%',
   },
   leftSide: {

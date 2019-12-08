@@ -20,6 +20,7 @@
       "@js-machine-app/models": ["libs/models/src/index.ts"],
       "@js-machine-app/api/*": ["apps/api/src/app/*"],
       "@js-machine-app/admin/*": ["apps/js-machine-admin/src/app/*"],
+      "@js-machine-app/front/*": ["apps/js-machine-front/src/app/*"],
       "@js-machine-app/data-service": ["libs/data-service/src/index.ts"]
     }
   },

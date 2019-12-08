@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react';
-import './App.css';
+import React, { memo, useMemo } from 'react';
 
 import './firebase.conf';
-import { NavBar } from './components/NavBar';
-// import { Partners } from './scenes/partnersLogo/Partners';
+import { theme } from './theme';
+import { DynamicNavBar } from './components/NavBar';
 import { Events } from './scenes/communityEvents/CommunityEvents';
 import { News } from './scenes/news/News';
 import { About } from './scenes/about/About';
@@ -12,7 +11,6 @@ import { Digest } from './scenes/digest';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Authorization } from './scenes/authorization/Authorization';
 import { Route, Redirect, Switch, Router } from 'react-router';
-import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { SnackbarProvider } from 'notistack';
 
@@ -22,14 +20,12 @@ import { RawIntlProvider } from 'react-intl';
 import { createBrowserHistory } from 'history';
 import { observer } from 'mobx-react-lite';
 import { syncHistoryWithStore } from 'mobx-react-router';
-import { useStore } from './stores';
-
-const theme = createMuiTheme();
+import { useStores } from './stores';
 
 const browserHistory = createBrowserHistory();
 
 export const App: React.FC = observer(() => {
-  const { routerStore } = useStore();
+  const { routerStore } = useStores();
 
   const history = useMemo(
     () => syncHistoryWithStore(browserHistory, routerStore),
@@ -41,27 +37,18 @@ export const App: React.FC = observer(() => {
       <RawIntlProvider value={intl}>
         <Router history={history}>
           <SnackbarProvider maxSnack={3}>
-            {/* {authStore.user !== undefined && ( */}
-            <div className="app">
-              <NavBar />
-              <ErrorBoundary>
-                <Switch>
-                  <Route exact path="/" component={Main} />
-                  <Route exact path="/about" component={About} />
-                  <Route exact path="/news" component={News} />
-                  <Route exact path="/events" component={Events} />
-                  {/* <Route exact path="/partners" component={Partners} /> */}
-                  <Route
-                    exact
-                    path="/authorization"
-                    component={Authorization}
-                  />
-                  <Route exact path="/digest/:id" component={Digest} />
-                  <Redirect to={'/'} />
-                </Switch>
-              </ErrorBoundary>
-            </div>
-            {/* )} */}
+            <DynamicNavBar />
+            <ErrorBoundary>
+              <Switch>
+                <Route exact path="/" component={Main} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/digest/:id" component={Digest} />
+                <Route exact path="/events" component={Events} />
+                <Route exact path="/authorization" component={Authorization} />
+                <Redirect to="/" />
+              </Switch>
+            </ErrorBoundary>
           </SnackbarProvider>
         </Router>
       </RawIntlProvider>

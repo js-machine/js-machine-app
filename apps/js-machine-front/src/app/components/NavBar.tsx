@@ -1,91 +1,57 @@
-import React, { useState } from 'react';
-import './styles/route.css';
-import './styles/routeMedia.css';
+import React, { memo } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-// import { useStore } from '../stores';
-// import Avatar from '@material-ui/core/Avatar';
-// import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
+import Hidden from '@material-ui/core/Hidden';
+import { useStores } from '@js-machine-app/front/stores';
 import { observer } from 'mobx-react-lite';
+import { NavDesktop } from './NavDesktop';
+import { NavMobile } from './NavMobile';
 
-// const useStyles = makeStyles(theme => ({
-//   avatar: {
-//     marginLeft: 60,
-//   },
-// }));
+const useStyles = makeStyles(theme => ({
+  titleContainer: {
+    flexGrow: 1,
+  },
+  title: {
+    fontFamily: `'Machine', sans-serif`,
+    fontSize: '1.25rem',
+    textDecoration: 'none',
+    color: theme.palette.primary.contrastText,
+  },
+}));
 
-export const NavBar = observer(() => {
-  // const classes = useStyles();
-  // const { authStore } = useStore();
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+const hiddenRoutes = ['digest'];
+
+export const DynamicNavBar = observer(function DynamicNavBar() {
+  const { routerStore } = useStores();
+
+  if (new RegExp(hiddenRoutes.join('|')).test(routerStore.location.pathname)) {
+    return null;
+  }
+
+  return <NavBar />;
+});
+
+const NavBar = memo(function NavBar() {
+  const classes = useStyles();
 
   return (
-    <div>
-      <div className="logo-box">
-        <NavLink exact className="menu__nav-link menu__nav-link--logo" to="/">
-          JS MACHINE
-        </NavLink>
-      </div>
-
-      <input
-        id="menu__toggle"
-        type="checkbox"
-        checked={isMenuOpened}
-        onChange={() => setIsMenuOpened(!isMenuOpened)}
-      />
-      <label className="menu__btn" htmlFor="menu__toggle">
-        <span />
-      </label>
-      <div className="menu" onClick={() => setIsMenuOpened(false)}>
-        <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/about"
-        >
-          <FormattedMessage id="page.about" />
-        </NavLink>
-        <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/news"
-        >
-          <FormattedMessage id="page.news" />
-        </NavLink>
-        <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/events"
-        >
-          <FormattedMessage id="page.events" />
-        </NavLink>
-        {/* <NavLink
-          exact
-          className="menu__nav-link"
-          activeClassName="active-link"
-          to="/partners"
-        >
-          <FormattedMessage id="page.partners" />
-        </NavLink> */}
-        {/* {authStore.user ? (
-          authStore.user.photoURL ? (
-            <Avatar className={classes.avatar} src={authStore.user.photoURL} />
-          ) : (
-            <Avatar className={classes.avatar}>US</Avatar>
-          )
-        ) : (
-          <NavLink
-            exact
-            className="menu__nav-link"
-            activeClassName="active-link"
-            to="/authorization"
-          >
-            <FormattedMessage id="page.signIn" />
+    <AppBar position="fixed">
+      <Toolbar>
+        <Box className={classes.titleContainer}>
+          <NavLink exact to="/" className={classes.title}>
+            JS MACHINE
           </NavLink>
-        )} */}
-      </div>
-    </div>
+        </Box>
+        <Hidden smDown>
+          <NavDesktop />
+        </Hidden>
+        <Hidden mdUp>
+          <NavMobile />
+        </Hidden>
+      </Toolbar>
+    </AppBar>
   );
 });
