@@ -6,6 +6,6 @@ const rootStore = new RootStore();
 
 const StoreContext = createContext(rootStore);
 
-export const useStore = () => {
+export const useStores = () => {
   return useContext(StoreContext);
 };

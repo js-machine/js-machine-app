@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import '../styles/authSocial.css';
 import '../styles/authSocialMedia.css';
-import { useStore } from '../../../stores';
+import { useStores } from '../../../stores';
 
 export const SocialAuth: React.FC = () => {
-  const { authStore } = useStore();
+  const { authStore } = useStores();
 
   const handleGoogleClick = useCallback(() => {
     authStore.loginGmail();
