@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/socialLinks.css';
 import '../styles/socialLinksMedia.css';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import ChatBubbleIcon from '@material-ui/icons/ChatBubbleOutline';
 import { FeedbackDialog } from './FeedbackDialog';
 import { sendFeedback } from '@js-machine-app/data-service';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -56,7 +56,7 @@ export const SocialLinks = observer((props: SocialLinksProps) => {
         >
           <img
             className="social-links__img"
-            src={'assets/telegram-icon.png'}
+            src={'assets/telegram.svg'}
             alt="telegram-icon"
           />
         </a>
@@ -67,7 +67,7 @@ export const SocialLinks = observer((props: SocialLinksProps) => {
         >
           <img
             className="social-links__img"
-            src={'assets/vk-icon.png'}
+            src={'assets/vk.svg'}
             alt="vk-icon"
           />
         </a>
@@ -78,7 +78,7 @@ export const SocialLinks = observer((props: SocialLinksProps) => {
         >
           <img
             className="social-links__img"
-            src={'assets/instagram-icon.png'}
+            src={'assets/instagram.svg'}
             alt="inst-icon"
           />
         </a>

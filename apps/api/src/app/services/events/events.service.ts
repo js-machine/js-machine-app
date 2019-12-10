@@ -15,7 +15,7 @@ export class EventsService {
     return this.firebaseService.mapCollectionFromSnapshot(snapshot);
   }
 
-  public async getRecentEvents(limit = 5): Promise<Event[]> {
+  public async getRecentEvents(limit = 4): Promise<Event[]> {
     const snapshot = await this.firebaseService.firestore
       .collection('events')
       .orderBy('date', 'desc')

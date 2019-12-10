@@ -7,11 +7,11 @@
 }
 
 .event_wrapper{
-    padding: 0 36px 0;
+    padding: 0 24px 0;
     display: flex;
     flex-flow: row nowrap;
     color: white;
-    font-family: 'Exo', sans-serif;    
+    font-family: 'Avenir Next', 'Exo', sans-serif;
 }
 
 .event__date{
