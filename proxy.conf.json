@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:5001/js-machine-app/us-central1/api",
+    "target": "https://js-machine-dev.web.app/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

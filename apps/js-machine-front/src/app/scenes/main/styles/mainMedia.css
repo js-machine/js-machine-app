@@ -1,9 +1,10 @@
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1230px){
     .main__events{
         width: 100%;
         overflow: scroll;
         overflow-y: hidden;
-        margin: 0 0px 45px;
+        margin: 0 0px 36px;
+        padding-bottom: 8px;
     }
 
     .main__events::-webkit-scrollbar{
