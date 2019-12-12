@@ -1,3 +1,9 @@
+@media screen and (max-width: 1400px){
+    .event_wrapper{
+        min-width: 27%;
+    }
+}
+
 @media screen and (max-width: 1050px){
     .event_wrapper{
         min-width: 40%;
