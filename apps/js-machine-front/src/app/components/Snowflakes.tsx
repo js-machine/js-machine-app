@@ -16,9 +16,30 @@ export function Snowflakes() {
         startSnowflakes();
     });
 
+    const getCanvasElementById = (id: string): HTMLCanvasElement => {
+        const canvas = document.getElementById(id);
+    
+        if (!(canvas instanceof HTMLCanvasElement)) {
+            throw new Error(`The element of id "${id}" is not a HTMLCanvasElement. Make sure a <canvas id="${id}""> element is present in the document.`);
+        }
+    
+        return canvas;
+    }
+
+    const getCanvasRenderingContext2D = (canvas: HTMLCanvasElement): CanvasRenderingContext2D => {
+        const context = canvas.getContext('2d');
+    
+        if (!(context instanceof CanvasRenderingContext2D)) {
+            throw new Error('This browser does not support 2-dimensional canvas rendering contexts.');
+        }
+    
+        return context;
+    }
+
     function startSnowflakes() {
-        let canvas: any = document.getElementById("snow"),
-            ctx: CanvasRenderingContext2D = canvas.getContext("2d");
+
+        const canvas: HTMLCanvasElement = getCanvasElementById('snow');
+        const ctx: CanvasRenderingContext2D = getCanvasRenderingContext2D(canvas);
 
         if (!isSnowing) {
             window.cancelAnimationFrame(requestId.current);
@@ -26,8 +47,8 @@ export function Snowflakes() {
             return;
         }
 
-        let flakesAmoung = getFlakesAmoungByWindowSize();
-        let flakes: Snowflake[] = createSnowflakes(flakesAmoung);
+        const flakesAmoung = getFlakesAmoungByWindowSize();
+        const flakes: Snowflake[] = createSnowflakes(flakesAmoung);
 
         window.addEventListener("resize", function () {
             canvas.width = window.innerWidth;
@@ -38,15 +59,16 @@ export function Snowflakes() {
         snowStep();
 
         function getFlakesAmoungByWindowSize() {
-            if (innerWidth < 500) {
+            const width = window.innerWidth;
+            if (width < 500) {
                 return (60);
-            } else if (innerWidth < 750) {
+            } else if (width < 750) {
                 return (80);
-            } else if (innerWidth < 1000) {
+            } else if (width < 1000) {
                 return (100)
-            } else if (innerWidth < 1200) {
+            } else if (width < 1200) {
                 return (120);
-            } else if (innerWidth < 1600) {
+            } else if (width < 1600) {
                 return (160)
             } else {
                 return (180);
@@ -56,7 +78,7 @@ export function Snowflakes() {
         function snowStep() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < flakes.length; i++) {
-                let flake: Snowflake = flakes[i];
+                const flake: Snowflake = flakes[i];
 
                 flake.speedX *= .98;
                 flake.speedX += Math.cos(flake.step += .05) * flake.stepSize;
@@ -90,9 +112,9 @@ export function Snowflakes() {
         }
 
         function createSnowflakes(flakeCount: number): Snowflake[] {
-            let flakes: Snowflake[] = [];
+            const flakes: Snowflake[] = [];
             for (let i = 0; i < flakeCount; i++) {
-                let x = Math.floor(Math.random() * canvas.width),
+                const x = Math.floor(Math.random() * canvas.width),
                     y = Math.floor(Math.random() * canvas.height),
                     size = (Math.random() * 3) + 2,
                     speedY = (Math.random() * 1) + 0.5,
@@ -106,17 +128,17 @@ export function Snowflakes() {
                     size: size,
                     stepSize: (Math.random()) / 30,
                     step: 0,
-                    opacity: opacity
+                    opacity: opacity,
                 });
             }
             return flakes;
         };
     }
 
-    const useStyles: any = makeStyles({
+    const useStyles = makeStyles({
         colorSecondary: {
             '&$checked': {
-                color: '#f2e14c'
+                color: '#f2e14c',
             },
         },
         switchBase: {
@@ -150,7 +172,7 @@ export function Snowflakes() {
                     onClick={() => setSnowing(!isSnowing)}>
                 </Switch>
             </div>
-            <canvas id="snow" width={innerWidth} height={innerHeight}></canvas>
+            <canvas id="snow" width={window.innerWidth} height={window.innerHeight}></canvas>
         </>
     );
 }
