@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import './firebase.conf';
 import { theme } from './theme';
