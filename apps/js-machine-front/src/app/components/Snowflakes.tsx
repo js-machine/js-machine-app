@@ -47,7 +47,7 @@ export function Snowflakes() {
             return;
         }
 
-        const flakesAmoung = getFlakesAmoungByWindowSize();
+        const flakesAmoung = getFlakesAmoungByScreenWidth(window.innerWidth);
         const flakes: Snowflake[] = createSnowflakes(flakesAmoung);
 
         window.addEventListener("resize", function () {
@@ -57,8 +57,7 @@ export function Snowflakes() {
 
         snowStep();
 
-        function getFlakesAmoungByWindowSize() {
-            const width = window.innerWidth;
+        function getFlakesAmoungByScreenWidth(width: number) {
             if (width < 500) {
                 return (60);
             } else if (width < 750) {
@@ -134,10 +133,12 @@ export function Snowflakes() {
         };
     }
 
+    const MAIN_YELLOW = '#F2E14C';
+
     const useStyles = makeStyles({
         colorSecondary: {
             '&$checked': {
-                color: '#f2e14c',
+                color: MAIN_YELLOW,
             },
         },
         switchBase: {
@@ -145,7 +146,7 @@ export function Snowflakes() {
             '&$checked': {
                 color: 'white',
                 '& + $track': {
-                    backgroundColor: '#f2e14c',
+                    backgroundColor: MAIN_YELLOW,
                     opacity: 1,
                 },
                 "&:hover": {
