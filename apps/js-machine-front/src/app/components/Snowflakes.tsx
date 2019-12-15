@@ -24,7 +24,7 @@ export function Snowflakes() {
         }
     
         return canvas;
-    }
+    };
 
     const getCanvasRenderingContext2D = (canvas: HTMLCanvasElement): CanvasRenderingContext2D => {
         const context = canvas.getContext('2d');
@@ -34,7 +34,7 @@ export function Snowflakes() {
         }
     
         return context;
-    }
+    };
 
     function startSnowflakes() {
 
@@ -55,7 +55,6 @@ export function Snowflakes() {
             canvas.height = window.innerHeight;
         });
 
-
         snowStep();
 
         function getFlakesAmoungByWindowSize() {
@@ -65,11 +64,11 @@ export function Snowflakes() {
             } else if (width < 750) {
                 return (80);
             } else if (width < 1000) {
-                return (100)
+                return (100);
             } else if (width < 1200) {
                 return (120);
             } else if (width < 1600) {
-                return (160)
+                return (160);
             } else {
                 return (180);
             }
