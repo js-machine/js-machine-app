@@ -13,6 +13,7 @@ import { Authorization } from './scenes/authorization/Authorization';
 import { Route, Redirect, Switch, Router } from 'react-router';
 import { ThemeProvider } from '@material-ui/styles';
 import { SnackbarProvider } from 'notistack';
+import { Snowflakes } from './components/Snowflakes';
 
 // Internationalization
 import { intl } from './i18n/messages';
@@ -36,6 +37,7 @@ export const App: React.FC = observer(() => {
     <ThemeProvider theme={theme}>
       <RawIntlProvider value={intl}>
         <Router history={history}>
+        <Snowflakes/>
           <SnackbarProvider maxSnack={3}>
             <DynamicNavBar />
             <ErrorBoundary>

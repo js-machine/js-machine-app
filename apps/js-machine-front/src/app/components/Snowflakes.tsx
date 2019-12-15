@@ -117,7 +117,7 @@ export function Snowflakes() {
         colorSecondary: {
             '&$checked': {
                 color: '#f2e14c'
-            }
+            },
         },
         switchBase: {
             color: 'white',
@@ -129,10 +129,7 @@ export function Snowflakes() {
                 },
                 "&:hover": {
                     backgroundColor: '#f2e14c4d',
-                }
-            },
-            '&$focusVisible $thumb': {
-                color: '#f2e14c',
+                },
             },
         },
         track: {},
