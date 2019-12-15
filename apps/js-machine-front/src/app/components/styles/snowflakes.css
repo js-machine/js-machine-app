@@ -1,0 +1,18 @@
+#snow {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.snow-switcher {
+    display: flex;
+    position: absolute;
+    z-index: 1101;
+    color: white;
+}
+
+.snow-switcher__label {
+    font-size: 0.9rem;;
+}

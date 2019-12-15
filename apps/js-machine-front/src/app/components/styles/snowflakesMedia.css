@@ -1,0 +1,32 @@
+@media screen and (min-width: 960px) {
+    .snow-switcher {
+        top: 27px;
+        left: 28px;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .snow-switcher {
+        top: 14px;
+        left: 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .snow-switcher {
+        top: 0px;
+        left: 0px;
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+    .snow-switcher {
+        top: -2px;
+        left: -4px;
+    }
+
+    .snow-switcher__label {
+        font-size: 0.9rem;
+    }
+}
