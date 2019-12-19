@@ -11,7 +11,7 @@
     display: flex;
     flex-flow: row nowrap;
     color: white;
-    font-family: 'Avenir Next', 'Exo', sans-serif;
+    font-family: 'Avenir Next', sans-serif;
 }
 
 .event__date{
