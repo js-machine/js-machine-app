@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-flow: column nowrap;
-    font-family: 'Exo';
+    font-family: 'Avenir Next', sans-serif; 
     transition: 0.7s;
     right: 270px;
 }
