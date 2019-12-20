@@ -1,5 +1,6 @@
 export const errorIndicator = {
-  'errorIndicator.title': 'УПС!',
-  'errorIndicator.subTitle': 'что-то пошло не так',
-  'errorIndicator.subTitle1': 'но мы уже отправили парня из поддержки починить это',
+  'errorIndicator.title': 'Oops...',
+  'errorIndicator.subTitle': 'Что-то пошло не так',
+  'errorIndicator.subTitle1':
+    'Попробуйте обновить страницу или вернитесь позже',
 };

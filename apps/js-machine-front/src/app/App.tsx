@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import './firebase.conf';
 import { theme } from './theme';
@@ -31,22 +31,22 @@ export const App: React.FC = observer(() => {
 
   return (
     <ThemeProvider theme={theme}>
-        <Router history={history}>
-          <SnackbarProvider maxSnack={3}>
-            <DynamicNavBar />
-            <ErrorBoundary>
-              <Switch>
-                <Route exact path="/" component={Main} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/news" component={News} />
-                <Route exact path="/digest/:id" component={Digest} />
-                <Route exact path="/events" component={Events} />
-                <Route exact path="/authorization" component={Authorization} />
-                <Redirect to="/" />
-              </Switch>
-            </ErrorBoundary>
-          </SnackbarProvider>
-        </Router>
+      <Router history={history}>
+        <SnackbarProvider maxSnack={3}>
+          <DynamicNavBar />
+          <ErrorBoundary>
+            <Switch>
+              <Route exact path="/" component={Main} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/news" component={News} />
+              <Route exact path="/digest/:id" component={Digest} />
+              <Route exact path="/events" component={Events} />
+              <Route exact path="/authorization" component={Authorization} />
+              <Redirect to="/" />
+            </Switch>
+          </ErrorBoundary>
+        </SnackbarProvider>
+      </Router>
     </ThemeProvider>
   );
 });
