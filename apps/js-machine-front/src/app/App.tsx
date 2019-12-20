@@ -14,9 +14,6 @@ import { Route, Redirect, Switch, Router } from 'react-router';
 import { ThemeProvider } from '@material-ui/styles';
 import { SnackbarProvider } from 'notistack';
 
-// Internationalization
-import { intl } from './i18n/messages';
-import { RawIntlProvider } from 'react-intl';
 import { createBrowserHistory } from 'history';
 import { observer } from 'mobx-react-lite';
 import { syncHistoryWithStore } from 'mobx-react-router';
@@ -34,7 +31,6 @@ export const App: React.FC = observer(() => {
 
   return (
     <ThemeProvider theme={theme}>
-      <RawIntlProvider value={intl}>
         <Router history={history}>
           <SnackbarProvider maxSnack={3}>
             <DynamicNavBar />
@@ -51,7 +47,6 @@ export const App: React.FC = observer(() => {
             </ErrorBoundary>
           </SnackbarProvider>
         </Router>
-      </RawIntlProvider>
     </ThemeProvider>
   );
 });
