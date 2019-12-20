@@ -20,7 +20,7 @@
 
 .error-indicator__title {
   color: #F2E14C;
-  font-family: 'Exo', sans-serif;   
+  font-family: 'Avenir Next', sans-serif;   
   font-size:6rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -29,7 +29,7 @@
 
 .error-indicator__subtitle {
   color: white;
-  font-family: 'Exo', sans-serif;   
+  font-family: 'Avenir Next', sans-serif;   
   font-size: 1.2rem;
   text-align: left;
   letter-spacing: 2px;

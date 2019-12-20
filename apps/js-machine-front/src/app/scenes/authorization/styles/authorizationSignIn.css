@@ -3,7 +3,7 @@
     display: flex;
     flex-flow: column nowrap;
     transition: 0.7s;
-    font-family: 'Exo';
+    font-family: 'Avenir Next', sans-serif; 
     transition: 0.7s;
     left: 270px;
 }
