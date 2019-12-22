@@ -14,28 +14,30 @@ export function useSnowflakes() {
     const handleSnowSwitch = useCallback(() => {
         setSnowing(!isSnowing);
     }, [isSnowing]);
-    
-    const getCanvasElementById = useCallback((id: string): HTMLCanvasElement => {
-        const canvas = document.getElementById(id);
-    
-        if (!(canvas instanceof HTMLCanvasElement)) {
-            throw new Error(`The element of id "${id}" is not a HTMLCanvasElement. Make sure a <canvas id="${id}""> element is present in the document.`);
-        }
-    
-        return canvas;
-    }, []);
 
-    const getCanvasRenderingContext2D = useCallback((canvas: HTMLCanvasElement): CanvasRenderingContext2D => {
-        const context = canvas.getContext('2d');
-    
-        if (!(context instanceof CanvasRenderingContext2D)) {
-            throw new Error('This browser does not support 2-dimensional canvas rendering contexts.');
-        }
-    
-        return context;
-    }, []);
 
-    const startSnowflakes = useCallback( () => {
+    const startSnowflakes = useCallback(() => {
+
+        const getCanvasElementById = (id: string): HTMLCanvasElement => {
+            const canvas = document.getElementById('snow');
+
+            if (!(canvas instanceof HTMLCanvasElement)) {
+                throw new Error(`The element of id "${id}" is not a HTMLCanvasElement. Make sure a <canvas id="${id}""> element is present in the document.`);
+            }
+
+            return canvas;
+        };
+
+        const getCanvasRenderingContext2D = (canvas: HTMLCanvasElement): CanvasRenderingContext2D => {
+            const context = canvas.getContext('2d');
+
+            if (!(context instanceof CanvasRenderingContext2D)) {
+                throw new Error('This browser does not support 2-dimensional canvas rendering contexts.');
+            }
+
+            return context;
+        };
+
 
         const canvas: HTMLCanvasElement = getCanvasElementById('snow');
         const ctx: CanvasRenderingContext2D = getCanvasRenderingContext2D(canvas);
@@ -132,5 +134,5 @@ export function useSnowflakes() {
         };
     }, [isSnowing]);
 
-    return {isSnowing, handleSnowSwitch};
+    return { isSnowing, handleSnowSwitch };
 };
