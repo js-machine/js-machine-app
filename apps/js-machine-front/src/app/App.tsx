@@ -13,6 +13,7 @@ import { Authorization } from './scenes/authorization/Authorization';
 import { Route, Redirect, Switch, Router } from 'react-router';
 import { ThemeProvider } from '@material-ui/styles';
 import { SnackbarProvider } from 'notistack';
+import { Snowflakes } from './components/Snowflakes';
 
 import { createBrowserHistory } from 'history';
 import { observer } from 'mobx-react-lite';
@@ -32,6 +33,7 @@ export const App: React.FC = observer(() => {
   return (
     <ThemeProvider theme={theme}>
       <Router history={history}>
+        <Snowflakes/>
         <SnackbarProvider maxSnack={3}>
           <DynamicNavBar />
           <ErrorBoundary>
