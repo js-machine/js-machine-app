@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
     color: theme.palette.primary.contrastText,
   },
+  logo:{
+    width: '250px',
+  },
 }));
 
 const hiddenRoutes = ['digest'];
@@ -42,7 +45,9 @@ const NavBar = memo(function NavBar() {
       <Toolbar>
         <Box className={classes.titleContainer}>
           <NavLink exact to="/" className={classes.title}>
-            JS MACHINE
+            {/* JS MACHINE */}
+            {/* new logo for new year */}
+            <img className={classes.logo} src={'assets/logo-ny.png'} alt="logo"/>
           </NavLink>
         </Box>
         <Hidden smDown>

@@ -28,13 +28,14 @@ export const theme: Theme = {
     },
     MuiToolbar: {
       gutters: {
-        paddingLeft: _theme.spacing(4),
+        // TODO: revert paddingLeft value after NY   
+        paddingLeft: _theme.spacing(2),
         [_theme.breakpoints.up('sm')]: {
-          paddingLeft: _theme.spacing(6),
+          paddingLeft: _theme.spacing(2),
           paddingRight: _theme.spacing(4),
         },
         [_theme.breakpoints.up('md')]: {
-          paddingLeft: _theme.spacing(8),
+          paddingLeft: _theme.spacing(2),
           paddingRight: _theme.spacing(8),
         },
       },
