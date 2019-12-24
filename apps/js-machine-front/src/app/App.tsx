@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import './firebase.conf';
 import { theme } from './theme';
 import { DynamicNavBar } from './components/NavBar';
+import { SnowSwitcher } from './components/SnowSwitcher';
 import { Events } from './scenes/communityEvents/CommunityEvents';
 import { News } from './scenes/news/News';
 import { About } from './scenes/about/About';
@@ -33,7 +34,7 @@ export const App: React.FC = observer(() => {
   return (
     <ThemeProvider theme={theme}>
       <Router history={history}>
-        <Snowflakes/>
+        <Snowflakes />
         <SnackbarProvider maxSnack={3}>
           <DynamicNavBar />
           <ErrorBoundary>
@@ -47,6 +48,7 @@ export const App: React.FC = observer(() => {
               <Redirect to="/" />
             </Switch>
           </ErrorBoundary>
+		      <SnowSwitcher />
         </SnackbarProvider>
       </Router>
     </ThemeProvider>
