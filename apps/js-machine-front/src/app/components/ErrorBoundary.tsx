@@ -1,25 +1,52 @@
-import * as React from 'react';
-import { ErrorIndicator } from './ErrorIndicator';
+import React, { ReactNode, ComponentType, ErrorInfo } from 'react';
+import { ErrorBoundaryFallbackComponent } from './ErrorBoundaryFallbackComponent';
 
-export interface ErrorBoundaryState {
-  hasError: boolean;
+interface Props {
+  children?: ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  FallbackComponent: ComponentType<any>;
+  onError?: (error: Error, componentStack: string) => void;
 }
 
-export class ErrorBoundary extends React.Component<{}, ErrorBoundaryState> {
-  state: ErrorBoundaryState = {
-    hasError: false,
+interface State {
+  error?: Error;
+  info?: ErrorInfo;
+}
+
+export class ErrorBoundary extends React.Component<Props, State> {
+  static defaultProps: Props = {
+    FallbackComponent: ErrorBoundaryFallbackComponent,
   };
 
-  componentDidCatch(): void {
-    this.setState({
-      hasError: true,
-    });
+  public state: State = {};
+
+  public componentDidCatch(error: Error, info: ErrorInfo): void {
+    const { onError } = this.props;
+
+    if (typeof onError === 'function') {
+      try {
+        onError.call(this, error, info ? info.componentStack : '');
+      } catch (ignoredError) {
+        // catch error
+      }
+    }
+
+    this.setState({ error, info });
   }
 
-  render(): React.ReactNode | React.FC {
-    if (this.state.hasError) {
-      return <ErrorIndicator />;
+  public render(): React.ReactNode | React.FC {
+    const { children, FallbackComponent } = this.props;
+    const { error, info } = this.state;
+
+    if (error) {
+      return (
+        <FallbackComponent
+          componentStack={info ? info.componentStack : ''}
+          error={error}
+        />
+      );
     }
-    return this.props.children;
+
+    return children || null;
   }
 }

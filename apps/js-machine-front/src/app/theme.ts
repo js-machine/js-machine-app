@@ -4,6 +4,18 @@ const _theme = createMuiTheme();
 
 export const theme: Theme = {
   ..._theme,
+  mixins: {
+    ..._theme.mixins,
+    toolbar: {
+      minHeight: _theme.spacing(10),
+      [_theme.breakpoints.up('sm')]: {
+        minHeight: _theme.spacing(13),
+      },
+      [_theme.breakpoints.up('md')]: {
+        minHeight: _theme.spacing(16),
+      },
+    },
+  },
   overrides: {
     MuiAppBar: {
       root: {
