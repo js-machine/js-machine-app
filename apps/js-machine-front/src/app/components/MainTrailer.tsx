@@ -7,8 +7,8 @@ const useStyles = makeStyles({
     top: 0,
     left: '50%',
     transform: 'translateX(-50%)',
-    height: '100%'
-  }
+    height: '100%',
+  },
 });
 
 export const MainTrailer = memo(() => {

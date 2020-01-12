@@ -4,9 +4,8 @@ import './styles/mainMedia.css';
 import { useSnackbar } from 'notistack';
 
 import { SocialLinks, RecentEvents } from './';
-import { getRecentEvents } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
-import { MainTrailer } from '../../components/MainTrailer'
+import { MainTrailer } from '../../components/MainTrailer';
 import { useStores } from "@js-machine-app/front/stores";
 import { observer } from "mobx-react-lite";
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,7 +25,7 @@ const useStyles = makeStyles({
     // '@media only screen and (max-width: 1200px) ': {
     //   display: 'none'
     // }
-  }
+  },
 });
 
 export const Main: React.FC = observer(() => {
@@ -35,8 +34,8 @@ export const Main: React.FC = observer(() => {
   const {communityEventsStore, uiStore} = useStores();
 
   useEffect(() => {
-    communityEventsStore.getRecentEvents(true)
-  }, [getRecentEvents]);
+    communityEventsStore.getRecentEvents(true);
+  }, [communityEventsStore]);
 
   return (
     <div className={classes.section}>

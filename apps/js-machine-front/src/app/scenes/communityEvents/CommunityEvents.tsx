@@ -25,7 +25,7 @@ export const Events = observer(() => {
   const {communityEventsStore, uiStore} = useStores();
 
   useEffect(() => {
-    communityEventsStore.getEvents(true)
+    communityEventsStore.getEvents(true);
   }, [communityEventsStore]);
 
   return (

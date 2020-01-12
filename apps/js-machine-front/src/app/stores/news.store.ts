@@ -14,7 +14,7 @@ export class NewsStore {
 
     if (withCache && !this.news.length) {
       this.uiStore.setIsLoading(true);
-      isLoading = true
+      isLoading = true;
     }
 
     try {

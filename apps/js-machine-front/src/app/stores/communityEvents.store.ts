@@ -15,7 +15,7 @@ export class CommunityEventsStore {
 
     if (withCache && !this.events.length) {
       this.uiStore.setIsLoading(true);
-      isLoading = true
+      isLoading = true;
     }
 
     try {
@@ -33,7 +33,7 @@ export class CommunityEventsStore {
 
     if (withCache && !this.recentEvents.length) {
       this.uiStore.setIsLoading(true);
-      isLoading = true
+      isLoading = true;
     }
 
     try {

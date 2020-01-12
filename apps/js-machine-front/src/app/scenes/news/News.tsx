@@ -19,7 +19,7 @@ export const News = observer(() => {
   const {newsStore, uiStore} = useStores();
 
   useEffect(() => {
-    newsStore.get(true)
+    newsStore.get(true);
   }, [newsStore]);
 
   return (
