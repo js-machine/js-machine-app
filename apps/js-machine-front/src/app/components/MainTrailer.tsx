@@ -5,9 +5,6 @@ const useStyles = makeStyles({
   root: {
     position: 'fixed',
     top: 0,
-    left: '50%',
-    transform: 'translateX(-50%)',
-    height: '100%',
   },
 });
 
