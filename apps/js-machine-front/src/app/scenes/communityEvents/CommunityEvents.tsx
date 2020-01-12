@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './styles/events.css';
 
-import { Event } from '@js-machine-app/models';
-import { getEvents } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
 import { EventsContent } from './components/EventsContent';
 
 import { FormattedMessage } from 'react-intl';
 
 import { makeStyles } from '@material-ui/core/styles';
+import { useStores } from "@js-machine-app/front/stores";
+import { observer } from "mobx-react-lite";
 
 const useStyles = makeStyles({
   root: {
@@ -20,19 +20,13 @@ const useStyles = makeStyles({
   },
 });
 
-export const Events = () => {
+export const Events = observer(() => {
   const classes = useStyles();
-  const [events, setEvents] = useState<Event[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const {communityEventsStore, uiStore} = useStores();
 
   useEffect(() => {
-    setIsLoading(true);
-    getEvents()
-      .then(setEvents)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    communityEventsStore.getEvents(true)
+  }, [communityEventsStore]);
 
   return (
     <div className={classes.root}>
@@ -40,12 +34,12 @@ export const Events = () => {
         <div className="title">
           <FormattedMessage id="page.events" />
         </div>
-        {isLoading ? (
-          <Loader isLoading={isLoading} />
+        {uiStore.isLoading ? (
+          <Loader isLoading={uiStore.isLoading} />
         ) : (
-          <EventsContent events={events} />
+          <EventsContent events={communityEventsStore.events} />
         )}
       </div>
     </div>
   );
-};
+});

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import './styles/news.css';
 
 import { NewsContainer } from './components/NewsContainer';
-import { Digest } from '@js-machine-app/models';
-import { getDigests } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
+import { useStores } from "@js-machine-app/front/stores";
+import { observer } from "mobx-react-lite";
 
 const sectionStyle = {
   height: '100vh',
@@ -15,18 +15,12 @@ const sectionStyle = {
   backgroundPosition: 'center',
 };
 
-export const News = () => {
-  const [news, setNews] = useState<Digest[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export const News = observer(() => {
+  const {newsStore, uiStore} = useStores();
 
   useEffect(() => {
-    setIsLoading(true);
-    getDigests()
-      .then(setNews)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    newsStore.get(true)
+  }, [newsStore]);
 
   return (
     <div style={sectionStyle}>
@@ -34,12 +28,12 @@ export const News = () => {
         <div className="title">
           <FormattedMessage id="page.news" />
         </div>
-        {isLoading ? (
-          <Loader isLoading={isLoading} />
+        {uiStore.isLoading ? (
+          <Loader isLoading={uiStore.isLoading} />
         ) : (
-          <NewsContainer newsData={news} />
+          <NewsContainer newsData={newsStore.news} />
         )}
       </div>
     </div>
   );
-};
+});

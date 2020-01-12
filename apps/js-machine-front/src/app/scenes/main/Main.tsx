@@ -1,57 +1,68 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './styles/main.css';
 import './styles/mainMedia.css';
 import { useSnackbar } from 'notistack';
 
 import { SocialLinks, RecentEvents } from './';
 import { getRecentEvents } from '@js-machine-app/data-service';
-import { Event } from '@js-machine-app/models';
 import { Loader } from '../../components/Loader';
+import { MainTrailer } from '../../components/MainTrailer'
+import { useStores } from "@js-machine-app/front/stores";
+import { observer } from "mobx-react-lite";
+import { makeStyles } from "@material-ui/core/styles";
 
-const sectionStyle = {
-  height: '100vh',
-  backgroundImage: `url('assets/main.jpg')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-};
+const useStyles = makeStyles({
+  section: {
+    height: '100vh',
+    backgroundImage: `url('assets/main.jpg')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  video: {
+    /**
+     * Enable this lines of video is playing ugly on small devices
+     */
+    // '@media only screen and (max-width: 1200px) ': {
+    //   display: 'none'
+    // }
+  }
+});
 
-export const Main: React.FC = memo(() => {
-  const { enqueueSnackbar } = useSnackbar();
-  const [events, setEvents] = useState<Event[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export const Main: React.FC = observer(() => {
+  const classes = useStyles();
+  const {enqueueSnackbar} = useSnackbar();
+  const {communityEventsStore, uiStore} = useStores();
 
   useEffect(() => {
-    setIsLoading(true);
-    getRecentEvents()
-      .then(setEvents)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    communityEventsStore.getRecentEvents(true)
+  }, [getRecentEvents]);
 
   return (
-    <div style={sectionStyle}>
-      {isLoading ? (
-        <Loader isLoading={isLoading} />
+    <div className={classes.section}>
+      {uiStore.isLoading ? (
+        <Loader isLoading={uiStore.isLoading} />
       ) : (
         <>
           <SocialLinks
             onSendFeedbackSuccess={() => {
               enqueueSnackbar('Фидбек успешно отправлен!', {
                 variant: 'success',
-                anchorOrigin: { vertical: 'top', horizontal: 'right' },
+                anchorOrigin: {vertical: 'top', horizontal: 'right'},
               });
             }}
             onSendFeedbackError={() => {
               enqueueSnackbar('Произошла ошибка отправки фидбека!', {
                 variant: 'warning',
-                anchorOrigin: { vertical: 'top', horizontal: 'right' },
+                anchorOrigin: {vertical: 'top', horizontal: 'right'},
               });
             }}
           />
+          <div className={classes.video}>
+            <MainTrailer />
+          </div>
           <div className="main__events">
-            <RecentEvents events={events} />
+            <RecentEvents events={communityEventsStore.recentEvents} />
           </div>
         </>
       )}
