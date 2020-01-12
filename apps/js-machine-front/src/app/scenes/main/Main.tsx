@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
   video: {
     /**
-     * Enable this lines of video is playing ugly on small devices
+     * Enable this lines if video is playing ugly on small devices
      */
     // '@media only screen and (max-width: 1200px) ': {
     //   display: 'none'
