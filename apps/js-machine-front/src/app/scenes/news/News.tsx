@@ -28,8 +28,8 @@ export const News = observer(() => {
         <div className="title">
           <FormattedMessage id="page.news" />
         </div>
-        {uiStore.isLoading ? (
-          <Loader isLoading={uiStore.isLoading} />
+        {uiStore.isPageLoading ? (
+          <Loader isLoading={uiStore.isPageLoading} />
         ) : (
           <NewsContainer newsData={newsStore.news} />
         )}

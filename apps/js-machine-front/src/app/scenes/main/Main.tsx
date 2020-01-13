@@ -39,8 +39,8 @@ export const Main: React.FC = observer(() => {
 
   return (
     <div className={classes.section}>
-      {uiStore.isLoading ? (
-        <Loader isLoading={uiStore.isLoading} />
+      {uiStore.isPageLoading ? (
+        <Loader isLoading={uiStore.isPageLoading} />
       ) : (
         <>
           <SocialLinks

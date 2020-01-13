@@ -34,8 +34,8 @@ export const Events = observer(() => {
         <div className="title">
           <FormattedMessage id="page.events" />
         </div>
-        {uiStore.isLoading ? (
-          <Loader isLoading={uiStore.isLoading} />
+        {uiStore.isPageLoading ? (
+          <Loader isLoading={uiStore.isPageLoading} />
         ) : (
           <EventsContent events={communityEventsStore.events} />
         )}
