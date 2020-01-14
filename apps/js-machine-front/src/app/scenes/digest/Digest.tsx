@@ -66,7 +66,7 @@ interface Props {
   match: { params: { id: string } };
 }
 
-export const Digest = memo(({ history, match }: Props) => {
+export const Digest = memo(({history, match}: Props) => {
   const classes = useStyles();
   const [markdown, setMarkdown] = useState();
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -90,7 +90,7 @@ export const Digest = memo(({ history, match }: Props) => {
     <Grid className={classes.root} container>
       <Hidden smDown>
         <Grid className={classes.leftSide} item md={3}>
-          <BackButton className={classes.backButton} onClick={ handleBackButton }>
+          <BackButton className={classes.backButton} onClick={handleBackButton}>
             <FormattedMessage id="digest.back" />
           </BackButton>
           <Options className={classes.options} />
