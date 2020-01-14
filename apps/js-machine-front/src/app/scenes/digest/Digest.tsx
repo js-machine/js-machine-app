@@ -11,7 +11,6 @@ import { Options } from './Options';
 import { Theme } from '@material-ui/core/styles';
 import { getDigestsById } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
-import MetaTags from 'react-meta-tags';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -88,27 +87,20 @@ export const Digest = memo(({history, match}: Props) => {
   );
 
   return (
-    <div>
-      <MetaTags>
-        <meta property="og:title" content="JS Machine Digest" />
-        <meta property="og:image"
-              content="https://firebasestorage.googleapis.com/v0/b/js-machine-app.appspot.com/o/%20Digest%20Cycle%20News.png?alt=media&token=bd7c00dc-c389-4227-891b-dcb584ab4946" />
-      </MetaTags>
-      <Grid className={classes.root} container>
-        <Hidden smDown>
-          <Grid className={classes.leftSide} item md={3}>
-            <BackButton className={classes.backButton} onClick={handleBackButton}>
-              <FormattedMessage id="digest.back" />
-            </BackButton>
-            <Options className={classes.options} />
-          </Grid>
-        </Hidden>
-        <Grid className={classes.rightSide} item md={9}>
-          <DateAndView views={25} />
-          <Loader isLoading={isLoading} />
-          <Markdown markdown={markdown} />
+    <Grid className={classes.root} container>
+      <Hidden smDown>
+        <Grid className={classes.leftSide} item md={3}>
+          <BackButton className={classes.backButton} onClick={handleBackButton}>
+            <FormattedMessage id="digest.back" />
+          </BackButton>
+          <Options className={classes.options} />
         </Grid>
+      </Hidden>
+      <Grid className={classes.rightSide} item md={9}>
+        <DateAndView views={25} />
+        <Loader isLoading={isLoading} />
+        <Markdown markdown={markdown} />
       </Grid>
-    </div>
+    </Grid>
   );
 });
