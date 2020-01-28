@@ -2,16 +2,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { makeStyles } from '@material-ui/core/styles';
-import { useStores } from '@js-machine-app/front/stores'
+import { useStores } from '@js-machine-app/front/stores';
 import { observer } from "mobx-react-lite";
 
 const useStyles = makeStyles(theme => ({
     navDesktop: {
-      padding: '10px 20px'
+      padding: '10px 20px',
     },
     navDesktopWithBackground: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      padding: '10px 20px'
+      padding: '10px 20px',
     },
     link: {
       textDecoration: 'none',
