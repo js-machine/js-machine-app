@@ -7,17 +7,16 @@ import { observer } from "mobx-react-lite";
 
 const useStyles = makeStyles(theme => ({
     navDesktop: {
-      padding: '10px 20px',
+      padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
     },
-    navDesktopWithBackground: {
+    withBackground: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      padding: '10px 20px',
     },
     link: {
       textDecoration: 'none',
       color: theme.palette.primary.contrastText,
       fontWeight: 'bold',
-      marginLeft: 60,
+      marginLeft: theme.spacing(7),
     },
     firstLink: {
       textDecoration: 'none',
@@ -37,7 +36,8 @@ export const NavDesktop = observer(function NavDesktop() {
   const {routerStore} = useStores();
 
   return (
-    <div className={routerStore.location.pathname === '/' ? classes.navDesktopWithBackground : classes.navDesktop}>
+    <div
+      className={`${classes.navDesktop} ${routerStore.location.pathname === '/' ? classes.withBackground : ''}`}>
       <NavLink
         exact
         to="/about"
