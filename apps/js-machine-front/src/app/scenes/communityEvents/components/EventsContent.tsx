@@ -6,13 +6,14 @@ interface Props {
   events: Event[];
 }
 
-export const EventsContent: React.FC<Props> = memo(({ events }) => {
+export const EventsContent: React.FC<Props> = memo(({events}) => {
   return (
     <div className="eventsContent">
       {events.map((event: Event) => {
         const eventDate: number = new Date(event.date).getDate();
+        const eventYear: number = new Date(event.date).getFullYear();
         const eventMonth: string = new Date(event.date)
-          .toLocaleString('ru', { month: 'short' })
+          .toLocaleString('ru', {month: 'short'})
           .toUpperCase();
 
         return (
@@ -27,6 +28,7 @@ export const EventsContent: React.FC<Props> = memo(({ events }) => {
               <div className="eventsContent__date">
                 <p className="eventsContent__day">{eventDate}</p>
                 <span className="eventsContent__month">{eventMonth}</span>
+                <span className="eventsContent__month">{eventYear}</span>
               </div>
               <div className="eventsContent__info">
                 <p className="eventsContent__title">{event.title}</p>
