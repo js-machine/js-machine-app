@@ -48,7 +48,6 @@ export const App: React.FC = observer(() => {
               <Redirect to="/" />
             </Switch>
           </ErrorBoundary>
-		      <SnowSwitcher />
         </SnackbarProvider>
       </Router>
     </ThemeProvider>
