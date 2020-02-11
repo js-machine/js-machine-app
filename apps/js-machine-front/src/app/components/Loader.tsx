@@ -37,12 +37,7 @@ export const Loader = memo(({ isLoading }: Props) => {
 
   return (
     <Box className={classes.root}>
-      <PacmanLoader
-        sizeUnit="px"
-        size={45}
-        color={MAIN_YELLOW}
-        loading={isLoading}
-      />
+      <PacmanLoader size={45} color={MAIN_YELLOW} loading={isLoading} />
     </Box>
   );
 });
