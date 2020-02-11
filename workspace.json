@@ -22,9 +22,11 @@
               "apps/js-machine-front/src/manifest.json",
               "apps/js-machine-front/src/robots.txt"
             ],
-            "styles": ["apps/js-machine-front/src/styles.css"],
+            "styles": [
+              "apps/js-machine-front/src/styles.css"
+            ],
             "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/babel"
+            "webpackConfig": "@nrwl/react/plugins/webpack"
           },
           "configurations": {
             "production": {
@@ -72,7 +74,10 @@
               "apps/js-machine-front/tsconfig.app.json",
               "apps/js-machine-front/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/js-machine-front/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/js-machine-front/**"
+            ]
           }
         },
         "test": {
@@ -107,8 +112,13 @@
           "options": {
             "linter": "eslint",
             "config": "apps/js-machine-front-e2e/.eslintrc",
-            "tsConfig": ["apps/js-machine-front-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/js-machine-front-e2e/**"]
+            "tsConfig": [
+              "apps/js-machine-front-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/js-machine-front-e2e/**"
+            ]
           }
         }
       }
@@ -126,7 +136,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -157,7 +169,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**"
+            ]
           }
         },
         "test": {
@@ -189,9 +204,11 @@
               "apps/js-machine-admin/src/manifest.json",
               "apps/js-machine-admin/src/robots.txt"
             ],
-            "styles": ["apps/js-machine-admin/src/styles.css"],
+            "styles": [
+              "apps/js-machine-admin/src/styles.css"
+            ],
             "scripts": [],
-            "webpackConfig": "@nrwl/react/plugins/babel"
+            "webpackConfig": "@nrwl/react/plugins/webpack"
           },
           "configurations": {
             "production": {
@@ -239,7 +256,10 @@
               "apps/js-machine-admin/tsconfig.app.json",
               "apps/js-machine-admin/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/js-machine-admin/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/js-machine-admin/**"
+            ]
           }
         },
         "test": {
@@ -274,8 +294,13 @@
           "options": {
             "linter": "eslint",
             "config": "apps/js-machine-admin-e2e/.eslintrc",
-            "tsConfig": ["apps/js-machine-admin-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/js-machine-admin-e2e/**"]
+            "tsConfig": [
+              "apps/js-machine-admin-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/js-machine-admin-e2e/**"
+            ]
           }
         }
       }
@@ -295,7 +320,10 @@
               "libs/models/tsconfig.lib.json",
               "libs/models/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/models/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/models/**"
+            ]
           }
         },
         "test": {
@@ -322,7 +350,10 @@
               "libs/data-service/tsconfig.lib.json",
               "libs/data-service/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/data-service/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/data-service/**"
+            ]
           }
         },
         "test": {
