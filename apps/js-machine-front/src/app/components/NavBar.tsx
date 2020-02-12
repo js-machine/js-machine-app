@@ -45,9 +45,9 @@ const NavBar = memo(function NavBar() {
       <Toolbar>
         <Box className={classes.titleContainer}>
           <NavLink exact to="/" className={classes.title}>
-            {/* JS MACHINE */}
-            {/* new logo for new year */}
-            <img className={classes.logo} src={'assets/logo-ny.png'} alt="logo"/>
+            JS MACHINE
+            {/* Christmas Logo */}
+            {/* <img className={classes.logo} src={'assets/logo-ny.png'} alt="logo"/> */}
           </NavLink>
         </Box>
         <Hidden smDown>

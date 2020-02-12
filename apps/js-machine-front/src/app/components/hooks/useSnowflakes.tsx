@@ -4,7 +4,7 @@ import { Snowflake } from './models/Snowflake';
 
 export function useSnowflakes() {
 
-    const [isSnowing, setSnowing] = useState<boolean>(true);
+    const [isSnowing, setSnowing] = useState<boolean>(false);
     const requestId = React.useRef(0);
 
     useEffect(() => {
