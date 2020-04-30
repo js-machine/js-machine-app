@@ -1,32 +1,42 @@
 import React, { memo, useMemo } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import marked from 'marked';
+import { theme } from '@js-machine-app/front/theme';
 
 const useStyles = makeStyles({
   root: {
+    minHeight: '1000px',
     '& h1': {
       color: 'rgba(0, 0, 0, 0.85)',
       fontSize: 36,
       marginTop: 8,
       marginBottom: 40,
+      fontFamily: 'Arvo',
+    },
+    '& h2': {
+      fontFamily: 'Russo One',
+      margin: '32px 0',
+      fontSize: '24px',
+      color: 'rgb(41, 41, 41)',
     },
     '& h3': {
-      color: 'rgba(0, 0, 0, 0.3)',
-      marginTop: 48,
-      marginBottom: 12,
+      color: 'rgb(41, 41, 41)',
+      marginTop: 36,
+      marginBottom: 0,
+      fontFamily: 'Russo One',
+      fontSize: '20px',
     },
     '& p': {
-      fontFamily: 'Tahoma',
       lineHeight: '1.5em',
       fontSize: '18px',
+      marginTop: '8px',
     },
     '& a': {
-      textDecoration: 'none',
-      color: '#2F5C7C',
+      color: '#2F5C7C'
     },
-    padding: '0 36px'
   },
 });
+
 
 interface Props {
   markdown?: string;

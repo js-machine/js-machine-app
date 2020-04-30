@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import CloseIcon from '@material-ui/icons/Close';
+import { History } from 'history';
 import { makeStyles } from '@material-ui/styles';
-import clsx from 'clsx';
 import { Grid } from '@material-ui/core';
 import { Options } from './Options';
+import { theme } from '@js-machine-app/front/theme';
 
 const useStyles = makeStyles({
   root: {
@@ -11,27 +11,34 @@ const useStyles = makeStyles({
     color: '#000000',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '0 48px',
-    boxSizing: 'border-box'
+    padding: '16px 48px',
+    boxSizing: 'border-box',
+    fontFamily: 'Russo One',
+    [theme.breakpoints.down('xs')]: {
+        padding: '16px 16px',
+      },
   },
   title: {
     fontSize: '36px',
     fontWeight: 'bold',
+    [theme.breakpoints.down('xs')]: {
+        fontSize: '32px',
+      },
   },
 });
 
 interface Props {
-  className?: string;
+  text: string;
+  history: History
 }
 
-export const Title = memo(({ className }: Props) => {
+export const Title = memo(({ text, history }: Props) => {
   const classes = useStyles();
 
   return (
-      <Grid className={clsx(classes.root, className)}>
-        <div className={classes.title}>Digest Cicle #22</div>
-        <Options/>
+      <Grid className={classes.root}>
+        <div className={classes.title}>{text}</div>
+        <Options history={history}/>
       </Grid>
-
   );
 });
