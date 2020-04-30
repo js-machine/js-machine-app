@@ -11,55 +11,39 @@ import { Options } from './Options';
 import { Theme } from '@material-ui/core/styles';
 import { getDigestsById } from '@js-machine-app/data-service';
 import { Loader } from '../../components/Loader';
+import { Title } from './Title';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    position: 'relative',
-    height: '100vh',
-    minHeight: '100%',
+    background: createDotBackgorund(2, '#fff', 36, '#000'),
+    backgroundSize: '36px 36px',
+    padding: '128px 48px',
+    backgroundAttachment: 'fixed'
   },
-  leftSide: {
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    backgroundImage: `url('assets/news.jpg')`,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    position: 'relative',
-    '&:before': {
-      position: 'absolute',
-      content: `" "`,
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      display: 'block',
-      zIndex: 0,
-      backgroundColor: 'rgba(18,18,18,0.8)',
-    },
+  title: {
+    position: 'sticky',
+    top: '0',
+    background: 'white',
+    '-webkit-backdrop-filter': 'saturate(180%) blur(10px)',
+    backdropFilter: 'saturate(180%) blur(10px)',
+    backgroundColor: 'rgba(255,255,255,0.72)',
   },
-  rightSide: {
-    padding: theme.spacing(6, 8),
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(4),
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(2),
-    },
-  },
-  backButton: {
-    position: 'fixed',
-    top: theme.spacing(6),
-    left: theme.spacing(6),
-    cursor: 'pointer',
-    alignItems: 'center',
-    display: 'flex',
-  },
-  options: {
-    position: 'fixed',
-    top: 'calc(50% - 52px)',
-    left: 'calc(25% - 32px)',
+  digest: {
+    margin: '0 auto',
+    flexDirection: 'column',
+    maxWidth: '768px',
+    background: 'white',
+    padding: '64px 0',
+    boxShadow: '0px 0px 2px 0px rgba(159, 159, 159, 0.46)',
+    borderRadius: '8px',
   },
 }));
+
+const createDotBackgorund = (dotSize: number, bgColor: string, dotSpace: number, dotColor: string): string => {
+  return `linear-gradient(90deg, ${bgColor} ${dotSpace - dotSize}px, transparent 1%) center,
+  linear-gradient(${bgColor} ${dotSpace - dotSize}px, transparent 1%) center,
+  #9d9d9d`;
+}
 
 interface Props {
   history: History;
@@ -85,21 +69,19 @@ export const Digest = memo(({history, match}: Props) => {
     },
     [history],
   );
-
+  console.log(markdown);
   return (
     <Grid className={classes.root} container>
-      <Hidden smDown>
-        <Grid className={classes.leftSide} item md={3}>
-          <BackButton className={classes.backButton} onClick={handleBackButton}>
-            <FormattedMessage id="digest.back" />
-          </BackButton>
-          <Options className={classes.options} />
+      <Grid className={classes.digest}>
+        <Grid className={classes.title}>
+          <Title></Title>
         </Grid>
-      </Hidden>
-      <Grid className={classes.rightSide} item md={9}>
-        <DateAndView views={25} />
-        <Loader isLoading={isLoading} />
-        <Markdown markdown={markdown} />
+        <br/>
+        <Grid>
+          <DateAndView views={25} />
+          <Loader isLoading={isLoading} />
+          <Markdown markdown={markdown} />
+        </Grid>
       </Grid>
     </Grid>
   );

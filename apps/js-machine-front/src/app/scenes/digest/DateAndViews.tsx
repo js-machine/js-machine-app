@@ -21,10 +21,8 @@ interface Props {
 
 export const DateAndView = memo(({ views }: Props) => {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
-      <span>5 АВГ</span>
       {/*<VisibilityIcon className={classes.icon} />*/}
       {/*<span>{views}</span>*/}
     </div>

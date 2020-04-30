@@ -1,16 +1,11 @@
 import React, { memo } from 'react';
-import ReplyIcon from '@material-ui/icons/Reply';
-import StarIcon from '@material-ui/icons/Star';
-import InfoIcon from '@material-ui/icons/Info';
+import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 
 const useStyles = makeStyles({
   root: {
-    width: 32,
-    height: 104,
     color: '#000000',
-    backgroundColor: '#f2e14c',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -19,6 +14,7 @@ const useStyles = makeStyles({
     flex: 1,
     cursor: 'pointer',
     transform: 'scale(-1, 1)',
+    fontSize: '36px'
   },
 });
 
@@ -31,9 +27,7 @@ export const Options = memo(({ className }: Props) => {
 
   return (
     <div className={clsx(classes.root, className)}>
-      <ReplyIcon className={classes.icon} />
-      <StarIcon className={classes.icon} />
-      <InfoIcon className={classes.icon} />
+      <CloseIcon className={classes.icon} />
     </div>
   );
 });

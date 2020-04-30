@@ -16,12 +16,15 @@ const useStyles = makeStyles({
       marginBottom: 12,
     },
     '& p': {
-      color: 'rgba(0, 0, 0, 0.85)',
+      fontFamily: 'Tahoma',
+      lineHeight: '1.5em',
+      fontSize: '18px',
     },
     '& a': {
       textDecoration: 'none',
       color: '#2F5C7C',
     },
+    padding: '0 36px'
   },
 });
 
