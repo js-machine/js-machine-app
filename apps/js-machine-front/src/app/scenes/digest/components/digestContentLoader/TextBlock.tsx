@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     background: '#e1e1e1',
     borderRadius: 4,
     marginBottom: theme.spacing(4),
-  }
+  },
 });
 
 const getRandomWordSet = (lines: Array<Array<WordSize>>) => lines[Math.floor(Math.random() * Math.floor(lines.length))];
