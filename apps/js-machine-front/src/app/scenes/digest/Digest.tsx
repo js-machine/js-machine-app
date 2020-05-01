@@ -20,7 +20,7 @@ const bgConfig: BackgroundConfig = {
   dotColor: '#9d9d9d',
   dotSize: 2,
   dotSpace: 48,
-  bgColor: 'white'
+  bgColor: 'white',
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -87,7 +87,7 @@ export const Digest = memo(({history, match}: Props) => {
   const classes = useStyles();
   const emptyDigest: DigestContent = {
     title: '',
-    text: ''
+    text: '',
   };
 
   const [digest, setDigest] = useState<DigestContent>(emptyDigest);

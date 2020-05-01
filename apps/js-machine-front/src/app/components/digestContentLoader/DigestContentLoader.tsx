@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
     '100%': {
       opacity: 1,
-    }
+    },
   },
 });
 
