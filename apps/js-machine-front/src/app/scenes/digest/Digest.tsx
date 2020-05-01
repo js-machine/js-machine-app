@@ -6,7 +6,7 @@ import { Markdown } from './Markdown';
 import { Theme } from '@material-ui/core/styles';
 import { getDigestsById } from '@js-machine-app/data-service';
 import { Title } from './Title';
-import { DigestContentLoader } from '../../components/digestContentLoader/DigestContentLoader';
+import { DigestContentLoader } from './components/digestContentLoader/DigestContentLoader';
 import { Container, Box } from '@material-ui/core';
 
 interface BackgroundConfig {

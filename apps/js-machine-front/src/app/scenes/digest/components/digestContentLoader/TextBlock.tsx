@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import {Line } from './Line';
@@ -19,10 +19,10 @@ const useStyles = makeStyles({
   }
 });
 
+const getRandomWordSet = (lines: Array<Array<WordSize>>) => lines[Math.floor(Math.random() * Math.floor(lines.length))];
 
 export const TextBlock = memo(() => {
   const classes = useStyles();
-  const getRandomWordSet = (lines: Array<Array<WordSize>>) => lines[Math.floor(Math.random() * Math.floor(lines.length))];
 
   return (
     <Box className={classes.root}>

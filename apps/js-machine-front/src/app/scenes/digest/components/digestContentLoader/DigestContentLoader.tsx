@@ -25,9 +25,10 @@ interface Props {
   isLoading: boolean;
 }
 
+const TEN_TEXT_BLOCKS = 10;
+
 export const DigestContentLoader = memo(({ isLoading }: Props) => {
   const classes = useStyles();
-  const TEN_TEXT_BLOCKS = 10;
 
   return (
     <Box className={classes.root}>
