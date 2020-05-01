@@ -43,6 +43,8 @@ interface Props {
   isLoading: boolean;
 }
 
+const SECOND = 1000;
+
 export const Markdown = memo(({ markdown, isLoading }: Props) => {
   const classes = useStyles();
 
@@ -51,10 +53,8 @@ export const Markdown = memo(({ markdown, isLoading }: Props) => {
     [markdown],
   );
 
-  const second = 1000;
-
   return (
-    <Fade in={!isLoading} timeout={second}>
+    <Fade in={!isLoading} timeout={SECOND}>
       <article
         className={classes.root}
         dangerouslySetInnerHTML={{
