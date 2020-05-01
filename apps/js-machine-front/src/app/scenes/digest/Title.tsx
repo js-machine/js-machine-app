@@ -11,18 +11,18 @@ const useStyles = makeStyles({
     color: '#000000',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '16px 48px',
+    padding: theme.spacing(2, 6),
     boxSizing: 'border-box',
     fontFamily: 'Russo One',
     [theme.breakpoints.down('xs')]: {
-        padding: '16px 16px',
+        padding: theme.spacing(2, 2),
       },
   },
   title: {
-    fontSize: '36px',
+    fontSize: 36,
     fontWeight: 'bold',
     [theme.breakpoints.down('xs')]: {
-        fontSize: '32px',
+        fontSize: 32,
       },
   },
 });

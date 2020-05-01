@@ -2,32 +2,31 @@ import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import clsx from 'clsx';
-
-const MAIN_YELLOW = '#F2E14C';
+import { theme } from '@js-machine-app/front/theme';
 
 const useStyles = makeStyles({
   root: {
-      marginBottom: '16px',
+      marginBottom: theme.spacing(2),
   },
   text: {
-    minHeight: '16px',
-    marginLeft: '4px',
+    minHeight: 16,
+    marginLeft: 4,
     background: '#e1e1e1',
-    borderRadius: '4px',
+    borderRadius: 4,
   },
   lg: {
-    width: '150px',
+    width: 150,
   },
   sm: {
-    width: '30px',
+    width: 30,
   },
   md: {
-    width: '80px',
+    width: 80,
   },
 });
 
 interface Props {
-    size: any;
+    size: WordSize;
 }
 
 export enum WordSize {
@@ -36,12 +35,12 @@ export enum WordSize {
     lg = 'lg',
 }
 
-export const Word = memo(({size} : Props) => {
+export const Word = memo(({size}: Props) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-        <div className={clsx(classes.text, (classes as any)[size])}/>
+        <div className={clsx(classes.text, classes[size])}/>
     </Box>
   );
 });

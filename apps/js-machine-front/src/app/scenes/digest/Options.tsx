@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   icon: {
     cursor: 'pointer',
     transform: 'scale(-1, 1)',
-    fontSize: '36px',
+    fontSize: 36,
     color: 'rgb(41, 41, 41)',
   },
 });

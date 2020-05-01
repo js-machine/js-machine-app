@@ -4,17 +4,18 @@ import Box from '@material-ui/core/Box';
 import {Line } from './Line';
 import { WordSize } from './Word';
 import { wordSizeSets } from './wordSizeSets';
+import { theme } from '@js-machine-app/front/theme';
 
 const useStyles = makeStyles({
   root: {
-    marginBottom: '32px',
+    marginBottom: theme.spacing(4),
   },
   title: {
-    minHeight: '16px',
-    width: '140px',
+    minHeight: 16,
+    width: 140,
     background: '#e1e1e1',
-    borderRadius: '4px',
-    marginBottom: '32px',
+    borderRadius: 4,
+    marginBottom: theme.spacing(4),
   }
 });
 

@@ -27,13 +27,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     background: createDotBackground(bgConfig),
     backgroundSize: '48px 48px',
-    padding: '128px 48px',
+    padding: theme.spacing(16, 6),
     backgroundAttachment: 'fixed',
     [theme.breakpoints.down('sm')]: {
-      padding: '48px 36px',
+      padding: theme.spacing(6, 4.5),
     },
     [theme.breakpoints.down('xs')]: {
-      padding: '0px',
+      padding: theme.spacing(0),
     },
   },
   title: {
@@ -44,26 +44,27 @@ const useStyles = makeStyles((theme: Theme) => ({
     backdropFilter: 'saturate(180%) blur(5px)',
     backgroundColor: 'rgba(255,255,255,0.72)',
     width: '100%',
+    marginBottom: theme.spacing(4),
   },
   digest: {
-    width: "746px",
+    width: "768px",
     height: '100%',
     flexDirection: 'column',
     background: 'white',
-    padding: '48px 0',
+    padding: theme.spacing(6, 0),
     boxShadow: '0px 0px 2px 0px rgba(159, 159, 159, 0.46)',
     borderRadius: '8px',
     [theme.breakpoints.down('xs')]: {
       margin: 0,
-      padding: '16px 0',
+      padding: theme.spacing(2, 0),
     },
   },
   content: {
-    padding: '0 48px',
+    padding: theme.spacing(0, 6),
     maxWidth: '650px',
     [theme.breakpoints.down('xs')]: {
       margin: 0,
-      padding: '0 16px',
+      padding: theme.spacing(0, 2),
     },
   },
 }));

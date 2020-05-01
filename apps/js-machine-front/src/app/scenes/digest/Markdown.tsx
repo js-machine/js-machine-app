@@ -5,31 +5,30 @@ import { theme } from '@js-machine-app/front/theme';
 
 const useStyles = makeStyles({
   root: {
-    minHeight: '1000px',
     '& h1': {
       color: 'rgba(0, 0, 0, 0.85)',
       fontSize: 36,
-      marginTop: 8,
-      marginBottom: 40,
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(5),
       fontFamily: 'Arvo',
     },
     '& h2': {
       fontFamily: 'Russo One',
-      margin: '32px 0',
-      fontSize: '24px',
+      margin: theme.spacing(4, 0),
+      fontSize: 24,
       color: 'rgb(41, 41, 41)',
     },
     '& h3': {
       color: 'rgb(41, 41, 41)',
-      marginTop: 36,
-      marginBottom: 0,
+      marginTop: theme.spacing(4.5),
+      marginBottom: theme.spacing(0),
       fontFamily: 'Russo One',
-      fontSize: '20px',
+      fontSize: 20,
     },
     '& p': {
       lineHeight: '1.5em',
-      fontSize: '18px',
-      marginTop: '8px',
+      fontSize: 18,
+      marginTop: theme.spacing(1),
     },
     '& a': {
       color: '#2F5C7C'
