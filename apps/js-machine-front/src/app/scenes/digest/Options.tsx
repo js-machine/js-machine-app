@@ -3,12 +3,11 @@ import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 import { History } from 'history';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    width: 'initial',
   },
   icon: {
     cursor: 'pointer',
@@ -33,8 +32,12 @@ export const Options = memo(({ className, history }: Props) => {
     [history],
   );
   return (
-    <div className={clsx(classes.root, className)}>
+    <Grid className={clsx(classes.root, className)}
+          container
+          direction="column"
+          alignItems="center"
+          >
       <CloseIcon className={classes.icon} onClick={handleBackButton}/>
-    </div>
+    </Grid>
   );
 });

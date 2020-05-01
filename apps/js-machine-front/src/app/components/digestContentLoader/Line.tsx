@@ -1,13 +1,11 @@
 import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import { Word, WordSize } from './Word';
 import { theme } from '@js-machine-app/front/theme';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    display: 'flex',
-    justifyContent: 'start',
     marginBottom: theme.spacing(0.5),
     flexFlow: 'wrap'
   },
@@ -21,8 +19,8 @@ export const Line = memo(({wordSizes} : Props) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Grid className={classes.root} container justify="flex-start">
         {wordSizes.map((size, i) => <Word key={i} size={size}/>)}
-    </Box>
+    </Grid>
   );
 });

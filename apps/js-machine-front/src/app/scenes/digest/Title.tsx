@@ -8,9 +8,7 @@ import { theme } from '@js-machine-app/front/theme';
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    color: '#000000',
-    display: 'flex',
-    justifyContent: 'space-between',
+    color: 'black',
     padding: theme.spacing(2, 6),
     boxSizing: 'border-box',
     fontFamily: 'Russo One',
@@ -36,7 +34,7 @@ export const Title = memo(({ text, history }: Props) => {
   const classes = useStyles();
 
   return (
-      <Grid className={classes.root}>
+      <Grid className={classes.root} container justify="space-between">
         <div className={classes.title}>{text}</div>
         <Options history={history}/>
       </Grid>

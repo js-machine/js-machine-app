@@ -2,12 +2,12 @@ import React, { memo, useEffect, useState } from 'react';
 import { History } from 'history';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import { Markdown } from './Markdown';
 import { Theme } from '@material-ui/core/styles';
 import { getDigestsById } from '@js-machine-app/data-service';
 import { Title } from './Title';
 import { DigestContentLoader } from '../../components/digestContentLoader/DigestContentLoader';
+import { Container, Box } from '@material-ui/core';
 
 interface BackgroundConfig {
   dotSize: number;
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     position: 'sticky',
-    top: '0',
+    top: 0,
     background: 'white',
     '-webkit-backdrop-filter': 'saturate(180%) blur(10px)',
     backdropFilter: 'saturate(180%) blur(5px)',
@@ -47,21 +47,19 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: theme.spacing(4),
   },
   digest: {
-    width: "768px",
+    width: 768,
     height: '100%',
-    flexDirection: 'column',
     background: 'white',
     padding: theme.spacing(6, 0),
     boxShadow: '0px 0px 2px 0px rgba(159, 159, 159, 0.46)',
-    borderRadius: '8px',
+    borderRadius: 8,
     [theme.breakpoints.down('xs')]: {
-      margin: 0,
       padding: theme.spacing(2, 0),
     },
   },
   content: {
     padding: theme.spacing(0, 6),
-    maxWidth: '650px',
+    maxWidth: 650,
     [theme.breakpoints.down('xs')]: {
       margin: 0,
       padding: theme.spacing(0, 2),
@@ -97,18 +95,18 @@ export const Digest = memo(({history, match}: Props) => {
 
   return (
     <Grid className={classes.root} container>
-      <Box className={classes.digest}  mx="auto">
+      <Container className={classes.digest}>
 
-        <Grid className={classes.title}>
+        <Box className={classes.title}>
           <Title text={titleText} history={history}/>
-        </Grid>
+        </Box>
 
-        <Grid className={classes.content}>
+        <Box className={classes.content}>
           <DigestContentLoader isLoading={isLoading}/>
           <Markdown markdown={markdown} />
-        </Grid>
+        </Box>
 
-      </Box>
+      </Container>
     </Grid>
   );
 });
