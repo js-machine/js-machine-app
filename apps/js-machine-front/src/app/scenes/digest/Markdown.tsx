@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import marked from 'marked';
 import { theme } from '@js-machine-app/front/theme';
+import { Fade } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -39,9 +40,10 @@ const useStyles = makeStyles({
 
 interface Props {
   markdown?: string;
+  isLoading: boolean;
 }
 
-export const Markdown = memo(({ markdown }: Props) => {
+export const Markdown = memo(({ markdown, isLoading }: Props) => {
   const classes = useStyles();
 
   const formatedMarkdown = useMemo(
@@ -50,12 +52,14 @@ export const Markdown = memo(({ markdown }: Props) => {
   );
 
   return (
-    <article
-      className={classes.root}
-      dangerouslySetInnerHTML={{
-        // https://stackoverflow.com/questions/48692039/how-to-use-n-in-a-javascript-string
-        __html: formatedMarkdown,
-      }}
-    />
+    <Fade in={!isLoading} timeout={500}>
+      <article
+        className={classes.root}
+        dangerouslySetInnerHTML={{
+          // https://stackoverflow.com/questions/48692039/how-to-use-n-in-a-javascript-string
+          __html: formatedMarkdown,
+        }}
+      />
+    </Fade>
   );
 });

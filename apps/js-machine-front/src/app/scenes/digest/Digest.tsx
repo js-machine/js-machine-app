@@ -78,18 +78,29 @@ interface Props {
   match: { params: { id: string } };
 }
 
+interface DigestContent {
+  title: string,
+  text: string,
+}
+
 export const Digest = memo(({history, match}: Props) => {
   const classes = useStyles();
-  const [markdown, setMarkdown] = useState();
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const emptyDigest: DigestContent = {
+    title: '',
+    text: ''
+  };
 
-  const titleText = 'Digest Cicle #22';
+  const [digest, setDigest] = useState<DigestContent>(emptyDigest);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setIsLoading(true);
     getDigestsById(match.params.id)
-      .then(response => response.content)
-      .then(text => setMarkdown(text))
+      .then(response => ({
+          title: response.title,
+          text: response.content,
+        }))
+      .then(digest => setDigest(digest))
       .finally(() => setIsLoading(false));
   }, [match]);
 
@@ -98,12 +109,12 @@ export const Digest = memo(({history, match}: Props) => {
       <Container className={classes.digest}>
 
         <Box className={classes.title}>
-          <Title text={titleText} history={history}/>
+          <Title text={digest.title} history={history}/>
         </Box>
 
         <Box className={classes.content}>
           <DigestContentLoader isLoading={isLoading}/>
-          <Markdown markdown={markdown} />
+          <Markdown isLoading={isLoading} markdown={digest.text} />
         </Box>
 
       </Container>

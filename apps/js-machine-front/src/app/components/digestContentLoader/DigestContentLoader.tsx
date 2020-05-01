@@ -31,7 +31,7 @@ export const DigestContentLoader = memo(({ isLoading }: Props) => {
 
   return (
     <Box className={classes.root}>
-        {isLoading && Array.from({ length: TEN_TEXT_BLOCKS }, (_, i) => <TextBlock key={i}/>)}
+        { isLoading && Array.from({ length: TEN_TEXT_BLOCKS }, (_, i) => <TextBlock key={i}/>) }
     </Box>
   );
 });
