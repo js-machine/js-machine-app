@@ -18,3 +18,10 @@ code {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Russo One';
+  src: url('fonts/russo-one.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

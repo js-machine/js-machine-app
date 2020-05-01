@@ -1,39 +1,43 @@
-import React, { memo } from 'react';
-import ReplyIcon from '@material-ui/icons/Reply';
-import StarIcon from '@material-ui/icons/Star';
-import InfoIcon from '@material-ui/icons/Info';
+import React, { memo, useCallback } from 'react';
+import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
+import { History } from 'history';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    width: 32,
-    height: 104,
-    color: '#000000',
-    backgroundColor: '#f2e14c',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    width: 'initial',
   },
   icon: {
-    flex: 1,
     cursor: 'pointer',
     transform: 'scale(-1, 1)',
+    fontSize: 36,
+    color: 'rgb(41, 41, 41)',
   },
 });
 
 interface Props {
+  history: History,
   className?: string;
 }
 
-export const Options = memo(({ className }: Props) => {
+export const Options = memo(({ className, history }: Props) => {
   const classes = useStyles();
 
+  const handleBackButton = useCallback(
+    () => {
+      history.push('/news');
+    },
+    [history],
+  );
   return (
-    <div className={clsx(classes.root, className)}>
-      <ReplyIcon className={classes.icon} />
-      <StarIcon className={classes.icon} />
-      <InfoIcon className={classes.icon} />
-    </div>
+    <Grid className={clsx(classes.root, className)}
+          container
+          direction="column"
+          alignItems="center"
+          >
+      <CloseIcon className={classes.icon} onClick={handleBackButton}/>
+    </Grid>
   );
 });
