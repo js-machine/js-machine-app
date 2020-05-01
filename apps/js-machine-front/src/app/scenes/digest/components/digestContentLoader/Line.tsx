@@ -7,7 +7,7 @@ import { Grid } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     marginBottom: theme.spacing(0.5),
-    flexFlow: 'wrap'
+    flexFlow: 'wrap',
   },
 });
 

@@ -32,7 +32,7 @@ const useStyles = makeStyles({
       marginTop: theme.spacing(1),
     },
     '& a': {
-      color: '#2F5C7C'
+      color: '#2F5C7C',
     },
   },
 });
