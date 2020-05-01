@@ -51,8 +51,10 @@ export const Markdown = memo(({ markdown, isLoading }: Props) => {
     [markdown],
   );
 
+  const second = 1000;
+
   return (
-    <Fade in={!isLoading} timeout={500}>
+    <Fade in={!isLoading} timeout={second}>
       <article
         className={classes.root}
         dangerouslySetInnerHTML={{
