@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { History } from 'history';
 import { makeStyles } from '@material-ui/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Fade } from '@material-ui/core';
 import { Options } from './Options';
 import { theme } from '@js-machine-app/front/theme';
 
@@ -27,15 +27,22 @@ const useStyles = makeStyles({
 
 interface Props {
   text: string;
-  history: History
+  history: History,
+  isLoading: boolean,
 }
 
-export const Title = memo(({ text, history }: Props) => {
+const SECOND = 1000;
+
+export const Title = memo(({ text, history, isLoading }: Props) => {
   const classes = useStyles();
 
   return (
       <Grid className={classes.root} container justify="space-between">
-        <div className={classes.title}>{text}</div>
+
+         <Fade in={!isLoading} timeout={SECOND}>
+            <div className={classes.title}>{text}</div>
+         </Fade>
+
         <Options history={history}/>
       </Grid>
   );

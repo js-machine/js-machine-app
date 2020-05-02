@@ -8,6 +8,7 @@ import { getDigestsById } from '@js-machine-app/data-service';
 import { Title } from './Title';
 import { DigestContentLoader } from './components/digestContentLoader/DigestContentLoader';
 import { Container, Box } from '@material-ui/core';
+import { DigestTitleLoader } from './components/digestTitleLoader/DigestTitleLoader';
 
 interface BackgroundConfig {
   dotSize: number;
@@ -109,7 +110,8 @@ export const Digest = memo(({history, match}: Props) => {
       <Container className={classes.digest}>
 
         <Box className={classes.title}>
-          <Title text={digest.title} history={history}/>
+          <DigestTitleLoader isLoading={isLoading}/>
+          <Title text={digest.title} history={history} isLoading={isLoading}/>
         </Box>
 
         <Box className={classes.content}>
