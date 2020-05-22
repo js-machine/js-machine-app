@@ -1,8 +1,10 @@
-import { Inject as _Inject, Provides } from 'typescript-ioc';
+import { Inject as _Inject, Singleton } from 'typescript-ioc';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function Injectable(): (target: Function) => void {
-  return function(target: Function) {
-    Provides(target);
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  return function (target: Function): void {
+    Singleton(target);
   };
 }
 

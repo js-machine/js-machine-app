@@ -11,7 +11,7 @@ import { RegisterRoutes } from '@js-machine-app/api/routes';
 const app = express();
 
 app
-  .use(cors({ origin: true }))
+  .use(cors({ origin: true }) as string)
   .use(bodyBarser.json())
   .use(bodyBarser.urlencoded({ extended: false }));
 
