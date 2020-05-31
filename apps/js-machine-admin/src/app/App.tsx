@@ -8,7 +8,6 @@ import { Digests } from '@js-machine-app/admin/scenes/digests';
 import { Users } from '@js-machine-app/admin/scenes/users';
 import { NewDigest } from '@js-machine-app/admin/scenes/new-digest';
 import { EditDigest } from '@js-machine-app/admin/scenes/edit-digest';
-import 'mobx-react-lite/optimizeForReactDom';
 
 const theme = createMuiTheme();
 
