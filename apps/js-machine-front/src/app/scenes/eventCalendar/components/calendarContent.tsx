@@ -1,4 +1,5 @@
 import React from 'react';
+import { Event } from '@js-machine-app/models';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment'
@@ -12,9 +13,9 @@ const calendar = {
 };
 
 
-export function CalendarContent(props){
+export function CalendarContent(props: any){
   const localizer = momentLocalizer(moment)
-  const events = props.events.map((event) => {
+  const events = props.events.map((event: Event) => {
     const startDate = new Date(event.date);
     const endDate = new Date(event.date);
     endDate.setHours(endDate.getHours() + 2);
