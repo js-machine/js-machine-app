@@ -87,6 +87,13 @@ export const NavMobile = memo(function NavMobile() {
           >
             <FormattedMessage id="page.events" />
           </ListItem>
+          <ListItem
+            button
+            className={classes.drawerLink}
+            onClick={navigate('/calendar')}
+          >
+            <FormattedMessage id="page.calendar" />
+          </ListItem>
         </List>
       </SwipeableDrawer>
     </>
