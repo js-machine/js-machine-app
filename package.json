@@ -61,6 +61,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/pickers": "^3.2.10",
     "@material-ui/styles": "^4.10.0",
+    "@types/react-big-calendar": "^0.24.2",
     "body-parser": "^1.19.0",
     "clsx": "^1.1.0",
     "cors": "^2.8.5",

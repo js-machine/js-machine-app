@@ -1,5 +1,6 @@
 import React from 'react';
 import { Event } from '@js-machine-app/models';
+import { PropsEventContent } from '../models/eventContent';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment'
@@ -10,10 +11,13 @@ const calendar = {
   'width': '600px',
   'padding': "10px",
   'backgroundColor': '#fff',
+  'height': '450px',
 };
 
 
-export function CalendarContent(props: any){
+export const CalendarContent: React.FC<PropsEventContent> = (
+  props: PropsEventContent,
+) => {
   const localizer = momentLocalizer(moment)
   const events = props.events.map((event: Event) => {
     const startDate = new Date(event.date);
@@ -37,7 +41,6 @@ export function CalendarContent(props: any){
             localizer={localizer}
             startAccessor="start"
             endAccessor="end"
-            style={{ height: '450px',width: '95%' }}
         />
     </div>
   );
