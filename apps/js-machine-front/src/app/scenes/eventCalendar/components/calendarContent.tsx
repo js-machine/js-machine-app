@@ -20,6 +20,7 @@ export const CalendarContent: React.FC<PropsEventContent> = (
 ) => {
   const localizer = momentLocalizer(moment)
   const events = props.events.map((event: Event) => {
+    console.log(event)
     const startDate = new Date(event.date);
     const endDate = new Date(event.date);
     endDate.setHours(endDate.getHours() + 2);
@@ -36,7 +37,7 @@ export const CalendarContent: React.FC<PropsEventContent> = (
         <Calendar
             rtl={false}
             events={events}
-            culture={'en-GB'}
+            culture={'ru-RU'}
             defaultDate={new Date()}
             localizer={localizer}
             startAccessor="start"
