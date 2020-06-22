@@ -6,7 +6,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import '../styles/calendar.css'
 import moment from 'moment'
 
-
 export const CalendarContent: React.FC<PropsEventContent> = (
   props: PropsEventContent,
 ) => {
