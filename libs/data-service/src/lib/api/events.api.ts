@@ -13,3 +13,11 @@ export async function getRecentEvents(): Promise<Event[]> {
     headers: { 'Content-Type': 'application/json' },
   }).then(response => response.json());
 }
+
+export async function createEvent(event: Event): Promise<{ id: string }> {
+  return fetch('/api/events', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(event),
+  }).then(response => response.json());
+}

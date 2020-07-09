@@ -1,4 +1,12 @@
-import { Controller, Get, Route } from 'tsoa';
+import { 
+  Controller,
+  Get,
+  Post,
+  Route,
+  Body,
+  Delete,
+  Path
+} from 'tsoa';
 import { Event } from '@js-machine-app/models';
 import { Inject } from '@js-machine-app/api/ioc';
 import { EventsService } from '@js-machine-app/api/services/events';
@@ -12,8 +20,13 @@ export class EventsController extends Controller {
     return this.eventsService.getEvents();
   }
 
-  @Get('recent')
-  public async getRecentEvents(): Promise<Event[]> {
-    return this.eventsService.getRecentEvents();
+  @Post()
+  public async postEvent(@Body() event: Event): Promise<string> {
+    return this.eventsService.createEvent(event);
+  }
+
+  @Delete('{id}')
+  public async deleteEvent(@Path() id: string): Promise<void> {
+    return this.eventsService.deleteEvent(id);
   }
 }

@@ -14,7 +14,6 @@ app
   .use(cors({ origin: true }) as string)
   .use(bodyBarser.json())
   .use(bodyBarser.urlencoded({ extended: false }));
-
 RegisterRoutes(app);
 
 app.get('*', (_, res) =>

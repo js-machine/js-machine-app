@@ -24,4 +24,19 @@ export class EventsService {
 
     return this.firebaseService.mapCollectionFromSnapshot(snapshot);
   }
+
+  public async createEvent(event: Event): Promise<string> {
+    const reference = await this.firebaseService.firestore
+      .collection('events')
+      .add(this.firebaseService.convertToFirebaseEntity(event));
+
+    return reference.id;
+  }
+
+  public async deleteEvent(id: string): Promise<void> {
+    await this.firebaseService.firestore
+      .collection('events')
+      .doc(id)
+      .delete();
+  }
 }

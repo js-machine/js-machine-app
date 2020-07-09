@@ -5,8 +5,10 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { Shell } from '@js-machine-app/admin/shell';
 import { Digests } from '@js-machine-app/admin/scenes/digests';
+import { Events } from '@js-machine-app/admin/scenes/events';
 import { Users } from '@js-machine-app/admin/scenes/users';
 import { NewDigest } from '@js-machine-app/admin/scenes/new-digest';
+import { NewEvent } from '@js-machine-app/admin/scenes/new-event';
 import { EditDigest } from '@js-machine-app/admin/scenes/edit-digest';
 
 const theme = createMuiTheme();
@@ -19,8 +21,10 @@ export const App = memo(function App() {
           <Switch>
             <Route exact path="/" render={() => <Redirect to={'/digests'} />} />
             <Route exact path="/digests" component={Digests} />
+            <Route exact path="/events" component={Events} />
             <Route exact path="/digests/:digestId" component={EditDigest} />
             <Route exact path="/new-digest" component={NewDigest} />
+            <Route exact path="/new-event" component={NewEvent} />
             <Route exact path="/users" component={Users} />
             <Redirect to={'/'} />
           </Switch>
