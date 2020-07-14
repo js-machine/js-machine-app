@@ -9,14 +9,11 @@ import { MainTrailer } from '../../components/MainTrailer';
 import { useStores } from "@js-machine-app/front/stores";
 import { observer } from "mobx-react-lite";
 import { makeStyles } from "@material-ui/core/styles";
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const useStyles = makeStyles({
   section: {
-    height: '100vh',
-    backgroundImage: `url('assets/main.jpg')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    height: '100vh'
   },
   video: {
     /**
@@ -31,7 +28,9 @@ const useStyles = makeStyles({
 export const Main: React.FC = observer(() => {
   const classes = useStyles();
   const {enqueueSnackbar} = useSnackbar();
-  const {communityEventsStore, uiStore} = useStores();
+	const {communityEventsStore, uiStore} = useStores();
+	
+	useBackgroundImage('assets/main.jpg');
 
   useEffect(() => {
     communityEventsStore.getRecentEvents(true);

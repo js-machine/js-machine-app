@@ -9,6 +9,7 @@ import { Title } from './Title';
 import { DigestContentLoader } from './components/digestContentLoader/DigestContentLoader';
 import { Container, Box } from '@material-ui/core';
 import { DigestTitleLoader } from './components/digestTitleLoader/DigestTitleLoader';
+import { useStores } from '@js-machine-app/front/stores';
 
 interface BackgroundConfig {
   dotSize: number;
@@ -26,6 +27,8 @@ const bgConfig: BackgroundConfig = {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+		position: 'relative',
+		zIndex: 2,
     background: createDotBackground(bgConfig),
     backgroundSize: '48px 48px',
     padding: theme.spacing(16, 6),
@@ -92,7 +95,7 @@ export const Digest = memo(({history, match}: Props) => {
   };
 
   const [digest, setDigest] = useState<DigestContent>(emptyDigest);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setIsLoading(true);
