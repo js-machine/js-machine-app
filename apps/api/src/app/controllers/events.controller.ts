@@ -2,6 +2,7 @@ import {
   Controller,
   Get,
   Post,
+  Put,
   Route,
   Body,
   Delete,
@@ -20,9 +21,22 @@ export class EventsController extends Controller {
     return this.eventsService.getEvents();
   }
 
+  @Get('{id}')
+  public async getDigestById(@Path() id: string): Promise<Event> {
+    return this.eventsService.getEventById(id);
+  }
+
   @Post()
   public async postEvent(@Body() event: Event): Promise<string> {
     return this.eventsService.createEvent(event);
+  }
+
+  @Put('{id}')
+  public async updateDigest(
+    @Path() id: string,
+    @Body() event: Event,
+  ): Promise<void> {
+    return this.eventsService.updateEvent(id, event);
   }
 
   @Delete('{id}')
