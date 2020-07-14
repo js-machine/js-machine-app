@@ -6,6 +6,7 @@ import { DynamicNavBar } from './components/NavBar';
 import { Events } from './scenes/communityEvents/CommunityEvents';
 import { News } from './scenes/news/News';
 import { About } from './scenes/about/About';
+import { EventCalendar } from './scenes/eventCalendar/EventCalendar';
 import { Main } from './scenes/main/Main';
 import { Digest } from './scenes/digest';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -43,6 +44,7 @@ export const App: React.FC = observer(() => {
               <Route exact path="/news" component={News} />
               <Route exact path="/digest/:id" component={Digest} />
               <Route exact path="/events" component={Events} />
+              <Route exact path="/calendar" component={EventCalendar} />
               <Route exact path="/authorization" component={Authorization} />
               <Redirect to="/" />
             </Switch>
