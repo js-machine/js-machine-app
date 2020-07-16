@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '../stores';
 import { makeStyles } from '@material-ui/core';
-import { BackgroundImage } from './BackgroundImage';
-import { Event } from '@js-machine-app/models';
+import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		position: 'absolute',
 		top: 0,
 		left: 0,
+		zIndex: 0,
 		height: '100vh',
 		width: '100%',
+	},
+	backgroundImage: {
+		position: 'absolute',
+		objectFit: 'cover',
+		width: '100%',
+		height: '100%',
+		transition: 'opacity 0.4s'
 	},
 	backgroundDark: {
 		position: 'absolute',
@@ -21,10 +28,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-let isTopImageVisible: boolean = true;
-let bottomImageUrl: string | undefined;
-let topImageUrl: string | undefined;
-
 export const SmoothBackground = observer(() => {
 	const classes = useStyles();
 	const { uiStore } = useStores();
@@ -32,32 +35,33 @@ export const SmoothBackground = observer(() => {
 	const nextImage = uiStore.backgroundState?.nextImageUrl;
 
 	//	prepare next image to load
-	if(isTopImageVisible) {
-		bottomImageUrl = nextImage;
-	} else {
-		topImageUrl = nextImage;
-	};
+	const imageToPreload = new Image();
 
-	//	show next image after loaded smootly
+	//	show next image smootly after loaded
 	useEffect(() => {
-		const topImage: HTMLImageElement | null = document.querySelector('.topImage');
-		const bottomImage: HTMLImageElement | null = document.querySelector('.bottomImage');
-		if(topImage && bottomImage) {
-			bottomImage.onload = () => {
-				topImage.style.opacity = '0';
-				isTopImageVisible = false;
-			}
-			topImage.onload = () => {
-				topImage.style.opacity = '1';
-				isTopImageVisible = true;
+		if(nextImage !== undefined) {
+			const topImage: HTMLImageElement | null = document.querySelector('.topImage');
+			const bottomImage: HTMLImageElement | null = document.querySelector('.bottomImage');
+			if(topImage && bottomImage) {
+				//	preload image
+				imageToPreload.src = nextImage as string;
+				imageToPreload.onload = () => {
+					if(topImage.style.opacity === '0') {
+						topImage.src = imageToPreload.src;
+						topImage.style.opacity = '1';
+					} else {
+						bottomImage.src = imageToPreload.src;
+						topImage.style.opacity = '0';
+					}
+				}
 			}
 		}
-	});
+	}, [nextImage]);
 
 	return (
 		<div className={classes.root}>
-			<BackgroundImage url={bottomImageUrl} imageClass='bottomImage'/>
-			<BackgroundImage url={topImageUrl} imageClass='topImage'/>
+			<img className={clsx(classes.backgroundImage, 'bottomImage')}></img>
+			<img className={clsx(classes.backgroundImage, 'topImage')} style={{opacity: 0}}></img>
 			<div className={classes.backgroundDark}></div>
 		</div>
 	)
