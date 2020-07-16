@@ -32,7 +32,7 @@ export class EventsController extends Controller {
   }
 
   @Put('{id}')
-  public async updateDigest(
+  public async updateEvent(
     @Path() id: string,
     @Body() event: Event,
   ): Promise<void> {
