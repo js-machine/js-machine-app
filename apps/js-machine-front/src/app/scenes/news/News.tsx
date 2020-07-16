@@ -9,7 +9,7 @@ import { observer } from "mobx-react-lite";
 import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
-  height: '100vh'
+  height: '100vh',
 };
 
 export const News = observer(() => {

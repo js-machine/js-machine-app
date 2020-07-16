@@ -18,15 +18,15 @@ const useStyles = makeStyles(theme => ({
 		objectFit: 'cover',
 		width: '100%',
 		height: '100%',
-		transition: 'opacity 0.4s'
+		transition: 'opacity 0.4s',
 	},
 	backgroundDark: {
 		position: 'absolute',
 		height: '100%',
 		width: '100%',
 		backgroundColor: "rgba(0, 0, 0, 0.6)",
-		transition: 'opacity 0.5s'
-	}
+		transition: 'opacity 0.5s',
+	},
 }));
 
 export const SmoothBackground = observer(() => {
@@ -58,12 +58,12 @@ export const SmoothBackground = observer(() => {
 				}
 			}
 		}
-	}, [nextImageUrl]);
+	}, [nextImageUrl, imageToPreload]);
 
 	return (
 		<div className={classes.root}>
-			<img className={clsx(classes.backgroundImage, 'bottomImage')}></img>
-			<img className={clsx(classes.backgroundImage, 'topImage')} style={{opacity: 0}}></img>
+			<img className={clsx(classes.backgroundImage, 'bottomImage')} alt=''></img>
+			<img className={clsx(classes.backgroundImage, 'topImage')} style={{opacity: 0}} alt=''></img>
 			<div className={classes.backgroundDark} style={{opacity: nextIsDark ? 1 : 0}}></div>
 		</div>
 	)

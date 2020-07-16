@@ -13,7 +13,7 @@ import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBa
 
 const useStyles = makeStyles({
   section: {
-    height: '100vh'
+    height: '100vh',
   },
   video: {
     /**

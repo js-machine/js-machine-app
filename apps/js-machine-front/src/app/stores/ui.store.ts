@@ -13,7 +13,7 @@ export class UiStore {
     this.isPageLoading = isPageLoading;
 	}
 	
-	@action public setBackgroundImage = (imageUrl: string, isDark: boolean = true) => {
+	@action public setBackgroundImage = (imageUrl: string, isDark = true) => {
 		this.backgroundState = {
 			imageUrl,
 			isDark

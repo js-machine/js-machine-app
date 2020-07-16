@@ -9,7 +9,6 @@ import { Title } from './Title';
 import { DigestContentLoader } from './components/digestContentLoader/DigestContentLoader';
 import { Container, Box } from '@material-ui/core';
 import { DigestTitleLoader } from './components/digestTitleLoader/DigestTitleLoader';
-import { useStores } from '@js-machine-app/front/stores';
 
 interface BackgroundConfig {
   dotSize: number;

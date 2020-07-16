@@ -7,7 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
-	height: '100vh'
+	height: '100vh',
 };
 
 export const About: React.FC = memo(() => {
