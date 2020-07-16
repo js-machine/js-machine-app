@@ -65,6 +65,14 @@ export const NavDesktop = observer(function NavDesktop() {
       >
         <FormattedMessage id="page.events" />
       </NavLink>
+      <NavLink
+        exact
+        to="/calendar"
+        className={classes.link}
+        activeClassName={classes.activeNavLink}
+      >
+        <FormattedMessage id="page.calendar" />
+      </NavLink>
     </div>
   );
 });
