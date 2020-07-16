@@ -9,20 +9,19 @@ import { FormattedMessage } from 'react-intl';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStores } from "@js-machine-app/front/stores";
 import { observer } from "mobx-react-lite";
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const useStyles = makeStyles({
   root: {
     height: '100vh',
-    backgroundImage: `url('assets/events.jpg')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
   },
 });
 
 export const Events = observer(() => {
   const classes = useStyles();
-  const {communityEventsStore, uiStore} = useStores();
+	const {communityEventsStore, uiStore} = useStores();
+	
+	useBackgroundImage('assets/events.jpg');
 
   useEffect(() => {
     communityEventsStore.getEvents(true);

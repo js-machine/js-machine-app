@@ -20,19 +20,21 @@ import { createBrowserHistory } from 'history';
 import { observer } from 'mobx-react-lite';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import { useStores } from './stores';
+import { SmoothBackground } from './components/SmoothBackground';
 
 const browserHistory = createBrowserHistory();
 
 export const App: React.FC = observer(() => {
-  const { routerStore } = useStores();
+	const { routerStore } = useStores();
 
   const history = useMemo(
     () => syncHistoryWithStore(browserHistory, routerStore),
     [routerStore],
-  );
+	);
 
   return (
     <ThemeProvider theme={theme}>
+		<SmoothBackground />
       <Router history={history}>
         <Snowflakes />
         <SnackbarProvider maxSnack={3}>

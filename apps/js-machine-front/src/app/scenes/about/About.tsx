@@ -4,16 +4,15 @@ import './styles/aboutMedia.css';
 import { Tile } from './models/tile';
 import { TileContent } from './components/TileContent';
 import { FormattedMessage } from 'react-intl';
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
-  height: '100vh',
-  backgroundImage: `url('assets/about.jpg')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+	height: '100vh',
 };
 
 export const About: React.FC = memo(() => {
+	useBackgroundImage('assets/about.jpg');
+
   const arrTiles: Tile[] = [
     {
       id: 0,
@@ -39,7 +38,8 @@ export const About: React.FC = memo(() => {
       description:
         'Разумеется, каждый из нас разработчик, каждый из нас эксперт и будущий номинант на премию Тьюринга, но в тоже время мы такие же люди как, и вы! Мы любим видеоигры, пиццы, общение, холивары и фан, поэтому даже если ты не знаешь, как фильтровать массивы и чем отчличается "null" от "undefined" - это не значит что нам не по пути.',
     },
-  ];
+	];
+	
   return (
     <div style={sectionStyle}>
       <div className="body">
