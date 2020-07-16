@@ -18,9 +18,12 @@ export class UiStore {
 		? this.backgroundState.nextImageUrl 
 		: imageUrl;
 
+		const isFirstUpdate: boolean = imageUrl == prevImageUrl;
+
 		this.backgroundState = {
 			nextImageUrl: imageUrl,
-			prevImageUrl
+			prevImageUrl,
+			isFirstUpdate
 		}
 	}
 }

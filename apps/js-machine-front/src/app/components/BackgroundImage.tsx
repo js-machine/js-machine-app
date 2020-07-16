@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core';
-import { observer } from 'mobx-react-lite';
+import clsx from 'clsx';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -10,29 +10,21 @@ const useStyles = makeStyles(theme => ({
 		zIndex: 0,
 		height: '100%',
 		width: '100%',
-		transition: 'opacity 0.3s',
-		opacity: 1
 	},
 	backgroundImage: {
 		objectFit: 'cover',
 		width: '100%',
 		height: '100%',
-	},
-	backgroundDark: {
-		position: 'absolute',
-		height: '100%',
-		width: '100%',
-		backgroundColor: "rgba(0, 0, 0, 0.6)",
+		transition: 'opacity 0.5s'
 	}
 }));
 
-export const BackgroundImage = observer((props: { url: string | undefined}) => {
+export const BackgroundImage = memo((props: {url: string | undefined, imageClass: string}) => {
 	const classes = useStyles();
-
+	
 	return (
 		<div className={classes.root}>
-			<div className={classes.backgroundDark}></div>
-			<img className={classes.backgroundImage} src={props.url}></img>
+			<img className={clsx(classes.backgroundImage, props.imageClass)} src={props.url}></img>
 		</div>
 	)
 });
