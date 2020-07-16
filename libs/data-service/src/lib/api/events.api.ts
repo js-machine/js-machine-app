@@ -21,3 +21,18 @@ export async function createEvent(event: Event): Promise<{ id: string }> {
     body: JSON.stringify(event),
   }).then(response => response.json());
 }
+
+export async function updateEvent(event: Event): Promise<Response> {
+  return fetch(`/api/evnents/${event.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(event),
+  });
+}
+
+export async function deleteEvent(id: string): Promise<Response> {
+  return fetch(`/api/events/${id}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+}

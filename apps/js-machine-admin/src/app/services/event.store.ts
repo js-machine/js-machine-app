@@ -4,7 +4,9 @@ import { observable, action, runInAction } from 'mobx';
 
 import {
     getEvents,
-    createEvent
+    createEvent,
+    updateEvent,
+    deleteEvent
   } from '@js-machine-app/data-service';
 
 export class EventStore {
@@ -37,63 +39,35 @@ export class EventStore {
     }
   };
 
-//   @action public saveEvent = async (event: Event) => {
-//     try {
-//       await updateEvent(event);
-//       runInAction(() => {
-//         this.events = this.events.map(d => (d.id === event.id ? event : d));
-//       });
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+  @action public saveEvent = async (event: Event) => {
+    try {
+      await updateEvent(event);
+      runInAction(() => {
+        this.events = this.events.map(d => (d.id === event.id ? event : d));
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-//   @action public hideEvent = async (event: Event) => {
-//     try {
-//       await updateEvent({ ...event, visible: false });
-//       runInAction(() => (event.visible = false));
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+  @action public deleteEvent = async (event: Event) => {
+    try {
+      await deleteEvent(event.id);
+      runInAction(
+        () => (this.events = this.events.filter(e => e.id !== event.id)),
+      );
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-//   @action public showEvent = async (event: Event) => {
-//     try {
-//       await updateEvent({ ...event, visible: true });
-//       runInAction(() => (event.visible = true));
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+  public findEventById = async (id: string) => {
+    if (!this.events.length) {
+      await this.loadEvents();
+    }
 
-//   @action public uploadEvent = async (event: Event, file: File) => {
-//     try {
-//       const content = await readMdFromFile(file);
-//       await updateEvent({ ...event, content });
-//       runInAction(() => (event.content = content));
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-
-//   @action public downloadEvent = async (event: Event) => {
-//     const blob: Blob = new Blob([event.content], {
-//       type: 'text/plain;charset=utf-8',
-//     });
-
-//     saveAs(blob, `${event.title}.md`);
-//   };
-
-//   @action public deleteDigest = async (event: Event) => {
-//     try {
-//       await deleteEvent(event.id);
-//       runInAction(
-//         () => (this.event = this.event.filter(d => d.id !== event.id)),
-//       );
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
+    return this.events.find(e => e.id === id);
+  };
 }
 
 const StoreContext = createContext(new EventStore());
