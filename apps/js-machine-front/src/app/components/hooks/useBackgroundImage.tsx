@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useStores } from '@js-machine-app/front/stores';
 
-export function useBackgroundImage(imageSrc: string) {
+export function useBackgroundImage(imageSrc: string, isDark: boolean = true) {
 	const { uiStore } = useStores();
 
 	useEffect(() => {
-		uiStore.setBackgroundImage(imageSrc);
+		uiStore.setBackgroundImage(imageSrc, isDark);
 	}, []);
 }

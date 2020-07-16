@@ -30,7 +30,7 @@ export const Main: React.FC = observer(() => {
   const {enqueueSnackbar} = useSnackbar();
 	const {communityEventsStore, uiStore} = useStores();
 	
-	useBackgroundImage('assets/main.jpg');
+	useBackgroundImage('assets/main.jpg', false);
 
   useEffect(() => {
     communityEventsStore.getRecentEvents(true);

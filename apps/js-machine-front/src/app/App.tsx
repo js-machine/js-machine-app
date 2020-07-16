@@ -20,7 +20,6 @@ import { createBrowserHistory } from 'history';
 import { observer } from 'mobx-react-lite';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import { useStores } from './stores';
-import { BackgroundImage } from './components/BackgroundImage';
 import { SmoothBackground } from './components/SmoothBackground';
 
 const browserHistory = createBrowserHistory();

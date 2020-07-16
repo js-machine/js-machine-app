@@ -1,4 +1,4 @@
 export interface BackgroundState {
-	nextImageUrl: string,
-	prevImageUrl: string,
+	imageUrl: string,
+	isDark: boolean
 }

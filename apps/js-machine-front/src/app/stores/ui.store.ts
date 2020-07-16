@@ -13,14 +13,10 @@ export class UiStore {
     this.isPageLoading = isPageLoading;
 	}
 	
-	@action public setBackgroundImage = (imageUrl: string) => {
-		const prevImageUrl: string = this.backgroundState?.nextImageUrl 
-		? this.backgroundState.nextImageUrl 
-		: imageUrl;
-
+	@action public setBackgroundImage = (imageUrl: string, isDark: boolean = true) => {
 		this.backgroundState = {
-			nextImageUrl: imageUrl,
-			prevImageUrl
+			imageUrl,
+			isDark
 		}
 	}
 }
