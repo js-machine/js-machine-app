@@ -30,7 +30,7 @@ interface Props {
 const routes = [
   { name: 'New Digest', icon: <NoteAddIcon />, to: '/new-digest' },
   { name: 'Digests', icon: <BookIcon />, to: '/digests' },
-  { name: 'Events', icon: <EventIcon />, to: '/digests' },
+  { name: 'Events', icon: <EventIcon />, to: '/events' },
 ];
 
 export const SideList = memo(({ onClick }: Props) => {
