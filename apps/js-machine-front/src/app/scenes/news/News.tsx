@@ -6,17 +6,16 @@ import { NewsContainer } from './components/NewsContainer';
 import { Loader } from '../../components/Loader';
 import { useStores } from "@js-machine-app/front/stores";
 import { observer } from "mobx-react-lite";
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
   height: '100vh',
-  backgroundImage: `url('assets/news.jpg')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
 };
 
 export const News = observer(() => {
-  const {newsStore, uiStore} = useStores();
+	const {newsStore, uiStore} = useStores();
+	
+	useBackgroundImage('assets/news.jpg');
 
   useEffect(() => {
     newsStore.get(true);

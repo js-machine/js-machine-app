@@ -9,19 +9,18 @@ import {
   AuthorizationBar,
 } from './';
 import { AuthorizationProps } from './models/authorization';
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
   height: '100vh',
-  backgroundImage: `url('assets/authorization.jpg')`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
 };
 
 export const AuthorizationComponent: React.FC<AuthorizationProps> = (
   props: AuthorizationProps,
 ) => {
-  const { isAuthorizitationVisible } = props;
+	const { isAuthorizitationVisible } = props;
+	
+	useBackgroundImage('assets/authorization.jpg');
 
   return (
     <div style={sectionStyle}>

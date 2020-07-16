@@ -6,22 +6,21 @@ import { Loader } from '../../components/Loader';
 import { CalendarContent } from './components/calendarContent'
 
 import { observer } from "mobx-react-lite";
+import { useBackgroundImage } from '@js-machine-app/front/components/hooks/useBackgroundImage';
 
 const sectionStyle = {
-    height: '100vh',
-    backgroundImage: `url('assets/about.jpg')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
-
-
+  height: '100vh',
+};
 
 export const EventCalendar = observer(() =>{
-  const {communityEventsStore, uiStore} = useStores();
+	const {communityEventsStore, uiStore} = useStores();
+	
+	useBackgroundImage('assets/about.jpg');
+
   useEffect(() => {
     communityEventsStore.getEvents(true);
-  }, [communityEventsStore]);
+	}, [communityEventsStore]);
+	
   return (
     <div style={sectionStyle}>
         <div className='body'>
