@@ -72,7 +72,7 @@
     "firebase": "^7.14.5",
     "firebase-admin": "^8.12.1",
     "firebase-functions": "^3.6.2",
-    "marked": "^1.1.0",
+    "marked": "^4.0.10",
     "mobx": "^5.15.4",
     "mobx-react-lite": "^2.0.7",
     "mobx-react-router": "^4.1.0",
